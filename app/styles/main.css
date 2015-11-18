@@ -1,0 +1,25 @@
+body {
+    background-color: #DDC366;
+}
+
+.statuswindow {
+    border: groove;
+    border-color: #ffc520;
+    border-width: 5px;
+    padding: 5px;
+    width: 155px;
+    height: 100px;
+    display: inline-block;
+    float: left;
+}
+
+.jobswindow {
+    border: groove;
+    border-color: #ffc520;
+    border-width: 5px;
+    padding: 5px;
+    width: 155px;
+    display: inline-block;
+    height: 100px;
+    text-align: center;
+}
