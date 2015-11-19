@@ -23,3 +23,26 @@ body {
     height: 100px;
     text-align: center;
 }
+.sellwindow {
+    border: groove;
+    border-color: #ffc520;
+    border-width: 5px;
+    padding: 5px;
+    width: 155px;
+    display: inline-block;
+    height: 100px;
+    text-align: center;
+}
+
+.logwindow {
+    border: groove;
+    border-color: #ffc520;
+    border-width: 5px;
+    padding: 5px;
+    width: 465px;
+    display: inline-block;
+    height: 300px;
+    text-align: center;
+    overflow: auto scroll;
+    float: right;
+}
