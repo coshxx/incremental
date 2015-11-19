@@ -6,7 +6,6 @@
 
 <div class="jobswindow">
     <button ng-click="fishbuttonclick() ; showme=true">{{buttonText}}</button>
-    <br>
 
     <div ng-show=showme>
         <div class="progress">
@@ -18,13 +17,14 @@
         </div>
     </div>
 </div>
-<br>
 <div ng-show=showSellFish>
-    <div class="sellwindow">
-        <button ng-click="sellFish()">Sell Fish!</button>
-    </div>
+  <div class="sellwindow">
+    <button ng-click="sellFish()">Sell Fish!</button>
+  </div>
+</div>
+<div class="logwindow">
+  <div ng-repeat="log in logData track by $index">{{log}}</div>
 </div>
 
-<div class="logwindow">
-    You really want to go fishing today.
-</div>
+
+

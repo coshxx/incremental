@@ -16,6 +16,7 @@ angular.module 'incrementalApp'
   $scope.fishPerSec = "+1/sec"
   $scope.showSellFish = false
   $scope.gold = 0
+  $scope.logData = [ "You really want to go fishing today." ]
   isFishing = false
 
   $scope.fishbuttonclick = ->
@@ -27,8 +28,9 @@ angular.module 'incrementalApp'
     return
 
   startFish = () ->
-    if $scope.fish >= 10
+    if $scope.fish >= 2 and not $scope.showSellFish
       $scope.showSellFish = true
+      logWindowAdd "Maybe you could sell some fish on the market."
     $scope.fish+=1
     $timeout startFish, 1000
     return
@@ -38,5 +40,9 @@ angular.module 'incrementalApp'
       return
     $scope.fish--
     $scope.gold+=0.1
+    return
+
+  logWindowAdd = (text) ->
+    $scope.logData.push text
     return
   return
