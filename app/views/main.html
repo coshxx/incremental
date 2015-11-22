@@ -1,7 +1,18 @@
 <div class="statuswindow">
-    Fish: {{fish}}<br>
-
-    <div ng-show="gold>0">Gold: {{gold}}</div>
+    <!--
+    <p class="fishdiv">Fish: <p class="fishrighthanded">{{fish}}</p></p>
+    <p class="golddiv">Gold: <p class="goldrighthanded">{{goldReadable}}</p></p>
+    -->
+    <table style="width:100%" border="1">
+        <tr>
+            <td><span style="color:blue">Fish:</span></td>
+            <td><span style="color:blue">{{fish}}</span></td>
+        </tr>
+        <tr>
+            <td><span style="color:yellow">Gold:</span></td>
+            <td><span style="color:yellow">{{goldReadable}}</span></td>
+        </tr>
+    </table>
 </div>
 
 <div class="jobswindow">
@@ -12,18 +23,19 @@
             <div class="progress-bar progress-bar-striped {{fishProgress}}" role="progressbar" aria-valuenow="70"
                  aria-valuemin="0"
                  aria-valuemax="100" style="width:100%">
-                {{fishPerSec}}
+                +{{fishPerSec}}/Sec
             </div>
         </div>
     </div>
 </div>
 <div ng-show=showSellFish>
-  <div class="sellwindow">
-    <button ng-click="sellFish()">Sell Fish!</button>
-  </div>
+    <div class="sellwindow">
+        <button ng-click="sellFish()">Sell Fish!</button><br>
+        <button ng-click="buyFisher()">Buy Fisher</button>
+    </div>
 </div>
 <div class="logwindow">
-  <div ng-repeat="log in logData track by $index">{{log}}</div>
+    <div ng-repeat="log in logData track by $index">{{log}}</div>
 </div>
 
 

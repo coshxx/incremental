@@ -2,6 +2,33 @@ body {
     background-color: #DDC366;
 }
 
+.fishdiv {
+    color: #0000FF;
+    float: left;
+}
+
+table {
+    table-layout: fixed;
+}
+
+td:nth-child(even) {
+    text-align: right;
+    width: 70%;
+}
+
+.fishrighthanded {
+    float: right;
+    color: #0000FF;
+}
+
+.golddiv {
+    float: left;
+}
+
+.goldrighthanded {
+    float: right;
+}
+
 .statuswindow {
     border: groove;
     border-color: #ffc520;
@@ -32,10 +59,10 @@ body {
     border-color: #ffc520;
     border-width: 5px;
     padding: 5px;
-    width: 155px;
+    width: 255px;
     height: 100px;
-    text-align: center;
-    display:inline-block;
+    display: inline-block;
+    float: left;
 }
 
 .logwindow {
@@ -49,5 +76,4 @@ body {
     text-align: center;
     overflow-y: scroll;
     float: right;
-    margin-top: -100px;
 }
