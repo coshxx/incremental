@@ -1,42 +1,51 @@
 <div class="statuswindow">
-    <!--
-    <p class="fishdiv">Fish: <p class="fishrighthanded">{{fish}}</p></p>
-    <p class="golddiv">Gold: <p class="goldrighthanded">{{goldReadable}}</p></p>
-    -->
-    <table style="width:100%" border="1">
-        <tr>
-            <td><span style="color:blue">Fish:</span></td>
-            <td><span style="color:blue">{{fish}}</span></td>
-        </tr>
-        <tr>
-            <td><span style="color:yellow">Gold:</span></td>
-            <td><span style="color:yellow">{{goldReadable}}</span></td>
-        </tr>
-    </table>
+  <!--
+  <p class="fishdiv">Fish: <p class="fishrighthanded">{{fish}}</p></p>
+  <p class="golddiv">Gold: <p class="goldrighthanded">{{goldReadable}}</p></p>
+  -->
+  <table style="width:100%" border="1">
+    <tr>
+      <td><span style="color:blue">Fish:</span></td>
+      <td><span style="color:blue">125</span></td>
+    </tr>
+    <tr>
+      <td><span style="color:yellow">Gold:</span></td>
+      <td><span style="color:yellow">100</span></td>
+    </tr>
+    <tr>
+      <td>Accountants:</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>Accountants:</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>Accountants:</td>
+      <td>100</td>
+    </tr>
+  </table>
 </div>
 
-<div class="jobswindow">
-    <button ng-click="fishbuttonclick() ; showme=true">{{buttonText}}</button>
-
-    <div ng-show=showme>
-        <div class="progress">
-            <div class="progress-bar progress-bar-striped {{fishProgress}}" role="progressbar" aria-valuenow="70"
-                 aria-valuemin="0"
-                 aria-valuemax="100" style="width:100%">
-                +{{fishPerSec}}/Sec
-            </div>
-        </div>
-    </div>
-</div>
-<div ng-show=showSellFish>
-    <div class="sellwindow">
-        <button ng-click="sellFish()">Sell Fish!</button><br>
-        <button ng-click="buyFisher()">Buy Fisher</button>
-    </div>
+<div class="sellwindow">
+  <button ng-click="sellFish()">Sell Fish!</button>
+  <button ng-click="buyFisher()">Buy Fisher</button>
+  <button ng-click="buyAccountant()">Buy Accountant</button>
+  <button ng-click="buyAccountant()">Buy Accountant</button>
+  <button ng-click="buyAccountant()">Buy Accountant</button>
+  <button ng-click="buyAccountant()">Buy Accountant</button>
+  <button ng-click="buyAccountant()">Buy Accountant</button>
+  <button ng-click="buyAccountant()">Buy Accountant</button>
 </div>
 <div class="logwindow">
-    <div ng-repeat="log in logData track by $index">{{log}}</div>
+  <div ng-repeat="log in logData track by $index">{{log}}</div>
 </div>
-
-
-
+<div class="jobswindow">
+  <button ng-click="sellFish()">DO SOMETHING!</button>
+  <button ng-click="sellFish()">DO SOMETHING!</button>
+  <button ng-click="sellFish()">DO SOMETHING!</button>
+  <button ng-click="sellFish()">DO SOMETHING!</button>
+  <button ng-click="sellFish()">DO SOMETHING!</button>
+  <button ng-click="sellFish()">DO SOMETHING!</button>
+  <button ng-click="sellFish()">DO SOMETHING!</button>
+</div>

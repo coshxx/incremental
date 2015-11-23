@@ -1,79 +1,81 @@
 body {
-    background-color: #DDC366;
+  background-color: #DDC366;
 }
 
 .fishdiv {
-    color: #0000FF;
-    float: left;
+  color: #0000FF;
+  float: left;
 }
 
 table {
-    table-layout: fixed;
+  table-layout: fixed;
 }
 
 td:nth-child(even) {
-    text-align: right;
-    width: 70%;
+  text-align: right;
+  width: 60%;
 }
 
 .fishrighthanded {
-    float: right;
-    color: #0000FF;
+  float: right;
+  color: #0000FF;
 }
 
 .golddiv {
-    float: left;
+  float: left;
 }
 
 .goldrighthanded {
-    float: right;
+  float: right;
 }
 
 .statuswindow {
-    border: groove;
-    border-color: #ffc520;
-    border-width: 5px;
-    padding: 5px;
-    width: 155px;
-    height: 100px;
-    display: inline-block;
-    overflow: auto;
-    float: left;
-}
-
-.jobswindow {
-    border: groove;
-    border-color: #ffc520;
-    border-width: 5px;
-    padding: 5px;
-    width: 155px;
-    display: inline-block;
-    height: 100px;
-    text-align: center;
-    overflow: auto;
-    float: left;
+  border: groove;
+  border-color: #ffc520;
+  border-width: 5px;
+  padding: 5px;
+  width: 255px;
+  height: 130px;
+  display: inline-block;
+  overflow: auto;
+  float: left;
 }
 
 .sellwindow {
-    border: groove;
-    border-color: #ffc520;
-    border-width: 5px;
-    padding: 5px;
-    width: 255px;
-    height: 100px;
-    display: inline-block;
-    float: left;
+  border: groove;
+  border-color: #ffc520;
+  border-width: 5px;
+  padding: 5px;
+  width: 270px;
+  display: inline-block;
+  float: left;
+  height: 130px;
+}
+
+.jobswindow {
+  border: groove;
+  display: inline-block;
+  width: 270px;
+  border-color: #ffc520;
+  border-width: 5px;
+}
+
+button {
+  width: 120px;
 }
 
 .logwindow {
-    border: groove;
-    border-color: #ffc520;
-    border-width: 5px;
-    padding: 5px;
-    width: 465px;
-    display: inline-block;
-    height: 300px;
-    text-align: center;
-    overflow-y: scroll;
-    float: right;
+  border: groove;
+  border-color: #ffc520;
+  border-width: 5px;
+  padding: 5px;
+  width: 465px;
+  display: inline-block;
+  height: 300px;
+  text-align: left;
+  overflow-y: scroll;
+  position: absolute;
+  float: left;
+  right: 0px;
+  bottom: 0px;
 }
