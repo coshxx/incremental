@@ -8,5 +8,5 @@
  # Controller of the incrementalApp
 ###
 angular.module 'incrementalApp'
-.controller 'MainCtrl', ($scope, $timeout) ->
+.controller 'MainCtrl', () ->
   return
