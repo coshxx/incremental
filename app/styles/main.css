@@ -1,5 +1,8 @@
 body {
-  background-color: #DDC366;
+  #background-color: #DDC366;
+  background-color: #666666;
+  height: 100%;
+  margin: 2%;
 }
 
 .fishdiv {
@@ -31,11 +34,11 @@ td:nth-child(even) {
 
 .statuswindow {
   border: groove;
-  border-color: #ffc520;
+  border-color: #AAAAAA;
   border-width: 5px;
-  padding: 5px;
-  width: 255px;
-  height: 130px;
+  width: 30%;
+  padding-top: 2px;
+  height: 290px;
   display: inline-block;
   overflow: auto;
   float: left;
@@ -43,39 +46,42 @@ td:nth-child(even) {
 
 .sellwindow {
   border: groove;
-  border-color: #ffc520;
+  border-color: #AAAAAA;
   border-width: 5px;
-  padding: 5px;
-  width: 270px;
+  padding: 2% 0 2% 0;
+  text-align: center;
   display: inline-block;
   float: left;
-  height: 130px;
+  width: 70%;
+  height: 290px;
+  overflow: auto;
 }
 
 .jobswindow {
+  padding: 2% 0 2% 0;
   border: groove;
   display: inline-block;
-  width: 270px;
-  border-color: #ffc520;
+  width: 30%;
+  text-align: center;
+  border-color: #AAAAAA;
   border-width: 5px;
+  float: left;
+  overflow: auto;
+  height: 432px;
 }
 
 button {
-  width: 120px;
+  width: 220px;
 }
 
 .logwindow {
   border: groove;
-  border-color: #ffc520;
+  border-color: #AAAAAA;
   border-width: 5px;
   padding: 5px;
-  width: 465px;
+  width: 70%;
   display: inline-block;
-  height: 300px;
-  text-align: left;
+  height: 432px;
+  text-align: center;
   overflow-y: scroll;
-  position: absolute;
-  float: left;
-  right: 0px;
-  bottom: 0px;
 }
