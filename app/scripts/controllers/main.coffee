@@ -8,11 +8,18 @@
  # Controller of the incrementalApp
 ###
 angular.module 'incrementalApp'
-.controller 'MainCtrl', (user) ->
-  @numFish = user.numFisher()
+.controller 'MainCtrl', (user, $interval) ->
+  @numFisher = user.numFisher()
+  @numFish = user.numFish()
   @numMoney = user.numMoney()
 
   @buyOne = ->
-    @numFish = user.buyOneFisher()
+    @numFisher = user.buyOneFisher()
     @numMoney = user.numMoney()
+
+  gameLoop = =>
+    @numFish = user.incrementFish(@numFisher/10)
+    @numFish = Math.floor(@numFish)
+
+  $interval(gameLoop, 100)
   return
