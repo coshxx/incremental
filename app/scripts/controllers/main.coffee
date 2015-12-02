@@ -8,5 +8,11 @@
  # Controller of the incrementalApp
 ###
 angular.module 'incrementalApp'
-.controller 'MainCtrl', () ->
+.controller 'MainCtrl', (user) ->
+  @numFish = user.numFisher()
+  @numMoney = user.numMoney()
+
+  @buyOne = ->
+    @numFish = user.buyOneFisher()
+    @numMoney = user.numMoney()
   return
