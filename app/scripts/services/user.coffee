@@ -9,13 +9,13 @@
 ###
 
 angular.module 'incrementalApp'
-  .factory 'user', -> new class User
+  .factory 'user', ($log) -> new class User
     constructor: ->
       @fish = 0
       @fisher = 0
       @dollars = 0
       @officeWorkers = 0
-      console.log "Constructor called"
+      $log.debug "User creation finished."
 
     buyOneFisher: ->
       @fisher += 1

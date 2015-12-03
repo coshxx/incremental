@@ -9,6 +9,6 @@
 ###
 
 angular.module 'incrementalApp'
-.controller 'MainCtrl', (user) ->
+.controller 'MainCtrl', (game, user) ->
   @user = user
   return
