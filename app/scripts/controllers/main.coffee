@@ -7,6 +7,8 @@
  # # MainCtrl
  # Controller of the incrementalApp
 ###
+
 angular.module 'incrementalApp'
-.controller 'MainCtrl', (user, $interval) ->
+.controller 'MainCtrl', (user) ->
+  @user = user
   return

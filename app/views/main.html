@@ -2,11 +2,11 @@
     <table class="table unit-table table-hover">
       <tr>
         <td><a href="#/">Fisher</a></td>
-        <td style="text-align: right;">0</td>
+        <td style="text-align: right;">{{main.user.fisher}}</td>
       </tr>
       <tr>
         <td>Fish</td>
-        <td style="text-align: right;">0</td>
+        <td style="text-align: right;">{{main.user.fish}}</td>
       </tr>
     </table>
   </div>
@@ -17,12 +17,12 @@
     <p>The fellow that catches the fish from the depths of the oceans.
       He is <b>very slow</b> but he never tires.<br>
 
-      <br>You own 0 Fisher
+      <br>You own {{main.user.fisher}} Fisher
       <br>1 Fisher costs 2 Dollars
       <br>1 Fisher catches 1 Fish per Second</p>
 
     <p><i>"Meh, let's go fishing!"</i></p>
-    <button ng-click="">Buy 1 Fisher!</button>
+    <button ng-click="main.user.buyOneFisher()">Buy 1 Fisher!</button>
     <button>Buy 10 Fisher!</button>
     <button>Buy 100 Fisher!</button>
   </div>
