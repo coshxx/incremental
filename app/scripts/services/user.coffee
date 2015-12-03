@@ -9,3 +9,5 @@
 ###
 angular.module 'incrementalApp'
   .factory 'user', ->
+
+return 10
