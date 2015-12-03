@@ -16,15 +16,11 @@ angular
   .config ($routeProvider) ->
     $routeProvider
       .when '/',
-        templateUrl: 'views/main.html'
+        templateUrl: 'views/fisher.html'
         controller: 'MainCtrl'
         controllerAs: 'main'
-      .when '/tab/fish',
-        templateUrl: 'views/main.html'
-        controller: 'MainCtrl'
-        controllerAs: 'main'
-      .when '/tab/dollars',
-        templateUrl: 'views/dollars.html'
+      .when '/tab/fish/fish',
+        templateUrl: 'views/fish.html'
         controller: 'MainCtrl'
         controllerAs: 'main'
       .otherwise

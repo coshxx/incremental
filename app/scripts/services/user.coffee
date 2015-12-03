@@ -9,7 +9,7 @@
 ###
 
 angular.module 'incrementalApp'
-  .factory 'user', ($log) -> new class User
+  .factory 'user', ($log, $timeout) -> new class User
     constructor: ->
       @fish = 0
       @fisher = 0
@@ -19,3 +19,11 @@ angular.module 'incrementalApp'
 
     buyOneFisher: ->
       @fisher += 1
+
+    goFish: ->
+      if not isWorking
+        isWorking = $timeout(addOneFish, 1000)
+
+    addOneFish = =>
+      @fish += 1
+      $log.debug "fish+1"
