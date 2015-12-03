@@ -14,7 +14,9 @@ angular.module 'incrementalApp'
 
     fisher = 0
     fish = 0
-    money = 10
+    dollars = 100
+    officeWorkers = 0
+    running = false
 
     # Public API here
     numFisher: ->
@@ -23,15 +25,37 @@ angular.module 'incrementalApp'
     numFish: ->
       fish
 
+    numDollars: ->
+      dollars
+
+    numOfficeWorkers: ->
+      officeWorkers
+
+    isRunning: ->
+      running
+
+    letRun: (yesno) ->
+      running = yesno
+
+    numOfficeWorker: ->
+      officeWorker
+
+    buyOneOfficeWorker: ->
+      if dollars - 20 < 0
+        officeWorker
+      else
+        dollars -= 20
+        officeWorker += 1
+
     buyOneFisher: ->
-      if money - 2 < 0
+      if dollars - 2 < 0
         fisher
       else
-        money -= 2
+        dollars -= 2
         fisher += 1
 
     incrementFish: (num) ->
       fish += num
 
-    numMoney: ->
-      money
+    numDollars: ->
+      dollars

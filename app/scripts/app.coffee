@@ -19,11 +19,11 @@ angular
         templateUrl: 'views/main.html'
         controller: 'MainCtrl'
         controllerAs: 'main'
-      .when '/#/tab/fish',
+      .when '/tab/fish',
         templateUrl: 'views/main.html'
         controller: 'MainCtrl'
         controllerAs: 'main'
-      .when '/#/tab/dollars',
+      .when '/tab/dollars',
         templateUrl: 'views/dollars.html'
         controller: 'MainCtrl'
         controllerAs: 'main'

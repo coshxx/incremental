@@ -1,42 +1,29 @@
-<div ng-controller="MainCtrl as main">
-  <div class="tab-content">
-    <div class="tab-pane active table-responsive">
-      <table class="table unit-table table-hover" style="width:90%; float: left;">
-        <tr>
-          <td><a href="#/tab/Fish">Fish</a></td>
-          <td><a href="#/tab/Dollars">{{main.numMoney}} Dollars</a></td>
-        </tr>
-      </table>
-    </div>
-  </div>
-
-  <div style="width: 20%; float: left; margin-right: 15px;">
+  <div style="width: 20%; float: left; margin-right: 15px; height: 100vh;">
     <table class="table unit-table table-hover">
       <tr>
         <td><a href="#/">Office Worker</a></td>
-        <td style="text-align: right;">{{main.numOfficeWorker}}</td>
+        <td style="text-align: right;">{{main.getNumOfficeWorkers()}}</td>
       </tr>
       <tr>
-        <td>Fish</td>
-        <td style="text-align: right;">{{main.numFish}}</td>
+        <td>Dollars</td>
+        <td style="text-align: right;">{{main.getNumDollars()}}</td>
       </tr>
     </table>
   </div>
 
-  <div class="content" style="float: left; width:60%">
-    <h2>Fisher</h2>
+  <div class="content">
+    <h2>Office Worker</h2>
 
-    <p>The fellow that catches the fish from the depths of the oceans.
-      He is <b>very slow</b> but he never tires.<br>
+    <p>Working 9 to 5 this guy automatically sells your fish.<br>
 
-      <br>You own {{main.numFisher}} Fisher
-      <br>1 Fisher costs 2 Dollars
-      <br>1 Fisher catches 1 Fish per Second</p>
+      <br>You own {{main.numOfficeWorker}} Worker
+      <br>1 Worker costs 20 Dollars
+      <br>1 Worker sells 1 Fish per Second</p>
 
-    <p><i>"Meh, let's go fishing!"</i></p>
-    <button ng-click="main.buyOne()">Buy 1 Fisher!</button>
-    <button>Buy 10 Fisher!</button>
-    <button>Buy 100 Fisher!</button>
+    <p><i>"God I hate this job!"</i></p>
+    <button ng-click="main.buyOneOfficeWorker()">Buy 1 Worker!</button>
+    <button>Buy 10 Worker!</button>
+    <button>Buy 100 Worker!</button>
   </div>
 
 </div>

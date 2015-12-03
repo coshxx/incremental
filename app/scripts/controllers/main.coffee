@@ -9,17 +9,32 @@
 ###
 angular.module 'incrementalApp'
 .controller 'MainCtrl', (user, $interval) ->
-  @numFisher = user.numFisher()
-  @numFish = user.numFish()
-  @numMoney = user.numMoney()
+  @getNumFisher = ->
+    user.numFisher()
 
-  @buyOne = ->
-    @numFisher = user.buyOneFisher()
-    @numMoney = user.numMoney()
+  @getNumFish = ->
+    user.numFish()
 
-  gameLoop = =>
-    @numFish = user.incrementFish(@numFisher/10)
-    @numFish = Math.floor(@numFish)
+  @getNumDollars = ->
+    Math.floor user.numDollars()
 
-  $interval(gameLoop, 100)
+  @getNumOfficeWorkers = ->
+    user.numOfficeWorkers()
+
+  @buyOneFisher = ->
+    user.buyOneFisher()
+    user.numDollars()
+
+  @buyOneOfficeWorker = ->
+    user.buyOneOfficeWorkers()
+    user.numDollars()
+
+  @gameLoop = =>
+    Math.floor user.incrementFish(user.numFisher()/10)
+    user.numDollars()
+
+  if not user.isRunning()
+    user.letRun(true)
+    $interval(@gameLoop, 100)
+
   return
