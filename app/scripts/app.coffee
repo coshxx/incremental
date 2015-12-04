@@ -23,6 +23,14 @@ angular
         templateUrl: 'views/fish.html'
         controller: 'MainCtrl'
         controllerAs: 'main'
+      .when '/tab/dollars',
+        templateUrl: 'views/dollars.html'
+        controller: 'MainCtrl'
+        controllerAs: 'main'
+      .when '/tab/dollars/officeworker',
+        templateUrl: 'views/officeworker.html'
+        controller: 'MainCtrl'
+        controllerAs: 'main'
       .otherwise
         redirectTo: '/'
 

@@ -1,16 +1,14 @@
 <dollartab></dollartab>
+
 <div class="content">
-  <h2>Office Worker</h2>
+  <h2>Dollars</h2>
 
-  <p>Working 9 to 5 this guy automatically sells your fish.<br>
+  <p>Makes the world go round.<br>
 
-    <br>You own 0 Worker
-    <br>1 Worker costs 20 Dollars
-    <br>1 Worker sells 1 Fish per Second</p>
+    <br>You have {{main.user.dollars | number:2}} Dollars
 
-  <p><i>"God I hate this job!"</i></p>
-  <button ng-click="">Buy 1 Worker!</button>
-  <button>Buy 10 Worker!</button>
-  <button>Buy 100 Worker!</button>
+  <p><i>"My precious!"</i></p>
+
+  <button ng-click="main.user.sellFish()">Sell Fish</button>
 </div>
 

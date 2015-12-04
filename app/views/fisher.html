@@ -8,8 +8,8 @@
     He is <b>very slow</b> but he never tires.<br>
 
     <br>You own {{main.user.fisher}} Fisher
-    <br>1 Fisher costs 2 Dollars
-    <br>1 Fisher catches 1 Fish per Second</p>
+    <br>1 Fisher costs {{main.user.fisherPrice | number:2}} Dollars
+    <br>1 Fisher catches 1 Fish every 5 seconds</p>
 
   <p><i>"Meh, let's go fishing!"</i></p>
   <button ng-click="main.user.buyOneFisher()">Buy 1 Fisher!</button>
