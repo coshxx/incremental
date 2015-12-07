@@ -1,0 +1,16 @@
+<fishtab>
+
+</fishtab>
+<div class="content">
+  <h2>Plane</h2>
+
+  <p>The latest in fishing technology.<br>
+
+    <br>You own {{main.user.planes}} Planes
+    <br>1 Plane costs {{main.user.planePrice | number:2}} Dollars
+    <br>1 Plane catches {{main.user.planeEfficiency * 10}} Fish every second
+    <br>In total your Planes catch {{main.user.planes * main.user.planeEfficiency * 10 | floor}} fish per second</p>
+
+  <p><i>"How does this even work?!"</i></p>
+  <button ng-click="main.user.buyOnePlane()">Buy 1 Plane!</button>
+</div>

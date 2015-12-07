@@ -11,9 +11,8 @@
 angular.module 'incrementalApp'
   .filter 'floor', ->
     (input) ->
-      if input < 1000
-        return input.toPrecision(3)
-      numShort = [ 'K', 'M', 'B', 'T' ]
+      # http://crusaders-of-the-lost-idols.wikia.com/wiki/Large_Number_Abbreviations
+      numShort = [ 'K', 'M', 'B', 't', 'q', 'Q', 's', 'S' ] #enough for now :)
       temp = Math.floor(input)
       index = -1
       power = 1000

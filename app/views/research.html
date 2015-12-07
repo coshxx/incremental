@@ -11,8 +11,14 @@
     <tr></tr>
     <td>
       <button ng-click="main.user.upgradeOfficeWorkers()">Of-Fish-Ency</button>
-      <br>Oficce Worker sell 100% faster<br>
+      <br>Office Worker sell 100% faster<br>
       Cost: {{main.user.officeWorkerUpgradePrice | floor}} Dollars
+    </td>
+    <tr></tr>
+    <td ng-show="main.user.fisher >= 10">
+      <button ng-click="main.user.upgradeBoats()">Boat-Fish-Ency</button>
+      <br>Boat fish 100% faster<br>
+      Cost: {{main.user.boatUpgradePrice | floor}} Dollars
     </td>
 
   </table>

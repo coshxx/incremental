@@ -11,8 +11,8 @@
 angular.module 'incrementalApp'
   .factory 'user', ($log, $timeout) -> new class User
     constructor: ->
-      @fish = 0
-      @dollars = 10000000
+      @fish = 100
+      @dollars = 100
 
       @fisher = 0
       @fisherPrice = 10
@@ -21,8 +21,13 @@ angular.module 'incrementalApp'
 
       @boats = 0
       @boatPrice = 100
-      @boatEfficiency = 0.2
+      @boatEfficiency = 0.1
       @boatUpgradePrice = 1000
+
+      @planes = 0
+      @planePrice = 1000
+      @planeEfficiency = 0.4
+      @planeUpgradePrice = 10000
 
       @officeWorkers = 0
       @officeWorkerPrice = 50
@@ -46,15 +51,23 @@ angular.module 'incrementalApp'
         @boat
       else
         @dollars = @dollars - @boatPrice
-        @boatPrice = @boatPrice * 1.07
+        @boatPrice = @boatPrice * 1.14
         @boats += 1
+
+    buyOnePlane: ->
+      if @dollars - @planePrice < 0
+        @plane
+      else
+        @dollars = @dollars - @planePrice
+        @planePrice = @planePrice * 1.25
+        @planes += 1
 
     buyOneOfficeWorker: ->
       if @dollars - @officeWorkerPrice < 0
         @officeWorkers
       else
         @dollars = @dollars - @officeWorkerPrice
-        @officeWorkerPrice = @officeWorkerPrice * 1.07
+        @officeWorkerPrice = @officeWorkerPrice * 1.25
         @officeWorkers += 1
 
     timerX = null
@@ -90,3 +103,10 @@ angular.module 'incrementalApp'
       @dollars = @dollars - @officeWorkerUpgradePrice
       @officeWorkerEfficiency = @officeWorkerEfficiency * 2
       @officeWorkerUpgradePrice = @officeWorkerUpgradePrice * 10
+
+    upgradeBoats: ->
+      if @dollars - @boatUpgradePrice < 0
+        return
+      @dollars = @dollars - @boatUpgradePrice
+      @boatEfficiency = @boatEfficiency * 2
+      @boatUpgradePrice = @boatUpgradePrice * 10
