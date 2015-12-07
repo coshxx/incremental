@@ -10,22 +10,24 @@
 angular.module 'incrementalApp'
   .factory 'game', (user, $interval, $log) -> new class Game
     tickrate = 10
-    officeWorkerFinished = 0
-
 
     constructor: (user) ->
       @user = user
-      $interval(onTick, 1000/tickrate)
+      $interval(onTickFisher, 1000/tickrate)
+      $interval(onTickOfficeWorker, 1000)
 
-    onTick = ->
-      fisherProfitPerTick = user.fisher * 0.02
+    onTickFisher = ->
+      fisherProfitPerTick = user.fisher * user.fisherEfficiency
       user.fish += fisherProfitPerTick
+      boatProfitPerTick = user.boats * user.boatEfficiency
+      user.fish += boatProfitPerTick
 
-      officeWorkerFinished += user.officeWorkers * 0.1
-
-      if officeWorkerFinished > 1
-        if user.fish > 1
-          user.fish -= 1
-          user.dollars += 1
-          officeWorkerFinished -= 1
-          $log.debug officeWorkerFinished
+    onTickOfficeWorker = ->
+      if user.officeWorkers <= 0
+        return
+      if user.fish - (user.officeWorkers * user.officeWorkerEfficiency) < 0
+        user.dollars += user.fish
+        user.fish = 0
+      else
+        user.fish -= (user.officeWorkers * user.officeWorkerEfficiency)
+        user.dollars += (user.officeWorkers * user.officeWorkerEfficiency)

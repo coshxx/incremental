@@ -1,0 +1,17 @@
+<fishtab>
+
+</fishtab>
+<div class="content">
+  <h2>Boat</h2>
+
+  <p>A powerful boat that roams the ocean for you.<br>
+
+    <br>You own {{main.user.boats}} Boats
+    <br>1 Boat costs {{main.user.boatPrice | number:2}} Dollars
+    <br>1 Boat catches {{main.user.boatEfficiency * 5}} Fish every second</p>
+
+  <p><i>"Well I'm on the Downeaster Alexa"</i></p>
+  <button ng-click="main.user.buyOneBoat()">Buy 1 Boat!</button>
+  <button>Buy 10 Boat!</button>
+  <button>Buy 100 Boat!</button>
+</div>

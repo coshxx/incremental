@@ -1,12 +1,16 @@
 <div style="width: 20%; float: left; margin-right: 15px;">
   <table class="table unit-table table-hover">
+      <tr ng-hide="main.user.fisher < 10">
+        <td><a href="#/tab/fish/boat">Boats</a></td>
+        <td style="text-align: right;">{{main.user.boats | floor}}</td>
+      </tr>
     <tr>
       <td><a href="#/tab/fish/fisher">Fisher</a></td>
-      <td style="text-align: right;">{{main.user.fisher | floor:0}}</td>
+      <td style="text-align: right;">{{main.user.fisher | floor}}</td>
     </tr>
     <tr>
       <td><a href="#/tab/fish/fish">Fish</a></td>
-      <td style="text-align: right;">{{main.user.fish | floor:0 }}</td>
+      <td style="text-align: right;">{{main.user.fish | floor }}</td>
     </tr>
   </table>
 </div>
