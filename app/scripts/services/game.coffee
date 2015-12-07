@@ -32,6 +32,8 @@ angular.module 'incrementalApp'
       user.fish += boatProfitPerTick
       planeProfitPerTick = user.planes * user.planeEfficiency * (timePassed/100)
       user.fish += planeProfitPerTick
+      submarineProfitPerTick = user.submarines * user.submarineEfficiency * (timePassed/100)
+      user.fish += submarineProfitPerTick
 
     onTickOfficeWorker = ->
       if user.officeWorkers <= 0

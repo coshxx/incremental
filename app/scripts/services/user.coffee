@@ -27,8 +27,13 @@ angular.module 'incrementalApp'
 
       @planes = 0
       @planePrice = 1000
-      @planeEfficiency = 0.6
+      @planeEfficiency = 2
       @planeUpgradePrice = 10000
+
+      @submarines = 0
+      @submarinePrice = 10000
+      @submarineEfficiency = 20
+      @submarineUpgradePrice = 100000
 
       @officeWorkers = 0
       @officeWorkerPrice = 25
@@ -47,6 +52,7 @@ angular.module 'incrementalApp'
       amount = $filter('floor')(@fisherEfficiency*10*@fisher)
       amount += $filter('floor')(@boatEfficiency*10*@boats)
       amount += $filter('floor')(@planeEfficiency*10*@planes)
+      amount += $filter('floor')(@submarineEfficiency*10*@submarines)
       @fishPerSec = "(+#{amount}/sec)"
 
     sellTenFishUpgradeBought: ->
@@ -70,6 +76,14 @@ angular.module 'incrementalApp'
         @dollars = @dollars - @boatPrice
         @boatPrice = @boatPrice * 1.14
         @boats += 1
+
+    buyOneSubmarine: ->
+      if @dollars - @submarinePrice < 0
+        @submarines
+      else
+        @dollars = @dollars - @submarinePrice
+        @submarinePrice = @submarinePrice * 1.07
+        @submarines += 1
 
     buyOnePlane: ->
       if @dollars - @planePrice < 0
@@ -123,7 +137,7 @@ angular.module 'incrementalApp'
         return
       @dollars = @dollars - @officeWorkerUpgradePrice
       @officeWorkerEfficiency = @officeWorkerEfficiency * 2
-      @officeWorkerUpgradePrice = @officeWorkerUpgradePrice * 10
+      @officeWorkerUpgradePrice = @officeWorkerUpgradePrice * 4.75
 
     upgradeBoats: ->
       if @dollars - @boatUpgradePrice < 0

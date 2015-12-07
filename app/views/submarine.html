@@ -1,0 +1,16 @@
+<fishtab>
+
+</fishtab>
+<div class="content">
+  <h2>Submarine</h2>
+
+  <p>The worlds best submarine captains.<br>
+
+    <br>You own {{main.user.submarines}} submarine
+    <br>1 submarine costs {{main.user.submarinePrice | number:2}} Dollars
+    <br>1 submarine catches {{main.user.submarineEfficiency * 10}} Fish every second
+    <br>In total your submarines catch {{main.user.submarines * main.user.submarineEfficiency * 10 | floor}} fish per second</p>
+
+  <p><i>"Re-verify our range to target... one ping only."</i></p>
+  <button ng-click="main.user.buyOneSubmarine()">Buy 1 Submarine!</button>
+</div>

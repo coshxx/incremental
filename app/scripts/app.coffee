@@ -31,6 +31,10 @@ angular
         templateUrl: 'views/plane.html'
         controller: 'MainCtrl'
         controllerAs: 'main'
+    .when '/tab/fish/submarine',
+        templateUrl: 'views/submarine.html'
+        controller: 'MainCtrl'
+        controllerAs: 'main'
       .when '/tab/dollars',
         templateUrl: 'views/dollars.html'
         controller: 'MainCtrl'
