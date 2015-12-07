@@ -1,76 +1,78 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Fishergame v.001</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width">
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-  <!-- build:css(.) styles/vendor.css -->
-  <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-  <link rel="stylesheet" href="bower_components/skeleton/css/skeleton.css" />
-  <!-- endbower -->
-  <!-- endbuild -->
-  <!-- build:css(.tmp) styles/main.css -->
-  <link rel="stylesheet" href="styles/main.css">
-  <!-- endbuild -->
+    <meta charset="utf-8">
+    <title>Game v.001</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/skeleton/css/skeleton.css"/>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
 </head>
 <body ng-app="incrementalApp">
 <!--[if lte IE 8]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-  your browser</a> to improve your experience.</p>
+    your browser</a> to improve your experience.</p>
 <![endif]-->
 <div class="container">
-  <div ng-controller="MainCtrl as main">
-    <div class="tab-content">
-      <div class="tab-pane active table-responsive">
-        <table class="table unit-table table-hover" style="width:90%; float: left;">
-          <tr>
-            <td><a href="#/tab/fish">{{main.user.fish | floor}} Fish</a></td>
-            <td><a href="#/tab/dollars">{{main.user.dollars | floor}} Dollars</a></td>
-            <td><a href="#/tab/research">Research</a></td>
-            <td><a href="#/tab/options">Options</a></td>
-          </tr>
-        </table>
-      </div>
+    <div ng-controller="MainCtrl as main">
+        <div class="tab-content">
+            <div class="tab-pane active table-responsive">
+                <table class="table unit-table table-hover" style="width:90%; float: left;">
+                    <tr>
+                        <td width="25%"><a href="#/tab/fish">{{main.user.fish | floor}} Fish {{main.user.fishPerSec}}</a></td>
+                        <td width="25%"><a href="#/tab/dollars">{{main.user.dollars | floor}} Dollars</a></td>
+                        <td width="25%">
+                            <span class="glyphicon glyphicon-plus" ng-show="main.user.researchAvailable"></span>
+                            <a href="#/tab/research">Research</a></td>
+                        <td width="25%"><a href="#/tab/options">Options</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div ng-view=""></div>
     </div>
 
-    <div ng-view=""></div>
-  </div>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+        !function (A, n, g, u, l, a, r) {
+            A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+                        (A[l].q = A[l].q || []).push(arguments)
+                    }, A[l].l = +new Date, a = n.createElement(g),
+                    r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+        }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-  <script>
-    !function (A, n, g, u, l, a, r) {
-      A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
-          (A[l].q = A[l].q || []).push(arguments)
-        }, A[l].l = +new Date, a = n.createElement(g),
-        r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
-    }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
+    </script>
 
-    ga('create', 'UA-XXXXX-X');
-    ga('send', 'pageview');
-  </script>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
 
-  <!-- build:js(.) scripts/vendor.js -->
-  <!-- bower:js -->
-  <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-  <script src="bower_components/angular-animate/angular-animate.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <!-- endbower -->
-  <!-- endbuild -->
-
-  <!-- build:js({.tmp,app}) scripts/scripts.js -->
-  <script src="scripts/app.js"></script>
-  <script src="scripts/controllers/main.js"></script>
-  <script src="scripts/controllers/about.js"></script>
-  <script src="scripts/services/user.js"></script>
-  <script src="scripts/services/game.js"></script>
-  <script src="scripts/directives/fishtab.js"></script>
-  <script src="scripts/directives/dollartab.js"></script>
-  <script src="scripts/filters/floor.js"></script>
-  <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/services/user.js"></script>
+    <script src="scripts/services/game.js"></script>
+    <script src="scripts/directives/fishtab.js"></script>
+    <script src="scripts/directives/dollartab.js"></script>
+    <script src="scripts/filters/floor.js"></script>
+    <!-- endbuild -->
 </body>
 </html>

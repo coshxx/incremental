@@ -10,6 +10,7 @@
 angular.module 'incrementalApp'
   .factory 'game', (user, $interval, $log) -> new class Game
     tickrate = 10
+    start = new Date
 
     constructor: (user) ->
       @user = user
@@ -17,11 +18,19 @@ angular.module 'incrementalApp'
       $interval(onTickOfficeWorker, 1000)
 
     onTickFisher = ->
-      fisherProfitPerTick = user.fisher * user.fisherEfficiency
+      # need to get time-delta now because once the tab goes inactive
+      # the browsers "optimize" timers to only tick like twice per second?
+      timePassed = new Date - start
+      start = new Date
+
+      user.canAffordUpgrades()
+      user.updateFishPerSec()
+
+      fisherProfitPerTick = user.fisher * user.fisherEfficiency * (timePassed/100)
       user.fish += fisherProfitPerTick
-      boatProfitPerTick = user.boats * user.boatEfficiency
+      boatProfitPerTick = user.boats * user.boatEfficiency * (timePassed/100)
       user.fish += boatProfitPerTick
-      planeProfitPerTick = user.planes * user.planeEfficiency
+      planeProfitPerTick = user.planes * user.planeEfficiency * (timePassed/100)
       user.fish += planeProfitPerTick
 
     onTickOfficeWorker = ->

@@ -1,45 +1,49 @@
 <div class="content">
-  <h2>Research</h2>
+    <h2>Research</h2>
+    <table>
+        <td ng-show="main.user.dollars > main.user.fisherUpgradePrice">
+            <button ng-click="main.user.upgradeFishers()">E-Fish-Ency</button>
+            <br>Fisher fish 100% faster<br>
+            Cost: {{main.user.fisherUpgradePrice | floor}} Dollars
+        </td>
+        <tr></tr>
+        <td ng-show="main.user.dollars > main.user.officeWorkerUpgradePrice">
+            <button ng-click="main.user.upgradeOfficeWorkers()">Of-Fish-Ency</button>
+            <br>Office Worker sell 100% faster<br>
+            Cost: {{main.user.officeWorkerUpgradePrice | floor}} Dollars
+        </td>
+        <tr></tr>
+        <td ng-show="main.user.dollars > main.user.boatUpgradePrice">
+            <button ng-click="main.user.upgradeBoats()">Boat-Fish-Ency</button>
+            <br>Boat fish 100% faster<br>
+            Cost: {{main.user.boatUpgradePrice | floor}} Dollars
+        </td>
+        <tr></tr>
+        <td ng-show="main.user.dollars > main.user.sellTenFishPrice && !main.user.sellTenFishAvailable">
+            <button ng-click="main.user.sellTenFishUpgradeBought()">Ten-Fishency</button>
+            <br>Sell 10 fish at once!<br>
+            Cost: {{main.user.sellTenFishPrice | floor}} Dollars
+        </td>
 
-  <table>
-    <td>
-      <button ng-click="main.user.upgradeFishers()">E-Fish-Ency</button>
-      <br>Fisher fish 100% faster<br>
-      Cost: {{main.user.fisherUpgradePrice | floor}} Dollars
+    </table>
 
-    </td>
-    <tr></tr>
-    <td>
-      <button ng-click="main.user.upgradeOfficeWorkers()">Of-Fish-Ency</button>
-      <br>Office Worker sell 100% faster<br>
-      Cost: {{main.user.officeWorkerUpgradePrice | floor}} Dollars
-    </td>
-    <tr></tr>
-    <td ng-show="main.user.fisher >= 10">
-      <button ng-click="main.user.upgradeBoats()">Boat-Fish-Ency</button>
-      <br>Boat fish 100% faster<br>
-      Cost: {{main.user.boatUpgradePrice | floor}} Dollars
-    </td>
+    <!--
+    <table>
+      <th>
+        <button ng-click="main.user.upgradeFishers()">E-Fish-Ency</button>
+      </th>
 
-  </table>
+      <tr>
+        Fisher fish faster by 100%
+        <br>Cost: {{main.user.fisherUpgradePrice}} Dollars
+      </tr>
 
-  <!--
-  <table>
-    <th>
-      <button ng-click="main.user.upgradeFishers()">E-Fish-Ency</button>
-    </th>
+      <tr>
+        Office Worker work 100% faster
+        <br>Cost: {{main.user.fisherUpgradePrice}} Dollars
+      </tr>
 
-    <tr>
-      Fisher fish faster by 100%
-      <br>Cost: {{main.user.fisherUpgradePrice}} Dollars
-    </tr>
-
-    <tr>
-      Office Worker work 100% faster
-      <br>Cost: {{main.user.fisherUpgradePrice}} Dollars
-    </tr>
-
-  </table>
--->
+    </table>
+  -->
 
 </div>
