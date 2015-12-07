@@ -33,7 +33,7 @@ angular.module 'incrementalApp'
       @officeWorkers = 0
       @officeWorkerPrice = 25
       @officeWorkerEfficiency = 1 # the equivalent to ~5 efficiency, being that office workers act on another timer
-      @officeWorkerUpgradePrice = 100
+      @officeWorkerUpgradePrice = 50
 
       @isFishing = false
       @researchAvailable = true
