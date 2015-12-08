@@ -51,6 +51,8 @@ angular
         templateUrl: 'views/options.html'
         controller: 'OptionsCtrl'
         controllerAs: 'options'
+      .when '/tab/changelog',
+        templateUrl: 'views/changelog.html'
       .otherwise
         redirectTo: '/'
 

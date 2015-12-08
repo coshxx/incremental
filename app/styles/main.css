@@ -2,3 +2,9 @@
   float: left;
   width: 60%;
 }
+
+button[disabled] {
+    background:#ccc;
+    border-color: #ccc;
+    text-shadow:none;
+}

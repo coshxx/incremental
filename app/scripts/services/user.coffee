@@ -43,10 +43,11 @@ angular.module 'incrementalApp'
       @sellTenFishAvailable = false
       $log.debug "User creation finished."
     updateFishPerSec: ->
-      amount = $filter('floor')(@fisherEfficiency*10*@fisher)
-      amount += $filter('floor')(@boatEfficiency*10*@boats)
-      amount += $filter('floor')(@planeEfficiency*10*@planes)
-      amount += $filter('floor')(@submarineEfficiency*10*@submarines)
+      amount = (@fisherEfficiency*10*@fisher)
+      amount += (@boatEfficiency*10*@boats)
+      amount += (@planeEfficiency*10*@planes)
+      amount += (@submarineEfficiency*10*@submarines)
+      amount = $filter('floor') amount
       @fishPerSec = "(+#{amount}/sec)"
     sellTenFishUpgradeBought: ->
       if @dollars - @sellTenFishPrice < 0
