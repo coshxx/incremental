@@ -8,3 +8,8 @@ button[disabled] {
     border-color: #ccc;
     text-shadow:none;
 }
+
+td a {
+    width: 100%;
+    display: block;
+}
