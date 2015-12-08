@@ -1,6 +1,21 @@
 <div class="content">
   <h2>Options</h2>
 
-  <p>Something something something
+  <p>
+  <h5>Your save data:</h5>
+  {{options.saveState}}</p>
+  <button ng-click="options.saveData()">Save to localStorage</button>
+  {{options.saveSuccess}}<br>
+  <button ng-click="options.loadData()">Load from localStorage</button>
 
+
+  <p>
+  <h5>Import savegame</h5>
+  <input ng-model="options.importString"><button ng-click="options.import()">Import</button>
+  </p>
+
+  <p>
+    <h5>Reset</h5>
+  <button ng-click="options.reset()">Reset</button>
+  </p>
 </div>

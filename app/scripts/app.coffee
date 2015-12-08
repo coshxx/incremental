@@ -49,8 +49,8 @@ angular
         controllerAs: 'main'
       .when '/tab/options',
         templateUrl: 'views/options.html'
-        controller: 'MainCtrl'
-        controllerAs: 'main'
+        controller: 'OptionsCtrl'
+        controllerAs: 'options'
       .otherwise
         redirectTo: '/'
 
