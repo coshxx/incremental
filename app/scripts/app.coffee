@@ -19,22 +19,10 @@ angular
         templateUrl: 'views/fisher.html'
         controller: 'MainCtrl'
         controllerAs: 'main'
-      .when '/tab/fish/fish',
-        templateUrl: 'views/fish.html'
-        controller: 'MainCtrl'
-        controllerAs: 'main'
-      .when '/tab/fish/boat',
-        templateUrl: 'views/boat.html'
-        controller: 'MainCtrl'
-        controllerAs: 'main'
-      .when '/tab/fish/plane',
-        templateUrl: 'views/plane.html'
-        controller: 'MainCtrl'
-        controllerAs: 'main'
-    .when '/tab/fish/submarine',
-        templateUrl: 'views/submarine.html'
-        controller: 'MainCtrl'
-        controllerAs: 'main'
+      .when '/tab/fish/:unit',
+        templateUrl: 'views/unit.html'
+        controller: 'UnitCtrl'
+        controllerAs: 'unit'
       .when '/tab/dollars',
         templateUrl: 'views/dollars.html'
         controller: 'MainCtrl'

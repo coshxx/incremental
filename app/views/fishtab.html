@@ -1,24 +1,24 @@
-<div style="width: 20%; float: left; margin-right: 15px;">
+<div style="width: 20%; float: left; margin-right: 15px;" ng-controller="UnitCtrl as unit">
     <table class="table unit-table table-hover">
         <tr ng-hide="main.user.planes < 10">
             <td><a href="#/tab/fish/submarine">Submarines</a></td>
-            <td style="text-align: right;">{{main.user.submarines | floor}}</td>
+            <td style="text-align: right;">{{unit.owned("submarine") | floor}}</td>
         </tr>
         <tr ng-hide="main.user.boats < 10">
             <td><a href="#/tab/fish/plane">Planes</a></td>
-            <td style="text-align: right;">{{main.user.planes | floor}}</td>
+            <td style="text-align: right;">{{unit.owned("plane") | floor}}</td>
         </tr>
         <tr ng-hide="main.user.fisher < 10">
             <td><a href="#/tab/fish/boat">Boats</a></td>
-            <td style="text-align: right;">{{main.user.boats | floor}}</td>
+            <td style="text-align: right;">{{unit.owned("boat") | floor}}</td>
         </tr>
         <tr>
             <td><a href="#/tab/fish/fisher">Fisher</a></td>
-            <td style="text-align: right;">{{main.user.fisher | floor}}</td>
+            <td style="text-align: right;">{{unit.owned("fisher") | floor}}</td>
         </tr>
         <tr>
             <td><a href="#/tab/fish/fish">Fish</a></td>
-            <td style="text-align: right;">{{main.user.fish | floor }}</td>
+            <td style="text-align: right;">{{unit.owned("fish") | floor }}</td>
         </tr>
     </table>
 </div>
