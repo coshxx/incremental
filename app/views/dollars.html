@@ -5,11 +5,10 @@
 
     <p>Money makes the world go round.<br>
 
-        <br>You have {{main.user.dollars | floor}} Dollars
+        <br>You have {{main.user.units['dollar'].owned | floor}} Dollars
 
     <p><i>"My precious!"</i></p>
 
     <button ng-click="main.user.sellFish()">Sell Fish</button>
-    <button ng-show="main.user.sellTenFishAvailable" ng-click="main.user.sellTenFish()">Sell 10 Fish</button>
 </div>
 

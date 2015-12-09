@@ -8,11 +8,11 @@
  # Controller of the incrementalApp
 ###
 angular.module 'incrementalApp'
-.controller 'OptionsCtrl', (user, $log) ->
+.controller 'OptionsCtrl', (units, reset, $log) ->
 # TODO: move to service...
   @importString = "Enter save data"
   @saveSuccess = ""
-  tempObject = JSON.stringify(user)
+  tempObject = JSON.stringify(units)
   @saveState = LZString.compressToEncodedURIComponent(tempObject)
   @saveData = ->
     localStorage.setItem("fishgame", @saveState)
@@ -27,8 +27,8 @@ angular.module 'incrementalApp'
   @importSave = (data) ->
     for obj in [data]
       for own key, val of obj
-        user[key] = val
+        units[key] = val
   @reset = ->
-    user.init()
+    reset.doTheReset()
   return
 

@@ -5,12 +5,14 @@
 
   <p>Working 9 to 5 this guy automatically sells your fish.<br>
 
-    <br>You own {{main.user.officeWorkers}} Office Workers
-    <br>1 Office Worker costs {{main.user.officeWorkerPrice | number:2}} Dollars
-    <br>1 Office Worker sells {{main.user.officeWorkerEfficiency}} Fish per Second
-    <br>In total your Office Worker sell {{main.user.officeWorkers * main.user.officeWorkerEfficiency | floor}} fish per second</p>
+    <br>You own {{main.user.units['officeworker'].owned}} Office Workers
+    <br>1 Office Worker costs {{main.user.units['officeworker'].price | number:2}} Dollars
+    <br>1 Office Worker sells {{main.user.units['officeworker'].efficiency }} Fish per Second
+    <br>In total your Office Worker sell {{main.user.units['officeworker'].owned *
+    main.user.units['officeworker'].efficiency | floor}} fish per second</p>
 
   <p><i>"God I hate this job!"</i></p>
-  <button ng-click="main.user.buyOneOfficeWorker()">Buy 1 Worker!</button>
+  <button ng-click="main.user.buyOne(main.user.units['officeworker'])">Buy 1 Worker!</button>
+
 </div>
 

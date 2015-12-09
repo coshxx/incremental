@@ -13,12 +13,26 @@ angular.module 'incrementalApp'
   constructor: ->
     @init()
   init: =>
-    @dollars = 100
     @units = units
+    @isFishing = false
     $log.debug "User creation finished."
 
   buyOne: (unit) ->
-    if @dollars - unit.price > 0
-      @dollars -= unit.price
+    $log.debug unit
+    if units['dollar'].owned - unit.price >= 0
+      units['dollar'].owned -= unit.price
       unit.owned += 1
       unit.price *= unit.pricefactor
+
+  goFish: ->
+    @isFishing = true
+    $timeout @catchOne, 50
+
+  catchOne: =>
+    @isFishing = false
+    units['fish'].owned += 1
+
+  sellFish: ->
+    if units['fish'].owned - 1 >= 0
+      units['fish'].owned -= 1
+      units['dollar'].owned += 1

@@ -16,14 +16,14 @@ angular
   .config ($routeProvider) ->
     $routeProvider
       .when '/',
-        templateUrl: 'views/fisher.html'
-        controller: 'MainCtrl'
-        controllerAs: 'main'
+        redirectTo: '/tab/fish/fish'
       .when '/tab/fish/:unit',
         templateUrl: 'views/unit.html'
         controller: 'UnitCtrl'
         controllerAs: 'unit'
       .when '/tab/dollars',
+        redirectTo: '/tab/dollars/dollars'
+      .when '/tab/dollars/dollars',
         templateUrl: 'views/dollars.html'
         controller: 'MainCtrl'
         controllerAs: 'main'

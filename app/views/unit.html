@@ -5,7 +5,7 @@
   <h2>{{unit.cur.name}}</h2>
 
   <span ng-if="unit.cur.subtext != ''"><p>{{unit.cur.subtext}}<br></span>
-  <br>You own {{unit.cur.owned}} {{unit.cur.name}}
+  <br>You own {{unit.cur.owned | floor}} {{unit.cur.name}}
   <span ng-if="unit.cur.price > 0">
     <br>1 {{unit.cur.name}} costs {{unit.cur.price | number:2}} Dollars
   </span>
@@ -21,7 +21,8 @@
   <button ng-click="unit.buyOne(unit.cur)">Buy 1 {{unit.cur.name}}!</button></span>
 
   <!-- Straight up hack to get the fishing button to show up on the fishing page -->
-  <span ng-if="unit.cur.price == 0">
-
+  <span ng-if="unit.cur.price == 0" ng-controller="MainCtrl as main">
+    <span ng-if="main.user.isFishing"><button disabled>Go Fish!</button></span>
+    <span ng-if="!main.user.isFishing"><button ng-click="main.user.goFish()">Go Fish!</button></span>
   </span>
 </div>

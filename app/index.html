@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Game v.002</title>
+  <title>Game v.003i</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
   <link rel="shortcut icon" type="image/png" href="favicon.ico">
@@ -27,8 +27,8 @@
     <div class="tab-content">
         <table class="table unit-table table-hover" style="width:90%; float: left;">
           <tr>
-            <td width="25%"><a href="#/tab/fish">{{main.user.fish | floor}} Fish {{main.user.fishPerSec}}</a></td>
-            <td width="25%"><a href="#/tab/dollars">{{main.user.dollars | floor}} Dollars</a></td>
+            <td width="25%"><a ng-href="#/tab/fish">{{main.user.units['fish'].owned | floor}} Fish {{main.user.fishPerSec}}</a></td>
+            <td width="25%"><a ng-href="#/tab/dollars">{{main.user.units['dollar'].owned | floor}} Dollars</a></td>
             <td width="25%">
               <span class="glyphicon glyphicon-plus" ng-show="main.user.researchAvailable"></span>
               <a href="#/tab/research">Research</a></td>
@@ -37,8 +37,8 @@
                     <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         More...<span class="caret"></span></a>
                         <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                            <li><a href="#/tab/options">Options</a></li>
-                            <li><a href="#/tab/changelog">Changelog</a></li>
+                            <li><a ng-href="#/tab/options">Options</a></li>
+                            <li><a ng-href="#/tab/changelog">Changelog</a></li>
                         </ul>
                     </a>
                 </div>
@@ -94,6 +94,7 @@
   <script src="scripts/controllers/options.js"></script>
   <script src="scripts/services/units.js"></script>
   <script src="scripts/controllers/unit.js"></script>
+  <script src="scripts/services/reset.js"></script>
   <!-- endbuild -->
 </body>
 </html>
