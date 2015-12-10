@@ -1,26 +1,49 @@
-<fishtab>
+<div style="width: 20%; float: left; margin-right: 15px;" ng-controller="UnitCtrl as unit">
+    <table class="table unit-table table-hover">
+        <tr class="animate-show" ng-hide="unit.allUnits['plane'].owned < 10">
+            <td><a ng-href="#/tab/fish/submarine">Submarines</a></td>
+            <td style="text-align: right;">{{unit.owned("submarine") | floor}}</td>
+        </tr>
+        <tr class="animate-show" ng-hide="unit.allUnits['boat'].owned < 10">
+            <td><a ng-href="#/tab/fish/plane">Planes</a></td>
+            <td style="text-align: right;">{{unit.owned("plane") | floor}}</td>
+        </tr>
+        <tr class="animate-show" ng-hide="unit.allUnits['fisher'].owned < 10">
+            <td><a ng-href="#/tab/fish/boat">Boats</a></td>
+            <td style="text-align: right;">{{unit.owned("boat") | floor}}</td>
+        </tr>
+        <tr>
+            <td><a ng-href="#/tab/fish/fisher">Fisher</a></td>
+            <td style="text-align: right;">{{unit.owned("fisher") | floor}}</td>
+        </tr>
+        <tr>
+            <td><a ng-href="#/tab/fish/fish">Fish</a></td>
+            <td style="text-align: right;">{{unit.owned("fish") | floor }}</td>
+        </tr>
+    </table>
+</div>
 
-</fishtab>
 <div class="content" ng-controller="UnitCtrl as unit">
-  <h2>{{unit.cur.name}}</h2>
+    <h2>{{unit.cur.name}}</h2>
 
-  <span ng-if="unit.cur.subtext != ''"><p>{{unit.cur.subtext}}<br></span>
-  <br>You own {{unit.cur.owned | floor}} {{unit.cur.name}}
+    <!-- Spawn the <br> and subtext only if the subtext exists -->
+    <span ng-if="unit.cur.subtext != ''"><p>{{unit.cur.subtext}}<br></span>
+    <br>You own {{unit.cur.owned | floor}} {{unit.cur.name}}
   <span ng-if="unit.cur.price > 0">
-    <br>1 {{unit.cur.name}} costs {{unit.cur.price | number:2}} Dollars
+    <br>1 {{unit.cur.name}} costs {{unit.cur.price | floor}} Dollars
   </span>
   <span ng-if="unit.cur.efficiency > 0">
     <br>1 {{unit.cur.name}} catches {{unit.cur.efficiency * 10}} Fish every 1 seconds
   </span>
   <span ng-if="unit.cur.efficiency > 0">
-    <br>In total your {{unit.cur.name}} catch {{unit.cur.owned * unit.cur.efficiency * 10 | floor}} fish per second</p>
+    <br>In total your {{unit.cur.plural}} catch {{unit.cur.owned * unit.cur.efficiency * 10 | floor}} fish per second</p>
   </span>
 
-  <p><i>"{{unit.cur.quote}}"</i></p>
+    <p><i>"{{unit.cur.quote}}"</i></p>
   <span ng-if="unit.cur.price > 0">
   <button ng-click="unit.buyOne(unit.cur)">Buy 1 {{unit.cur.name}}!</button></span>
 
-  <!-- Straight up hack to get the fishing button to show up on the fishing page -->
+    <!-- Straight up hack to get the fishing button to show up on the fishing page -->
   <span ng-if="unit.cur.price == 0" ng-controller="MainCtrl as main">
     <span ng-if="main.user.isFishing"><button disabled>Go Fish!</button></span>
     <span ng-if="!main.user.isFishing"><button ng-click="main.user.goFish()">Go Fish!</button></span>

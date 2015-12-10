@@ -9,7 +9,33 @@ button[disabled] {
     text-shadow:none;
 }
 
+.content-research {
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
 td a {
     width: 100%;
     display: block;
 }
+
+.animate-show {
+    line-height: 20px;
+    opacity: 1;
+    padding: 10px;
+    background: white;
+
+}
+
+.animate-show.ng-hide-remove {
+    transition: all linear 0.5s;
+}
+
+.animate-show.ng-hide {
+    line-height: 0;
+    opacity: 0;
+    padding: 0 10px;
+}
+

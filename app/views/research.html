@@ -1,55 +1,50 @@
-<div class="content">
-  <h2>Research</h2>
-  <table>
-    <td ng-show="main.user.dollars > main.user.fisherUpgradePrice">
-      <button ng-click="main.user.upgradeFishers()">E-Fish-Ency</button>
-      <br>Fisher fish 100% faster<br>
-      Cost: {{main.user.fisherUpgradePrice | floor}} Dollars
-    </td>
-    <tr></tr>
-    <td ng-show="main.user.dollars > main.user.officeWorkerUpgradePrice">
-      <button ng-click="main.user.upgradeOfficeWorkers()">Of-Fish-Ency</button>
-      <br>Office Worker sell 50% faster<br>
-      Cost: {{main.user.officeWorkerUpgradePrice | floor}} Dollars
-    </td>
-    <tr></tr>
-    <td ng-show="main.user.dollars > main.user.boatUpgradePrice">
-      <button ng-click="main.user.upgradeBoats()">Boat-Fish-Ency</button>
-      <br>Boat fish 100% faster<br>
-      Cost: {{main.user.boatUpgradePrice | floor}} Dollars
-    </td>
-    <tr></tr>
-    <td ng-show="main.user.dollars > main.user.sellTenFishPrice && !main.user.sellTenFishAvailable">
-      <button ng-click="main.user.sellTenFishUpgradeBought()">Ten-Fishency</button>
-      <br>Sell 10 fish at once!<br>
-      Cost: {{main.user.sellTenFishPrice | floor}} Dollars
-    </td>
-    <tr></tr>
-    <td ng-show="main.user.dollars > main.user.planeUpgradePrice">
-      <button ng-click="main.user.upgradePlanes()">Plane-Fishency</button>
-      <br>Planes fish 100% faster<br>
-      Cost: {{main.user.planeUpgradePrice | floor}} Dollars
-    </td>
+<div class="content-research" ng-controller="ResearchCtrl as research">
+    <h2>Research</h2>
 
-  </table>
+    <p><h5>Tier {{research.data.tier}}</h5>
+    Unlock everything to advance to the next tier</p>
 
-  <!--
-  <table>
-    <th>
-      <button ng-click="main.user.upgradeFishers()">E-Fish-Ency</button>
-    </th>
 
-    <tr>
-      Fisher fish faster by 100%
-      <br>Cost: {{main.user.fisherUpgradePrice}} Dollars
-    </tr>
+    <table>
+        <thead>
+        <th>Unit</th>
+        <th>Effect</th>
+        <th>Cost</th>
+        <th>Just do it!</th>
+        </thead>
+        <tr ng-repeat="item in research.data['tier'+research.data.tier]">
+            <td>{{research.units[item.unit].name}}</td>
+            <td>{{research.units[item.unit].efficiency}}</td>
+            <td>{{research.units[item.unit].upgradeprice | floor}}</td>
+            <td><button ng-click="research.doUpgrade(research.units[item.unit], research.data.tier)">Research!</button></td>
+        </tr>
+    </table>
 
-    <tr>
-      Office Worker work 100% faster
-      <br>Cost: {{main.user.fisherUpgradePrice}} Dollars
-    </tr>
 
-  </table>
--->
-
+    <!--
+        <table>
+            <thead>
+            <th>Unit</th>
+            <th>Effect</th>
+            <th>Cost</th>
+            <th>Just do it!</th>
+            </thead>
+            <tr></tr>
+            <td>Office Worker</td>
+            <td>Increase Office Worker efficiency by 100%</td>
+            <td>Cost: 200 Dollars</td>
+            <td><button disabled>Research</button><span style="color: green" class="glyphicon glyphicon-ok"></span></td>
+            <td><button>Research</button></td>
+            <tr></tr>
+            <td>Fisher</td>
+            <td>Increase Fishing efficiency by 200%</td>
+            <td>Cost: 50 Dollars</td>
+            <td><button>Research</button></td>
+            <tr></tr>
+            <td>Boat</td>
+            <td>Increase Fishing efficiency by 100%</td>
+            <td>Cost: 25 Dollars</td>
+            <td><button>Research</button></td>
+        </table>
+       -->
 </div>

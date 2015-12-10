@@ -9,6 +9,7 @@
 ###
 angular.module 'incrementalApp'
 .controller 'UnitCtrl', (units, $log, $routeParams, user) ->
+  @allUnits = units
   @cur = units[$routeParams.unit]
 
   @buyOne = (unit) ->

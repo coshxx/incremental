@@ -2,24 +2,16 @@
 
 ###*
  # @ngdoc service
- # @name incrementalApp.unitBak
+ # @name incrementalApp.reset
  # @description
- # # unitBak
+ # # reset
  # Service in the incrementalApp.
 ###
 angular.module 'incrementalApp'
 .service 'reset', (units, $log) ->
-  clone = (obj) ->
-    return obj if obj is null or typeof (obj) isnt "object"
-    temp = new obj.constructor()
-    for key of obj
-      temp[key] = clone(obj[key])
-    temp
+  @unitBackup = angular.copy(units) # save a copy of the original array
 
-  $log.debug "running"
-  unitBak = angular.copy(units)
-  $log.debug unitBak
-
-  doTheReset: =>
-    units = angular.copy unitBak
-    $log.debug units
+  doReset: =>
+    for trash, rootkey of units
+      for key, val of rootkey
+        units[trash][key] = @unitBackup[trash][key]

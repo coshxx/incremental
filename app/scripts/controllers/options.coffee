@@ -25,10 +25,10 @@ angular.module 'incrementalApp'
     unpacked = JSON.parse unpacked
     @importSave(unpacked)
   @importSave = (data) ->
-    for obj in [data]
-      for own key, val of obj
-        units[key] = val
+    for trash, rootkey of units
+      for key, val of rootkey
+        units[trash][key] = data[trash][key]
   @reset = ->
-    reset.doTheReset()
+    reset.doReset()
   return
 
