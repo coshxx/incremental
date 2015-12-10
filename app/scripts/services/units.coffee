@@ -9,15 +9,11 @@ angular.module 'incrementalApp'
     name: "Fish"
     price: 0
     subtext: "The fish that swims in the ocean."
-    pricefactor: 0
     owned: 0
-    efficiency: 0
-    upgradeprice: 0
-    upgradefactor: 7.5
     quote: "<°))))><"
   "dollar":
     name: "Dollars"
-    owned: 1000000
+    owned: 1000
   "officeworker":
     name: "Office Worker"
     plural: "Office Workers"
@@ -27,7 +23,7 @@ angular.module 'incrementalApp'
     owned: 0
     efficiency: 2
     upgradeprice: 200
-    upgradefactor: 7.5
+    upgradefactor: 2
     quote: "God I hate this job!"
     tier: 0
   "fisher":
@@ -39,42 +35,79 @@ angular.module 'incrementalApp'
     owned: 0
     efficiency: 0.02
     upgradeprice: 200
-    upgradefactor: 7.5
+    upgradefactor: 4
     quote: "Meh, let's go fishing!"
     tier: 0
+  "dynamite":
+    name: "Dynamite"
+    plural: "Dynamite-Fishers"
+    price: 100
+    pricefactor: 1.07
+    subtext: "The only true way to fish"
+    owned: 0
+    efficiency: 0.25
+    upgradeprice: 1000
+    upgradefactor: 2
+    quote: "'Cause I'm T.N.T"
+    tier: 1
   "boat":
     name: "Boat"
     plural: "Boats"
-    price: 100
+    price: 1000
     pricefactor: 1.07
     subtext: "A powerful boat that roams the ocean for you."
     owned: 0
-    efficiency: 0.2
+    efficiency: 2
     upgradeprice: 200
-    upgradefactor: 7.5
+    upgradefactor: 2
     quote: "Well I'm on the Downeaster Alexa."
+    tier: 0
+  "robot":
+    name: "Robot"
+    plural: "Robots"
+    price: 10000
+    pricefactor: 1.07
+    subtext: "Fish-hunting machines from the future."
+    owned: 0
+    efficiency: 15
+    upgradeprice: 200
+    upgradefactor: 2
+    quote: "I'll be back."
     tier: 0
   "plane":
     name: "Plane"
     plural: "Planes"
-    price: 1000
+    price: 100000
     pricefactor: 1.07
     subtext: "The latest in fishing technology. Hunt from above."
     owned: 0
-    efficiency: 2
+    efficiency: 25
     upgradeprice: 200
-    upgradefactor: 7.5
+    upgradefactor: 2
     quote: "How does this even work?!"
     tier: 0
   "submarine":
     name: "Submarine"
     plural: "Submarines"
-    price: 10000
+    price: 1000000
     pricefactor: 1.07
-    subtext: "The greates submarine captains"
+    subtext: "The greatest submarine captains"
     owned: 0
-    efficiency: 20
+    efficiency: 200
     upgradeprice: 200
-    upgradefactor: 7.5
+    upgradefactor: 2
     quote: "Re-verify our range to target...one ping only."
     tier: 0
+  "nuke":
+    name: "Nuke"
+    plural: "Nukes"
+    price: 10000000
+    pricefactor: 1.07
+    subtext: "Attack the ocean."
+    owned: 0
+    efficiency: 1500
+    upgradeprice: 10000000
+    upgradefactor: 2
+    quote: "Sir, I'm not sure this is a good idea."
+    tier: 0
+

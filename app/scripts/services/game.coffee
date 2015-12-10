@@ -14,10 +14,15 @@ angular.module 'incrementalApp'
     $interval @officeworkerTick, 1000
 
   fisherTick: ->
+    for trash, rootkey of units
+      if units[trash]['efficiency']? and trash isnt "officeworker"
+        units['fish'].owned += units[trash].owned * units[trash].efficiency
+    ###
     units['fish'].owned += units['fisher'].owned * units['fisher'].efficiency
     units['fish'].owned += units['boat'].owned * units['boat'].efficiency
     units['fish'].owned += units['plane'].owned * units['plane'].efficiency
     units['fish'].owned += units['submarine'].owned * units['submarine'].efficiency
+    ###
     return
 
   officeworkerTick: ->

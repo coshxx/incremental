@@ -1,4 +1,16 @@
-<dollartab></dollartab>
+<div style="width: 20%; float: left; margin-right: 15px;">
+  <table class="table unit-table table-hover">
+    <tr>
+      <td><a ng-href="#/tab/dollars/officeworker">Office Worker</a></td>
+      <td style="text-align: right;">{{main.user.units['officeworker'].owned}}</td>
+    </tr>
+    <tr>
+      <td><a ng-href="#/tab/dollars">Dollars</a></td>
+      <td style="text-align: right;">{{main.user.units['dollar'].owned | floor}}</td>
+    </tr>
+  </table>
+</div>
+
 
 <div class="content">
   <h2>Office Worker</h2>
