@@ -10,22 +10,32 @@
 angular.module 'incrementalApp'
 .value 'research', research =
   tier: 0
-  "tier0": [{
-    unit: "officeworker"
-  }
-    unit: "fisher"
+  "tier0": [
     {
-      unit: "boat"
+      unit: "fisher"
     }
   ]
-  "tier1": [{
-    unit: "officeworker"
-  }
+  "tier1": [
     {
       unit: "fisher"
     }
     {
-      unit: "boat"
+      unit: "officeworker"
+    }
+  ]
+  "tier2": [
+    {
+      unit: "officeworker"
+    }
+  ]
+  "tier3": [
+    {
+      unit: "dynamite"
+    }
+  ]
+  "tier4": [
+    {
+      unit: "officeworker"
     }
     {
       unit: "dynamite"

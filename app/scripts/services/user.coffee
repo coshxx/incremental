@@ -9,7 +9,7 @@
 ###
 
 angular.module 'incrementalApp'
-.factory 'user', ($log, $timeout, $filter, units) -> new class User
+.factory 'user', ($log, $timeout, units) -> new class User
   constructor: ->
     @init()
   init: =>

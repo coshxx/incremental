@@ -27,7 +27,7 @@
     <div class="tab-content">
         <table class="table unit-table table-hover" style="width:90%; float: left;" ng-cloak="">
           <tr>
-            <td width="25%"><a ng-href="#/tab/fish">{{main.user.units['fish'].owned | floor}} Fish {{main.user.fishPerSec}}</a></td>
+            <td width="25%"><a ng-href="#/tab/fish">{{main.user.units['fish'].owned | floor}} Fish {{main.game.fishPerSec}}</a></td>
             <td width="25%"><a ng-href="#/tab/dollars">{{main.user.units['dollar'].owned | floor}} Dollars</a></td>
             <td width="25%">
               <span class="glyphicon glyphicon-plus" ng-show="main.user.researchAvailable"></span>

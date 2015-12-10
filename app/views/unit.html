@@ -51,10 +51,10 @@
     <br>1 {{unit.cur.name}} costs {{unit.cur.price | floor}} Dollars
   </span>
   <span ng-if="unit.cur.efficiency > 0">
-    <br>1 {{unit.cur.name}} catches {{unit.cur.efficiency * 10}} Fish every 1 seconds
+    <br>1 {{unit.cur.name}} catches {{unit.cur.efficiency}} Fish every 1 seconds
   </span>
   <span ng-if="unit.cur.efficiency > 0">
-    <br>In total your {{unit.cur.plural}} catch {{unit.cur.owned * unit.cur.efficiency * 10 | floor}} fish per second</p>
+    <br>In total your {{unit.cur.plural}} catch {{unit.cur.owned * unit.cur.efficiency | floor}} fish per second</p>
   </span>
 
   <p><i>"{{unit.cur.quote}}"</i></p>

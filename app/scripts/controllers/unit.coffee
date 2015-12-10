@@ -8,9 +8,10 @@
  # Controller of the incrementalApp
 ###
 angular.module 'incrementalApp'
-.controller 'UnitCtrl', (units, $log, $routeParams, user) ->
+.controller 'UnitCtrl', (units, $log, $routeParams, user, game) ->
   @allUnits = units
   @cur = units[$routeParams.unit]
+  @game = game
 
   @buyOne = (unit) ->
     user.buyOne(unit)

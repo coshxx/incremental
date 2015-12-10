@@ -21,20 +21,14 @@ angular.module 'incrementalApp'
     @tierchange = true
 
   @advanceTier = (currenttier) ->
-    $log.debug currenttier
-    $log.debug @data
-    $log.debug units
-
     allResearched = true
     for obj in @data['tier'+currenttier]
       if units[obj.unit].tier isnt currenttier+1
         allResearched = false
 
     if allResearched
-      #currenttier+=1
-      #research.tier+=1
       @tierchange = false
-      $timeout afterAnimationAdvance, 500
+      $timeout afterAnimationAdvance, 1000
 
 
 

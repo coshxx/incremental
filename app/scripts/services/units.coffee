@@ -13,19 +13,19 @@ angular.module 'incrementalApp'
     quote: "<°))))><"
   "dollar":
     name: "Dollars"
-    owned: 1000
+    owned: 100000
   "officeworker":
     name: "Office Worker"
     plural: "Office Workers"
-    price: 25
+    price: 30
     pricefactor: 1.07
     subtext: "Working 9 to 5 this guy automatically sells your fish."
     owned: 0
-    efficiency: 2
-    upgradeprice: 200
-    upgradefactor: 2
+    efficiency: 1
+    upgradeprice: 300
+    upgradefactor: 3
     quote: "God I hate this job!"
-    tier: 0
+    tier: 1
   "fisher":
     name: "Fisher"
     plural: "Fishers"
@@ -33,7 +33,7 @@ angular.module 'incrementalApp'
     pricefactor: 1.07
     subtext: "The fellow that catches the fish from the depths of the oceans. He is very slow but he never tires."
     owned: 0
-    efficiency: 0.02
+    efficiency: 0.2
     upgradeprice: 200
     upgradefactor: 4
     quote: "Meh, let's go fishing!"
@@ -45,11 +45,11 @@ angular.module 'incrementalApp'
     pricefactor: 1.07
     subtext: "The only true way to fish"
     owned: 0
-    efficiency: 0.25
+    efficiency: 2
     upgradeprice: 1000
     upgradefactor: 2
     quote: "'Cause I'm T.N.T"
-    tier: 1
+    tier: 3
   "boat":
     name: "Boat"
     plural: "Boats"
@@ -57,7 +57,7 @@ angular.module 'incrementalApp'
     pricefactor: 1.07
     subtext: "A powerful boat that roams the ocean for you."
     owned: 0
-    efficiency: 2
+    efficiency: 5
     upgradeprice: 200
     upgradefactor: 2
     quote: "Well I'm on the Downeaster Alexa."
@@ -69,7 +69,7 @@ angular.module 'incrementalApp'
     pricefactor: 1.07
     subtext: "Fish-hunting machines from the future."
     owned: 0
-    efficiency: 15
+    efficiency: 10
     upgradeprice: 200
     upgradefactor: 2
     quote: "I'll be back."
@@ -81,7 +81,7 @@ angular.module 'incrementalApp'
     pricefactor: 1.07
     subtext: "The latest in fishing technology. Hunt from above."
     owned: 0
-    efficiency: 25
+    efficiency: 20
     upgradeprice: 200
     upgradefactor: 2
     quote: "How does this even work?!"
@@ -93,7 +93,7 @@ angular.module 'incrementalApp'
     pricefactor: 1.07
     subtext: "The greatest submarine captains"
     owned: 0
-    efficiency: 200
+    efficiency: 40
     upgradeprice: 200
     upgradefactor: 2
     quote: "Re-verify our range to target...one ping only."
@@ -105,7 +105,7 @@ angular.module 'incrementalApp'
     pricefactor: 1.07
     subtext: "Attack the ocean."
     owned: 0
-    efficiency: 1500
+    efficiency: 80
     upgradeprice: 10000000
     upgradefactor: 2
     quote: "Sir, I'm not sure this is a good idea."

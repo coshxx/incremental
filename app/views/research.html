@@ -18,7 +18,13 @@
         <td>{{research.units[item.unit].efficiency}}</td>
         <td>{{research.units[item.unit].upgradeprice | floor}}</td>
         <td>
-          <button ng-click="research.doUpgrade(research.units[item.unit], research.data.tier)">Research!</button>
+          <div ng-show="research.units[item.unit].tier == research.data.tier">
+            <button ng-click="research.doUpgrade(research.units[item.unit], research.data.tier)">Research!</button>
+          </div>
+          <div ng-show="research.units[item.unit].tier != research.data.tier">
+            <button disabled>Research!</button>
+            <span class="glyphicon glyphicon-ok" style="color:green"></span>
+          </div>
         </td>
       </tr>
     </table>

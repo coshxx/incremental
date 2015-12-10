@@ -8,21 +8,22 @@
  # Factory in the incrementalApp.
 ###
 angular.module 'incrementalApp'
-.factory 'game', (units, $interval, $log) -> new class Game
+.factory 'game', (units, $interval, $filter, $log) -> new class Game
   constructor: ->
-    $interval @fisherTick, 100
+    $interval @fisherTick, 50
     $interval @officeworkerTick, 1000
+    @fishPerSec = "(+0/sec)"
+    @fishSec = 0
+    @tickrate = 20
 
-  fisherTick: ->
-    for trash, rootkey of units
-      if units[trash]['efficiency']? and trash isnt "officeworker"
-        units['fish'].owned += units[trash].owned * units[trash].efficiency
-    ###
-    units['fish'].owned += units['fisher'].owned * units['fisher'].efficiency
-    units['fish'].owned += units['boat'].owned * units['boat'].efficiency
-    units['fish'].owned += units['plane'].owned * units['plane'].efficiency
-    units['fish'].owned += units['submarine'].owned * units['submarine'].efficiency
-    ###
+  fisherTick: =>
+    @fishSec = 0
+    for key of units
+      if units[key]['efficiency']? and key isnt "officeworker"
+        units['fish'].owned += (units[key].owned * units[key].efficiency)/@tickrate
+        @fishSec += (units[key].owned * units[key].efficiency)
+    @fishSec = $filter('floor') @fishSec
+    @fishPerSec = "(+#{@fishSec}/sec)"
     return
 
   officeworkerTick: ->

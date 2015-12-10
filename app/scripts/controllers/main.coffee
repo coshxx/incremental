@@ -11,4 +11,5 @@
 angular.module 'incrementalApp'
 .controller 'MainCtrl', (game, user) ->
   @user = user
+  @game = game
   return
