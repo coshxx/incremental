@@ -1,6 +1,25 @@
 <div class="content-research" ng-controller="ResearchCtrl as research">
   <h2>Research</h2>
 
+  <table>
+    <thead>
+    <th>Unit</th>
+    <th>Cost</th>
+    <th>Effect</th>
+    <th style="text-align: center">Research</th>
+    </thead>
+    <tr ng-repeat="unit in research.units" ng-show="unit.upgradeprice > 0 && unit.unlocked==true">
+      <td>{{unit.name}}</td>
+      <td>{{unit.upgradeprice | floor}}</td>
+      <td>x{{unit.efficiencyfactor}}</td>
+      <td><button ng-click="research.upgradeUnit(unit)">Research</button></td>
+    </tr>
+
+
+  </table>
+
+
+  <!--
   <div ng-show="research.tierchange" class="animate-show">
     <p><h5>Tier {{research.data.tier}}</h5>
     Unlock everything to advance to the next tier</p>

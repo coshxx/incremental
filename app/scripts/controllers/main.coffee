@@ -9,7 +9,7 @@
 ###
 
 angular.module 'incrementalApp'
-.controller 'MainCtrl', (game, user) ->
+.controller 'MainCtrl', (game, user, analytics) ->
   @user = user
   @game = game
   return

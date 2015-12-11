@@ -15,15 +15,30 @@ angular.module 'incrementalApp'
     @fishPerSec = "(+0/sec)"
     @fishSec = 0
     @tickrate = 20
+    @start = new Date
+
+    @tendency = 0
 
   fisherTick: =>
+    now = new Date - @start
+    @start = new Date
     @fishSec = 0
     for key of units
       if units[key]['efficiency']? and key isnt "officeworker"
-        units['fish'].owned += (units[key].owned * units[key].efficiency)/@tickrate
+        units['fish'].owned += ((units[key].owned * units[key].efficiency)/@tickrate)*now/50
         @fishSec += (units[key].owned * units[key].efficiency)
+    unflooredFishSec = @fishSec #for the tendency
     @fishSec = $filter('floor') @fishSec
     @fishPerSec = "(+#{@fishSec}/sec)"
+
+    sellpower = units['officeworker'].owned * units['officeworker'].efficiency
+
+    # calculate tendency
+    if sellpower == unflooredFishSec
+      @tendency = 0
+    else if sellpower > unflooredFishSec
+      @tendency = 1
+    else @tendency = 2
     return
 
   officeworkerTick: ->

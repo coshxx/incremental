@@ -8,38 +8,13 @@
  # Controller of the incrementalApp
 ###
 angular.module 'incrementalApp'
-.controller 'ResearchCtrl', ($log, research, units, $timeout) ->
-  @currentTier = research.tier
-  @data = research
+.controller 'ResearchCtrl', ($log, units, $timeout) ->
   @units = units
-  @tierchange = true
-  $log.debug @data
 
-  afterAnimationAdvance = =>
-    @currenttier += 1
-    research.tier += 1
-    @tierchange = true
-
-  @advanceTier = (currenttier) ->
-    allResearched = true
-    for obj in @data['tier'+currenttier]
-      if units[obj.unit].tier isnt currenttier+1
-        allResearched = false
-
-    if allResearched
-      @tierchange = false
-      $timeout afterAnimationAdvance, 1000
-
-
-
-
-  @doUpgrade = (unit, tier) =>
-    if unit.tier != tier #sanity check in case something explodes in the DOM
+  @upgradeUnit = (unit) ->
+    if units['dollar'].owned - unit.upgradeprice < 0
       return
-    if units['dollar'].owned >= unit.upgradeprice
-      units['dollar'].owned -= unit.upgradeprice
-      unit.efficiency = unit.efficiency * unit.upgradefactor
-      unit.upgradeprice = unit.upgradeprice * unit.upgradefactor
-      unit.tier += 1
-      @advanceTier(unit.tier-1)
+    units['dollar'].owned -= unit.upgradeprice
+    unit.upgradeprice = unit.upgradeprice * unit.upgradefactor
+    unit.efficiency = unit.efficiency * unit.efficiencyfactor
   return

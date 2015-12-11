@@ -7,49 +7,56 @@ angular.module 'incrementalApp'
 .value 'units', units =
   "fish":
     name: "Fish"
+    plural: "Fish" # http://grammarist.com/usage/fish-fishes/
     price: 0
     subtext: "The fish that swims in the ocean."
     owned: 0
     quote: "<°))))><"
   "dollar":
     name: "Dollars"
-    owned: 100000
+    owned: 10000
   "officeworker":
     name: "Office Worker"
     plural: "Office Workers"
     price: 30
-    pricefactor: 1.07
+    pricefactor: 1.1
     subtext: "Working 9 to 5 this guy automatically sells your fish."
     owned: 0
-    efficiency: 1
-    upgradeprice: 300
-    upgradefactor: 3
+    efficiency: 2
+    efficiencyfactor: 2
+    upgradeprice: 500
+    upgradefactor: 5
     quote: "God I hate this job!"
-    tier: 1
+    tier: 0
+    unlocked: true
   "fisher":
     name: "Fisher"
     plural: "Fishers"
     price: 10
     pricefactor: 1.07
-    subtext: "The fellow that catches the fish from the depths of the oceans. He is very slow but he never tires."
+    subtext: "The fellow that catches the fish from the depths of the oceans. He uses the classic fishing rod."
     owned: 0
     efficiency: 0.2
-    upgradeprice: 200
-    upgradefactor: 4
+    efficiencyfactor: 2
+    upgradeprice: 100
+    upgradefactor: 3
     quote: "Meh, let's go fishing!"
     tier: 0
+    unlocked: true
   "dynamite":
-    name: "Dynamite"
+    name: "Dynamite-Fisher"
     plural: "Dynamite-Fishers"
     price: 100
     pricefactor: 1.07
-    subtext: "The only true way to fish"
+    subtext: "This guy showed up with dynamite. 'Tis the ancient art of fishing' so he says."
     owned: 0
     efficiency: 2
-    upgradeprice: 1000
-    upgradefactor: 2
+    efficiencyfactor: 2
+    upgradeprice: 100000
+    upgradefactor: 3
     quote: "'Cause I'm T.N.T"
-    tier: 3
+    tier: 0
+    unlocked: false
   "boat":
     name: "Boat"
     plural: "Boats"
@@ -58,10 +65,12 @@ angular.module 'incrementalApp'
     subtext: "A powerful boat that roams the ocean for you."
     owned: 0
     efficiency: 5
-    upgradeprice: 200
-    upgradefactor: 2
+    efficiencyfactor: 2
+    upgradeprice: 1000000
+    upgradefactor: 3
     quote: "Well I'm on the Downeaster Alexa."
     tier: 0
+    unlocked: false
   "robot":
     name: "Robot"
     plural: "Robots"
@@ -70,10 +79,12 @@ angular.module 'incrementalApp'
     subtext: "Fish-hunting machines from the future."
     owned: 0
     efficiency: 10
-    upgradeprice: 200
-    upgradefactor: 2
+    efficiencyfactor: 2
+    upgradeprice: 10000000
+    upgradefactor: 3
     quote: "I'll be back."
     tier: 0
+    unlocked: false
   "plane":
     name: "Plane"
     plural: "Planes"
@@ -82,10 +93,12 @@ angular.module 'incrementalApp'
     subtext: "The latest in fishing technology. Hunt from above."
     owned: 0
     efficiency: 20
-    upgradeprice: 200
-    upgradefactor: 2
+    efficiencyfactor: 2
+    upgradeprice: 100000000
+    upgradefactor: 3
     quote: "How does this even work?!"
     tier: 0
+    unlocked: false
   "submarine":
     name: "Submarine"
     plural: "Submarines"
@@ -94,10 +107,12 @@ angular.module 'incrementalApp'
     subtext: "The greatest submarine captains"
     owned: 0
     efficiency: 40
-    upgradeprice: 200
-    upgradefactor: 2
+    efficiencyfactor: 2
+    upgradeprice: 1000000000
+    upgradefactor: 3
     quote: "Re-verify our range to target...one ping only."
     tier: 0
+    unlocked: false
   "nuke":
     name: "Nuke"
     plural: "Nukes"
@@ -106,8 +121,9 @@ angular.module 'incrementalApp'
     subtext: "Attack the ocean."
     owned: 0
     efficiency: 80
-    upgradeprice: 10000000
-    upgradefactor: 2
+    efficiencyfactor: 2
+    upgradeprice: 10000000000
+    upgradefactor: 3
     quote: "Sir, I'm not sure this is a good idea."
     tier: 0
-
+    unlocked: false

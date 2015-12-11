@@ -16,20 +16,16 @@ angular.module 'incrementalApp'
   tempObject = JSON.stringify(units)
   @saveState = LZString.compressToEncodedURIComponent(tempObject)
   @saveData = ->
-    return
     localStorage.setItem("fishgame", @saveState)
     @saveSuccess = "That worked...maybe"
   @loadData = ->
-    return
     @importString = localStorage.getItem "fishgame"
     @import()
   @import = ->
-    return
     unpacked = LZString.decompressFromEncodedURIComponent(@importString)
     unpacked = JSON.parse unpacked
     @importSave(unpacked)
   @importSave = (data) ->
-    return
     for trash, rootkey of units
       for key, val of rootkey
         units[trash][key] = data[trash][key]

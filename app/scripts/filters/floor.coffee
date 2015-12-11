@@ -11,6 +11,11 @@
 angular.module 'incrementalApp'
   .filter 'floor', ->
     (input) ->
+      switch
+        when input is 0   then return 0
+        when input  < 1   then return input.toPrecision(1)
+        when input  < 10  then return input.toPrecision(2)
+        when input  < 100 then return input.toPrecision(3)
       # http://crusaders-of-the-lost-idols.wikia.com/wiki/Large_Number_Abbreviations
       numShort = [ 'K', 'M', 'B', 't', 'q', 'Q', 's', 'S' ] #enough for now :)
       temp = Math.floor(input)

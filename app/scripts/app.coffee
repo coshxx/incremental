@@ -11,7 +11,9 @@
 angular
   .module 'incrementalApp', [
     'ngAnimate',
-    'ngRoute'
+    'ngRoute',
+    'angulartics',
+    'angulartics.google.analytics'
   ]
   .config ($routeProvider) ->
     $routeProvider
@@ -44,3 +46,6 @@ angular
       .otherwise
         redirectTo: '/'
 
+angular.module('incrementalApp').config ->
+  # window.ga.trackingId = "UA-69117458-2"
+  window.ga 'create', window.ga.trackingId, 'auto'

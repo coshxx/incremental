@@ -23,6 +23,7 @@ angular.module 'incrementalApp'
       units['dollar'].owned -= unit.price
       unit.owned += 1
       unit.price *= unit.pricefactor
+      unit.unlocked = true
 
   goFish: ->
     @isFishing = true
