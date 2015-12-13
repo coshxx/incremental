@@ -28,7 +28,7 @@ angular.module 'incrementalApp'
         units['fish'].owned += ((units[key].owned * units[key].efficiency)/@tickrate)*now/50
         @fishSec += (units[key].owned * units[key].efficiency)
     unflooredFishSec = @fishSec #for the tendency
-    @fishSec = $filter('floor') @fishSec
+    @fishSec = $filter('floorspecial') @fishSec
     @fishPerSec = "(+#{@fishSec}/sec)"
 
     sellpower = units['officeworker'].owned * units['officeworker'].efficiency
@@ -56,6 +56,5 @@ angular.module 'incrementalApp'
       dollar += fish
       fish = 0
 
-    # later
     units['fish'].owned = fish
     units['dollar'].owned = dollar

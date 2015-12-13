@@ -13,6 +13,9 @@ angular.module 'incrementalApp'
   @cur = units[$routeParams.unit]
   @game = game
 
+  @sellFish = ->
+    user.sellFish()
+
   @buy = (unit, amount) ->
     user.buy(unit, amount)
 
@@ -26,8 +29,6 @@ angular.module 'incrementalApp'
     else
       sum = 0
       for n in [0 .. amount-1]
-        sum += amount * @cur.pricefactor**n
+        sum += @cur.price * @cur.pricefactor**n
       sum
-
-
   return

@@ -48,7 +48,7 @@
     <span ng-if="unit.cur.subtext != ''"><p>{{unit.cur.subtext}}<br></span>
     <br>You own {{unit.cur.owned | floor}} {{unit.cur.plural}}
   <span ng-if="unit.cur.price > 0">
-    <br>1 {{unit.cur.name}} costs {{unit.cur.price | floor}} Dollars
+    <br>1 {{unit.cur.name}} costs {{unit.cur.price | floorspecial}} Dollars
   </span>
   <span ng-if="unit.cur.efficiency > 0">
     <br>1 {{unit.cur.name}} catches {{unit.cur.efficiency}} Fish every 1 seconds
@@ -74,13 +74,28 @@
           </thead>
           <tr>
               <td>
+                  <span ng-show="unit.allUnits['dollar'].owned >= unit.getPrice(1)">
                   <button ng-click="unit.buy(unit.cur, 1)">Buy 1 {{unit.cur.name}}!</button>
+                  </span>
+                  <span ng-show="unit.allUnits['dollar'].owned < unit.getPrice(1)">
+                      <button disabled>Buy 1 {{unit.cur.name}}!</button>
+                  </span>
               </td>
               <td>
+                  <span ng-show="unit.allUnits['dollar'].owned >= unit.getPrice(10)">
                   <button ng-click="unit.buy(unit.cur, 10)">Buy 10 {{unit.cur.name}}!</button>
+                  </span>
+                  <span ng-show="unit.allUnits['dollar'].owned < unit.getPrice(10)">
+                      <button disabled>Buy 10 {{unit.cur.name}}!</button>
+                  </span>
               </td>
               <td>
+                  <span ng-show="unit.allUnits['dollar'].owned >= unit.getPrice(100)">
                   <button ng-click="unit.buy(unit.cur, 100)">Buy 100 {{unit.cur.name}}!</button>
+                  </span>
+                  <span ng-show="unit.allUnits['dollar'].owned < unit.getPrice(100)">
+                      <button disabled>Buy 100 {{unit.cur.name}}!</button>
+                  </span>
               </td>
           </tr>
       </table>

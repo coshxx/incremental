@@ -25,15 +25,11 @@ angular
         controller: 'UnitCtrl'
         controllerAs: 'unit'
       .when '/tab/dollars',
-        redirectTo: '/tab/dollars/dollars'
-      .when '/tab/dollars/dollars',
-        templateUrl: 'views/dollars.html'
-        controller: 'MainCtrl'
-        controllerAs: 'main'
-      .when '/tab/dollars/officeworker',
-        templateUrl: 'views/officeworker.html'
-        controller: 'MainCtrl'
-        controllerAs: 'main'
+        redirectTo: '/tab/dollars/dollar'
+      .when '/tab/dollars/:unit',
+        templateUrl: 'views/officeunit.html'
+        controller: 'UnitCtrl'
+        controllerAs: 'unit'
       .when '/tab/research',
         templateUrl: 'views/research.html'
         controller: 'MainCtrl'

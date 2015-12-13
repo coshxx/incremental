@@ -17,19 +17,21 @@ angular.module 'incrementalApp'
     owned: 0
     quote: "<°))))><"
   "dollar":
-    name: "Dollars"
+    name: "Dollar"
+    plural: "Dollars"
     owned: 0
+    subtext: "Money makes the world go round."
   "officeworker":
     name: "Office Worker"
     plural: "Office Workers"
     price: 30
-    pricefactor: 1.05
+    pricefactor: 1.10
     subtext: "Working 9 to 5 this guy automatically sells your fish."
     owned: 0
     efficiency: 2
-    efficiencyfactor: 2
+    efficiencyfactor: 3
     upgradeprice: 1000
-    upgradefactor: 1.15
+    upgradefactor: 2
     quote: "God I hate this job!"
     tier: 0
     unlocked: true

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Game v.007</title>
+    <title>Fish Game v.008</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" type="image/png" href="favicon.ico">
@@ -33,13 +33,10 @@
             <table class="table unit-table table-hover" style="width:90%; float: left;" ng-cloak="">
                 <tr>
                     <td ng-show="main.game.tendency == 0" width="25%"><a ng-href="#/tab/fish">{{main.user.units['fish'].owned
-                        |
-                        floor}} Fish {{main.game.fishPerSec}}</a></td>
+                        | floor}} Fish {{main.game.fishPerSec}}</a></td>
                     <td ng-show="main.game.tendency == 1" width="25%"><a ng-href="#/tab/fish">{{main.user.units['fish'].owned
-                        |
-                        floor}} Fish
-                        {{main.game.fishPerSec}}<span class="glyphicon glyphicon-arrow-down"
-                                                      style="display:inline; color:red"></span></a></td>
+                        | floor}} Fish {{main.game.fishPerSec}}<span class="glyphicon glyphicon-arrow-down"
+                                                                     style="display:inline; color:red"></span></a></td>
                     <td ng-show="main.game.tendency == 2" width="25%"><a ng-href="#/tab/fish">{{main.user.units['fish'].owned
                         |
                         floor}} Fish
@@ -127,6 +124,7 @@
 <script src="scripts/directives/fishtab.js"></script>
 <script src="scripts/directives/dollartab.js"></script>
 <script src="scripts/filters/floor.js"></script>
+<script src="scripts/filters/floorspecial.js"></script>
 <script src="scripts/controllers/options.js"></script>
 <script src="scripts/services/units.js"></script>
 <script src="scripts/controllers/unit.js"></script>
@@ -135,7 +133,6 @@
 <script src="scripts/services/research.js"></script>
 <script src="scripts/controllers/research.js"></script>
 <script src="scripts/services/analytics.js"></script>
-<script src="scripts/controllers/alert.js"></script>
 <!-- endbuild -->
 </body>
 </html>
