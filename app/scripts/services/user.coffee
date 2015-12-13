@@ -18,12 +18,20 @@ angular.module 'incrementalApp'
     @isSelling = false
     $log.debug "User creation finished."
 
-  buyOne: (unit) ->
-    if units['dollar'].owned - unit.price >= 0
-      units['dollar'].owned -= unit.price
-      unit.owned += 1
-      unit.price *= unit.pricefactor
+  buy: (unit, amount) ->
+    sum = 0
+    if amount is 1
+      sum = unit.price
+    else
+      for n in [0 .. amount-1]
+        sum += amount * unit.pricefactor**n
+
+    if units['dollar'].owned - sum
+      units['dollar'].owned -= sum
+      unit.owned += amount
+      unit.price *= (amount-1) * unit.pricefactor**(amount-1)
       unit.unlocked = true
+
 
   goFish: ->
     @isFishing = true

@@ -17,4 +17,5 @@ angular.module 'incrementalApp'
     units['dollar'].owned -= unit.upgradeprice
     unit.upgradeprice = unit.upgradeprice * unit.upgradefactor
     unit.efficiency = unit.efficiency * unit.efficiencyfactor
+    unit.upgradefactor = unit.upgradefactor*2
   return

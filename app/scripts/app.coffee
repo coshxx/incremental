@@ -13,7 +13,8 @@ angular
     'ngAnimate',
     'ngRoute',
     'angulartics',
-    'angulartics.google.analytics'
+    'angulartics.google.analytics',
+    'ui.bootstrap'
   ]
   .config ($routeProvider) ->
     $routeProvider
@@ -43,6 +44,10 @@ angular
         controllerAs: 'options'
       .when '/tab/changelog',
         templateUrl: 'views/changelog.html'
+      .when '/tab/cheat',
+        templateUrl: 'views/cheats.html'
+        controller: 'OptionsCtrl'
+        controllerAs: 'options'
       .otherwise
         redirectTo: '/'
 

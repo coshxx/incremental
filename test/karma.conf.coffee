@@ -39,6 +39,7 @@ module.exports = (config) ->
       'bower_components/angulartics/src/angulartics-inspectlet.js'
       'bower_components/angulartics/src/angulartics-newrelic-insights.js'
       'bower_components/angulartics-google-analytics/lib/angulartics-google-analytics.js'
+      'bower_components/angular-bootstrap/ui-bootstrap-tpls.js'
       'bower_components/angular-mocks/angular-mocks.js'
       # endbower
       # bower:coffee

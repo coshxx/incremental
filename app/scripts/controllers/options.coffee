@@ -31,5 +31,10 @@ angular.module 'incrementalApp'
         units[trash][key] = data[trash][key]
   @reset = ->
     reset.doReset()
+
+  @cheat = ->
+    units['dollar'].owned += 1000
+    units['dollar'].owned += 100000
+
   return
 

@@ -1,12 +1,16 @@
 .content {
-  float: left;
-  width: 60%;
+    float: left;
+    width: 60%;
 }
 
 button[disabled] {
-    background:#ccc;
-    border-color: #ccc;
-    text-shadow:none;
+    background: #ccc;
+    border-color: #000;
+    text-shadow: none;
+}
+
+button {
+    border-color: #000;
 }
 
 .content-research {
@@ -30,7 +34,7 @@ td a {
 }
 
 .animate-show.ng-hide-add, .animate-show.ng-hide-remove {
-  transition: all linear 0.5s;
+    transition: all linear 0.5s;
 }
 
 .animate-show.ng-hide {
@@ -39,3 +43,19 @@ td a {
     padding: 0 10px;
 }
 
+.achievealert {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.warnalert {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
