@@ -8,7 +8,11 @@ angular.module 'incrementalApp'
   "pearl":
     name: "Pearl"
     plural: "Pearls"
-    owned: 0
+    subtext: "Rich and luxuriant beauty. Drawn up from the bottom of the ocean."
+    owned: 10
+    active: 0
+    nextpearl: 100000
+    nextpearlfactor: 5
   "fish":
     name: "Fish"
     plural: "Fish" # http://grammarist.com/usage/fish-fishes/
@@ -16,6 +20,7 @@ angular.module 'incrementalApp'
     subtext: "The fish that swims in the ocean."
     owned: 0
     quote: "<°))))><"
+    total: 0 # for pearl-tracking
   "dollar":
     name: "Dollar"
     plural: "Dollars"
@@ -25,7 +30,7 @@ angular.module 'incrementalApp'
     name: "Office Worker"
     plural: "Office Workers"
     price: 30
-    pricefactor: 1.10
+    pricefactor: 1.25
     subtext: "Working 9 to 5 this guy automatically sells your fish."
     owned: 0
     efficiency: 2
@@ -35,6 +40,8 @@ angular.module 'incrementalApp'
     quote: "God I hate this job!"
     tier: 0
     unlocked: true
+    pearlupgrades: 0
+    pearlupgradecost: 1
   "fisher":
     name: "Fisher"
     plural: "Fishers"
@@ -49,6 +56,8 @@ angular.module 'incrementalApp'
     quote: "Meh, let's go fishing!"
     tier: 0
     unlocked: true
+    pearlupgrades: 0
+    pearlupgradecost: 1
   "dynamite":
     name: "Dynamite-Fisher"
     plural: "Dynamite-Fishers"
@@ -63,6 +72,8 @@ angular.module 'incrementalApp'
     quote: "'Cause I'm T.N.T"
     tier: 0
     unlocked: false
+    pearlupgrades: 0
+    pearlupgradecost: 1
   "boat":
     name: "Boat"
     plural: "Boats"
@@ -77,6 +88,8 @@ angular.module 'incrementalApp'
     quote: "Well I'm on the Downeaster Alexa."
     tier: 0
     unlocked: false
+    pearlupgrades: 0
+    pearlupgradecost: 1
   "robot":
     name: "Robot"
     plural: "Robots"
@@ -91,6 +104,8 @@ angular.module 'incrementalApp'
     quote: "I'll be back."
     tier: 0
     unlocked: false
+    pearlupgrades: 0
+    pearlupgradecost: 1
   "plane":
     name: "Plane"
     plural: "Planes"
@@ -105,6 +120,8 @@ angular.module 'incrementalApp'
     quote: "How does this even work?!"
     tier: 0
     unlocked: false
+    pearlupgrades: 0
+    pearlupgradecost: 1
   "submarine":
     name: "Submarine"
     plural: "Submarines"
@@ -119,6 +136,8 @@ angular.module 'incrementalApp'
     quote: "Re-verify our range to target...one ping only."
     tier: 0
     unlocked: false
+    pearlupgrades: 0
+    pearlupgradecost: 1
   "nuke":
     name: "Nuke"
     plural: "Nukes"
@@ -133,3 +152,5 @@ angular.module 'incrementalApp'
     quote: "Sir, I'm not sure this is a good idea."
     tier: 0
     unlocked: false
+    pearlupgrades: 0
+    pearlupgradecost: 1

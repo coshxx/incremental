@@ -51,10 +51,11 @@
     <br>1 {{unit.cur.name}} costs {{unit.cur.price | floorspecial}} Dollars
   </span>
   <span ng-if="unit.cur.efficiency > 0">
-    <br>1 {{unit.cur.name}} catches {{unit.cur.efficiency}} Fish every 1 seconds
+    <br>1 {{unit.cur.name}} catches {{unit.cur.efficiency * (1+unit.cur.pearlupgrades/10) | number:2}} Fish every 1 seconds
+    <span ng-show="unit.cur.pearlupgrades > 0">({{unit.cur.pearlupgrades*10}}% Pearl Bonus)</span>
   </span>
   <span ng-if="unit.cur.efficiency > 0">
-    <br>In total your {{unit.cur.plural}} catch {{unit.cur.owned * unit.cur.efficiency | floor}} fish per second</p>
+    <br>In total your {{unit.cur.plural}} catch {{unit.cur.owned * unit.cur.efficiency * (1+unit.cur.pearlupgrades/10)| floor}} fish per second</p>
   </span>
     <br>
 
@@ -67,9 +68,6 @@
           </th>
           <th style="text-align: center">
               {{unit.getPrice(10) | floor}}
-          </th>
-          <th style="text-align: center">
-              {{unit.getPrice(100) | floor}}
           </th>
           </thead>
           <tr>
@@ -87,14 +85,6 @@
                   </span>
                   <span ng-show="unit.allUnits['dollar'].owned < unit.getPrice(10)">
                       <button disabled>Buy 10 {{unit.cur.name}}!</button>
-                  </span>
-              </td>
-              <td>
-                  <span ng-show="unit.allUnits['dollar'].owned >= unit.getPrice(100)">
-                  <button ng-click="unit.buy(unit.cur, 100)">Buy 100 {{unit.cur.name}}!</button>
-                  </span>
-                  <span ng-show="unit.allUnits['dollar'].owned < unit.getPrice(100)">
-                      <button disabled>Buy 100 {{unit.cur.name}}!</button>
                   </span>
               </td>
           </tr>

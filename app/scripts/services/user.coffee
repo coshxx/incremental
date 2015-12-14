@@ -42,6 +42,7 @@ angular.module 'incrementalApp'
   catchOne: =>
     @isFishing = false
     units['fish'].owned += 1
+    units['fish'].total += 1
 
   sellFish: ->
     @isSelling = true

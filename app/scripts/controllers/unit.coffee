@@ -8,7 +8,7 @@
  # Controller of the incrementalApp
 ###
 angular.module 'incrementalApp'
-.controller 'UnitCtrl', (units, $log, $routeParams, user, game) ->
+.controller 'UnitCtrl', (units, $log, $routeParams, user, game, reset) ->
   @allUnits = units
   @cur = units[$routeParams.unit]
   @game = game
@@ -31,4 +31,22 @@ angular.module 'incrementalApp'
       for n in [0 .. amount-1]
         sum += @cur.price * @cur.pricefactor**n
       sum
+
+  @claimPearls = ->
+    inactivePearls = units['pearl'].owned
+    activePearls = units['pearl'].active
+
+    activePearls += inactivePearls
+    inactivePearls = 0
+
+    reset.doReset()
+
+    # later
+    units['pearl'].owned = 0
+    units['pearl'].active = activePearls
+
+  @upgradeUnitWithPearls = (item) ->
+    units['pearl'].active -= item.pearlupgradecost
+    item.pearlupgradecost += 1
+    item.pearlupgrades += 1
   return

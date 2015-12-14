@@ -9,7 +9,7 @@
 ###
 angular.module 'incrementalApp'
 .controller 'OptionsCtrl', (units, reset, $log) ->
-# TODO: move to service...
+  @allUnits = units
 
   @importString = "Enter save data"
   @saveSuccess = ""

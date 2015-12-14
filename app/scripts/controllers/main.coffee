@@ -11,9 +11,8 @@
 angular.module 'incrementalApp'
 .controller 'MainCtrl', (game, user, $timeout) ->
   @alerts = [
-    { type: 'success', msg: 'v.008: More balancing stuff.'},
-    { type: 'danger' , msg: 'Don\'t use your old savegames for new versions. It will break things.'},
-    { type: 'danger', msg: 'Sorry if an update broke your game. Trying to balance things' },
+    { type: 'success', msg: 'v.009: Secret ascension stuff.'},
+    { type: 'danger' , msg: 'Don\'t use your old savegames for new versions. It will break things.'}
   ];
   @user = user
   @game = game

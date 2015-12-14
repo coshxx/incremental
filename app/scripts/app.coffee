@@ -30,12 +30,20 @@ angular
         templateUrl: 'views/officeunit.html'
         controller: 'UnitCtrl'
         controllerAs: 'unit'
+      .when '/tab/pearls',
+        templateUrl: 'views/pearltab.html'
+        controller: 'UnitCtrl'
+        controllerAs: 'unit'
       .when '/tab/research',
         templateUrl: 'views/research.html'
         controller: 'MainCtrl'
         controllerAs: 'main'
       .when '/tab/options',
         templateUrl: 'views/options.html'
+        controller: 'OptionsCtrl'
+        controllerAs: 'options'
+      .when '/tab/statistics',
+        templateUrl: 'views/statistics.html'
         controller: 'OptionsCtrl'
         controllerAs: 'options'
       .when '/tab/changelog',

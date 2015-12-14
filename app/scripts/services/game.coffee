@@ -19,19 +19,25 @@ angular.module 'incrementalApp'
 
     @tendency = 0
 
+  processPearlGain = ->
+    if units['fish'].total >= units['pearl'].nextpearl
+      units['pearl'].owned += 1
+      units['pearl'].nextpearl *= units['pearl'].nextpearlfactor
+
   fisherTick: =>
     now = new Date - @start
     @start = new Date
     @fishSec = 0
     for key of units
       if units[key]['efficiency']? and key isnt "officeworker"
-        units['fish'].owned += ((units[key].owned * units[key].efficiency)/@tickrate)*now/50
-        @fishSec += (units[key].owned * units[key].efficiency)
+        units['fish'].owned += ((units[key].owned * units[key].efficiency * (1+units[key].pearlupgrades/10))/@tickrate)*now/50
+        units['fish'].total += ((units[key].owned * units[key].efficiency * (1+units[key].pearlupgrades/10))/@tickrate)*now/50
+        @fishSec += (units[key].owned * units[key].efficiency * (1+units[key].pearlupgrades/10))
     unflooredFishSec = @fishSec #for the tendency
     @fishSec = $filter('floorspecial') @fishSec
     @fishPerSec = "(+#{@fishSec}/sec)"
 
-    sellpower = units['officeworker'].owned * units['officeworker'].efficiency
+    sellpower = units['officeworker'].owned * units['officeworker'].efficiency * (1+units['officeworker'].pearlupgrades/10)
 
     # calculate tendency
     if sellpower == unflooredFishSec
@@ -39,13 +45,16 @@ angular.module 'incrementalApp'
     else if sellpower > unflooredFishSec
       @tendency = 1
     else @tendency = 2
+
+    processPearlGain()
+
     return
 
   officeworkerTick: ->
     fish = units['fish'].owned
     dollar = units['dollar'].owned
     officeworker = units['officeworker'].owned
-    efficiency = units['officeworker'].efficiency
+    efficiency = units['officeworker'].efficiency * (1+units['officeworker'].pearlupgrades/10)
 
     sellpower = officeworker * efficiency
 
