@@ -20,6 +20,11 @@ button {
     display: none !important;
 }
 
+td {
+    text-align: left;
+    cursor: pointer;
+}
+
 td a {
     width: 100%;
     display: block;

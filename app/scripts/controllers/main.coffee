@@ -9,9 +9,9 @@
 ###
 
 angular.module 'incrementalApp'
-.controller 'MainCtrl', (game, user, $timeout) ->
+.controller 'MainCtrl', (game, user, $timeout, $location) ->
   @alerts = [
-    { type: 'success', msg: 'v.009: Secret ascension stuff.'},
+    { type: 'success', msg: 'v.009: Secret ascension stuff. New Buttons. Balance. '},
     { type: 'danger' , msg: 'Don\'t use your old savegames for new versions. It will break things.'}
   ];
   @user = user
@@ -21,4 +21,7 @@ angular.module 'incrementalApp'
     @alerts = {}
 
   $timeout @closeAlert, 20000
+
+  @click = (where) ->
+    $location.url where
   return

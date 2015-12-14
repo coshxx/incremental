@@ -9,8 +9,9 @@ angular.module 'incrementalApp'
     name: "Pearl"
     plural: "Pearls"
     subtext: "Rich and luxuriant beauty. Drawn up from the bottom of the ocean."
-    owned: 10
+    owned: 0
     active: 0
+    spent: 0
     nextpearl: 100000
     nextpearlfactor: 5
   "fish":
@@ -30,7 +31,7 @@ angular.module 'incrementalApp'
     name: "Office Worker"
     plural: "Office Workers"
     price: 30
-    pricefactor: 1.25
+    pricefactor: 1.35
     subtext: "Working 9 to 5 this guy automatically sells your fish."
     owned: 0
     efficiency: 2

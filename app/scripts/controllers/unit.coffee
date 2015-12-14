@@ -39,7 +39,7 @@ angular.module 'incrementalApp'
     activePearls += inactivePearls
     inactivePearls = 0
 
-    reset.doReset()
+    reset.doAscend()
 
     # later
     units['pearl'].owned = 0
@@ -47,6 +47,7 @@ angular.module 'incrementalApp'
 
   @upgradeUnitWithPearls = (item) ->
     units['pearl'].active -= item.pearlupgradecost
+    units['pearl'].spent += 1
     item.pearlupgradecost += 1
     item.pearlupgrades += 1
   return
