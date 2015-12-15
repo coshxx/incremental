@@ -13,7 +13,7 @@ angular.module 'incrementalApp'
     active: 0
     spent: 0
     nextpearl: 100000
-    nextpearlfactor: 5
+    nextpearlfactor: 4
   "fish":
     name: "Fish"
     plural: "Fish" # http://grammarist.com/usage/fish-fishes/
@@ -31,7 +31,7 @@ angular.module 'incrementalApp'
     name: "Office Worker"
     plural: "Office Workers"
     price: 30
-    pricefactor: 1.35
+    pricefactor: 1.25
     subtext: "Working 9 to 5 this guy automatically sells your fish."
     owned: 0
     efficiency: 2
