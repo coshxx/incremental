@@ -39,6 +39,9 @@ angular.module 'incrementalApp'
 
     sellpower = units['officeworker'].owned * units['officeworker'].efficiency * (1+units['officeworker'].pearlupgrades/10)
 
+    if units['officeworker'].paused
+      sellpower = 0
+
     # calculate tendency
     if sellpower == unflooredFishSec
       @tendency = 0
@@ -51,6 +54,8 @@ angular.module 'incrementalApp'
     return
 
   officeworkerTick: ->
+    if units['officeworker'].paused
+      return
     fish = units['fish'].owned
     dollar = units['dollar'].owned
     officeworker = units['officeworker'].owned

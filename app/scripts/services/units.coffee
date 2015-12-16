@@ -25,24 +25,26 @@ angular.module 'incrementalApp'
   "dollar":
     name: "Dollar"
     plural: "Dollars"
-    owned: 0
+    owned: 10000
     subtext: "Money makes the world go round."
   "officeworker":
     name: "Office Worker"
     plural: "Office Workers"
     price: 30
-    pricefactor: 1.25
+    pricefactor: 2
     subtext: "Working 9 to 5 this guy automatically sells your fish."
     owned: 0
     efficiency: 2
     efficiencyfactor: 3
     upgradeprice: 1000
     upgradefactor: 2
+    upgradecurrency: "fish"
     quote: "God I hate this job!"
     tier: 0
     unlocked: true
     pearlupgrades: 0
     pearlupgradecost: 1
+    paused: false
   "fisher":
     name: "Fisher"
     plural: "Fishers"
@@ -54,6 +56,7 @@ angular.module 'incrementalApp'
     efficiencyfactor: 2
     upgradeprice: 100
     upgradefactor: 3
+    upgradecurrency: "dollar"
     quote: "Meh, let's go fishing!"
     tier: 0
     unlocked: true
@@ -70,6 +73,7 @@ angular.module 'incrementalApp'
     efficiencyfactor: 2
     upgradeprice: 1500
     upgradefactor: 3
+    upgradecurrency: "dollar"
     quote: "'Cause I'm T.N.T"
     tier: 0
     unlocked: false
@@ -86,6 +90,7 @@ angular.module 'incrementalApp'
     efficiencyfactor: 2
     upgradeprice: 18000
     upgradefactor: 3
+    upgradecurrency: "dollar"
     quote: "Well I'm on the Downeaster Alexa."
     tier: 0
     unlocked: false
@@ -102,6 +107,7 @@ angular.module 'incrementalApp'
     efficiencyfactor: 2
     upgradeprice: 216000
     upgradefactor: 3
+    upgradecurrency: "dollar"
     quote: "I'll be back."
     tier: 0
     unlocked: false
@@ -118,6 +124,7 @@ angular.module 'incrementalApp'
     efficiencyfactor: 2
     upgradeprice: 2592000
     upgradefactor: 3
+    upgradecurrency: "dollar"
     quote: "How does this even work?!"
     tier: 0
     unlocked: false
@@ -134,6 +141,7 @@ angular.module 'incrementalApp'
     efficiencyfactor: 2
     upgradeprice: 31104000
     upgradefactor: 3
+    upgradecurrency: "dollar"
     quote: "Re-verify our range to target...one ping only."
     tier: 0
     unlocked: false
@@ -150,6 +158,7 @@ angular.module 'incrementalApp'
     efficiencyfactor: 2
     upgradeprice: 373248000
     upgradefactor: 3
+    upgradecurrency: "dollar"
     quote: "Sir, I'm not sure this is a good idea."
     tier: 0
     unlocked: false

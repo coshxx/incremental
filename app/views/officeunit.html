@@ -27,7 +27,7 @@
         <br>In total your Office Worker sell {{unit.cur.owned * unit.cur.efficiency * (1+unit.cur.pearlupgrades/10)| floor}} fish per second
   </p></span>
 
-  <p><i>{{unit.cur.quote}}</i></p>
+  <p><i>"{{unit.cur.quote}}"</i></p>
 
   <div ng-show="unit.cur.price > 0">
     <table>
@@ -58,6 +58,13 @@
         </td>
       </tr>
     </table>
+  </div>
+
+  <div ng-show="unit.cur.price > 0 && !unit.cur.paused">
+    <button ng-click="unit.cur.paused = true">Pause Selling!</button>
+  </div>
+  <div ng-show="unit.cur.price > 0 && unit.cur.paused">
+    <button ng-click="unit.cur.paused = false">Resume Selling!</button>
   </div>
 
   <div ng-show="unit.cur.price == undefined">
