@@ -34,6 +34,6 @@ angular.module 'incrementalApp'
 
   @cheat = ->
     units['dollar'].owned += 100000
-    units['pearl'].owned += 1
+    # units['pearl'].owned += 1
   return
 

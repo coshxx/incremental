@@ -49,5 +49,5 @@ angular.module 'incrementalApp'
     units['pearl'].active -= item.pearlupgradecost
     units['pearl'].spent += 1
     item.pearlupgradecost += 1
-    item.pearlupgrades += 4
+    item.pearlupgrades += 5
   return

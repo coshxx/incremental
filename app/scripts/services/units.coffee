@@ -13,7 +13,7 @@ angular.module 'incrementalApp'
     active: 0
     spent: 0
     nextpearl: 100000
-    nextpearlfactor: 4
+    nextpearlfactor: 3.5
   "fish":
     name: "Fish"
     plural: "Fish" # http://grammarist.com/usage/fish-fishes/
@@ -25,7 +25,7 @@ angular.module 'incrementalApp'
   "dollar":
     name: "Dollar"
     plural: "Dollars"
-    owned: 10000
+    owned: 0
     subtext: "Money makes the world go round."
   "officeworker":
     name: "Office Worker"
@@ -35,7 +35,7 @@ angular.module 'incrementalApp'
     subtext: "Working 9 to 5 this guy automatically sells your fish."
     owned: 0
     efficiency: 2
-    efficiencyfactor: 3
+    efficiencyfactor: 2
     upgradeprice: 1000
     upgradefactor: 2
     upgradecurrency: "fish"
@@ -55,7 +55,7 @@ angular.module 'incrementalApp'
     efficiency: 0.2
     efficiencyfactor: 2
     upgradeprice: 100
-    upgradefactor: 3
+    upgradefactor: 4
     upgradecurrency: "dollar"
     quote: "Meh, let's go fishing!"
     tier: 0
@@ -72,7 +72,7 @@ angular.module 'incrementalApp'
     efficiency: 1.15
     efficiencyfactor: 2
     upgradeprice: 1500
-    upgradefactor: 3
+    upgradefactor: 4
     upgradecurrency: "dollar"
     quote: "'Cause I'm T.N.T"
     tier: 0
@@ -89,7 +89,7 @@ angular.module 'incrementalApp'
     efficiency: 13.5
     efficiencyfactor: 2
     upgradeprice: 18000
-    upgradefactor: 3
+    upgradefactor: 4
     upgradecurrency: "dollar"
     quote: "Well I'm on the Downeaster Alexa."
     tier: 0
@@ -106,7 +106,7 @@ angular.module 'incrementalApp'
     efficiency: 162
     efficiencyfactor: 2
     upgradeprice: 216000
-    upgradefactor: 3
+    upgradefactor: 4
     upgradecurrency: "dollar"
     quote: "I'll be back."
     tier: 0
@@ -123,7 +123,7 @@ angular.module 'incrementalApp'
     efficiency: 1944
     efficiencyfactor: 2
     upgradeprice: 2592000
-    upgradefactor: 3
+    upgradefactor: 4
     upgradecurrency: "dollar"
     quote: "How does this even work?!"
     tier: 0
@@ -140,7 +140,7 @@ angular.module 'incrementalApp'
     efficiency: 23328
     efficiencyfactor: 2
     upgradeprice: 31104000
-    upgradefactor: 3
+    upgradefactor: 4
     upgradecurrency: "dollar"
     quote: "Re-verify our range to target...one ping only."
     tier: 0
@@ -157,7 +157,7 @@ angular.module 'incrementalApp'
     efficiency: 279936
     efficiencyfactor: 2
     upgradeprice: 373248000
-    upgradefactor: 3
+    upgradefactor: 4
     upgradecurrency: "dollar"
     quote: "Sir, I'm not sure this is a good idea."
     tier: 0
