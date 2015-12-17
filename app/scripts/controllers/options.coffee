@@ -8,7 +8,7 @@
  # Controller of the incrementalApp
 ###
 angular.module 'incrementalApp'
-.controller 'OptionsCtrl', (units, reset, $log) ->
+.controller 'OptionsCtrl', (units, reset, loadsave) ->
   @allUnits = units
 
   @importString = "Enter save data"

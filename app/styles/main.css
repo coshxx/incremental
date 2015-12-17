@@ -55,6 +55,19 @@ td a {
     width: 100%;
 }
 
+.loadsave.ng-enter {
+  float: right;
+  border-style: double;
+  position: fixed;
+  bottom: 0;
+  right: -80px;
+  transition: 0.5s linear all;
+}
+
+.loadsave.ng-enter.ng-enter-active {
+  right: 0px;
+}
+
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 .warnalert {

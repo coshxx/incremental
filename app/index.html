@@ -71,6 +71,10 @@
     <div ng-view=""></div>
 </div>
 
+<div ng-if="main.saving" class="loadsave">
+  Autosave
+</div>
+
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 <script>
     (function (i, s, o, g, r, a, m) {
@@ -135,6 +139,7 @@
 <script src="scripts/directives/flashbutton.js"></script>
 <script src="scripts/controllers/research.js"></script>
 <script src="scripts/services/analytics.js"></script>
+<script src="scripts/services/loadsave.js"></script>
 <!-- endbuild -->
 </body>
 </html>
