@@ -15,16 +15,6 @@ angular.module 'incrementalApp'
   ];
   @user = user
   @game = game
-  @saving = false
-
-  autosave = =>
-    loadsave.save
-    @saving = true
-    $timeout (@saving=false), 1000
-
-  $interval autosave, 5000
-
-  loadsave.load()
 
   @closeAlert = (index) =>
     @alerts = {}
