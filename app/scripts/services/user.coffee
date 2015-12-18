@@ -34,7 +34,6 @@ angular.module 'incrementalApp'
         unit.price = unit.price * unit.pricefactor**amount
         unit.owned += amount
 
-
   goFish: ->
     @isFishing = true
     $timeout @catchOne, 500
