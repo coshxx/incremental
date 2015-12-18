@@ -9,8 +9,8 @@
 ###
 angular.module 'incrementalApp'
 .controller 'OptionsCtrl', (units, reset, loadsave) ->
+  #TODO: violation of DRY :) extract to loadsave service. some time in the future.
   @allUnits = units
-
   @importString = "Enter save data"
   @saveSuccess = ""
   tempObject = JSON.stringify(units)

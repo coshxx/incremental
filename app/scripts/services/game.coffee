@@ -50,7 +50,6 @@ angular.module 'incrementalApp'
     else @tendency = 2
 
     processPearlGain()
-
     return
 
   officeworkerTick: ->
