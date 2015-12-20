@@ -13,43 +13,39 @@ angular
     'ngAnimate',
     'ngRoute',
     'angulartics',
-    'angulartics.google.analytics',
+#    'angulartics.google.analytics',
     'ui.bootstrap',
     'ngMaterial'
   ]
   .config ($routeProvider) ->
     $routeProvider
       .when '/',
-        redirectTo: '/tab/fish/fish'
+        redirectTo: '/tab/fish/fish/'
       .when '/tab/fish/:unit',
         templateUrl: 'views/unit.html'
-        controller: 'UnitCtrl'
-        controllerAs: 'unit'
       .when '/tab/dollars',
-        redirectTo: '/tab/dollars/dollar'
+        redirectTo: '/tab/dollars/dollar/'
       .when '/tab/dollars/:unit',
         templateUrl: 'views/officeunit.html'
         controller: 'UnitCtrl'
         controllerAs: 'unit'
-      .when '/tab/pearls',
+      .when '/tab/pearls/',
         templateUrl: 'views/pearltab.html'
         controller: 'UnitCtrl'
         controllerAs: 'unit'
-      .when '/tab/research',
+      .when '/tab/research/',
         templateUrl: 'views/research.html'
-        controller: 'MainCtrl'
-        controllerAs: 'main'
-      .when '/tab/options',
+      .when '/tab/options/',
         templateUrl: 'views/options.html'
         controller: 'OptionsCtrl'
         controllerAs: 'options'
-      .when '/tab/statistics',
+      .when '/tab/statistics/',
         templateUrl: 'views/statistics.html'
         controller: 'OptionsCtrl'
         controllerAs: 'options'
-      .when '/tab/changelog',
+      .when '/tab/changelog/',
         templateUrl: 'views/changelog.html'
-      .when '/tab/cheat',
+      .when '/tab/cheat/',
         templateUrl: 'views/cheats.html'
         controller: 'OptionsCtrl'
         controllerAs: 'options'

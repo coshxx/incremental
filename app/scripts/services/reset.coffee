@@ -9,6 +9,7 @@
 ###
 angular.module 'incrementalApp'
 .service 'reset', (units, $log) ->
+  $log.debug "unit backup"
   @unitBackup = angular.copy(units) # save a copy of the original arrays
 
   doAscend: =>
@@ -19,6 +20,7 @@ angular.module 'incrementalApp'
 
 
   doResetHard: =>
+    $log.debug "resetting"
     for trash, rootkey of units
       for key, val of rootkey
         units[trash][key] = @unitBackup[trash][key]

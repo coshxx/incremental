@@ -9,22 +9,20 @@
 ###
 
 angular.module 'incrementalApp'
-.controller 'MainCtrl', (game, user, $interval, $timeout, $location, $log, loadsave ) ->
+.controller 'MainCtrl', (reset, loadsave, game, user, $interval, $timeout, $location, $log ) ->
   @alerts = [
     { type: 'success' , msg: 'Autosave.'}
   ];
   @user = user
   @game = game
 
+  $log.debug "setting selectedIndex"
   @selectedIndex = 0
 
   @closeAlert = (index) =>
     @alerts = {}
 
   $timeout @closeAlert, 20000
-
-  @click = (where) ->
-    $location.url where
 
   @selectTab = (where) ->
     $log.debug where

@@ -93,7 +93,7 @@
   </span>
 
     <!-- Straight up hack to get the fishing button to show up on the fishing page -->
-  <span ng-if="unit.cur.price == 0" ng-controller="MainCtrl as main">
+    <span ng-if="unit.cur.price == 0">
     <span ng-if="main.user.isFishing"><md-button ng-disabled="true" class="md-raised">Go Fish!</md-button></span>
     <span ng-if="!main.user.isFishing"><md-button class="md-raised" ng-click="main.user.goFish()">Go Fish!</md-button></span>
   </span>
