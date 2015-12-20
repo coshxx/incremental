@@ -8,32 +8,14 @@
  # Controller of the incrementalApp
 ###
 angular.module 'incrementalApp'
-.controller 'OptionsCtrl', (units, reset, loadsave) ->
-  #TODO: violation of DRY :) extract to loadsave service. some time in the future.
+.controller 'OptionsCtrl', (units, reset, $log, loadsave) ->
   @allUnits = units
-  @importString = "Enter save data"
-  @saveSuccess = ""
-  tempObject = JSON.stringify(units)
-  @saveState = LZString.compressToEncodedURIComponent(tempObject)
+  @saveState = loadsave.generateSaveString()
   @saveData = ->
-    localStorage.setItem("fishgame", @saveState)
-    @saveSuccess = "That worked...maybe"
+    loadsave.save()
   @loadData = ->
-    @importString = localStorage.getItem "fishgame"
-    @import()
-  @import = ->
-    unpacked = LZString.decompressFromEncodedURIComponent(@importString)
-    unpacked = JSON.parse unpacked
-    @importSave(unpacked)
-  @importSave = (data) ->
-    for trash, rootkey of units
-      for key, val of rootkey
-        units[trash][key] = data[trash][key]
+    loadsave.load()
   @reset = ->
     reset.doResetHard()
-
-  @cheat = ->
-    units['dollar'].owned += 100000
-    # units['pearl'].owned += 1
   return
 

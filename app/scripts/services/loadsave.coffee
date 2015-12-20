@@ -13,28 +13,23 @@ angular.module 'incrementalApp'
     @saveString = ""
     @loadString = ""
     @load()
-    $interval @save, 5000
 
-
-  generateSaveString = =>
+    $interval @save, 60000
+  generateSaveString: =>
     @saveString = JSON.stringify(units)
     @saveString = LZString.compressToEncodedURIComponent(@saveString)
-
   save: =>
     $log.debug "saving"
-    @saveString = generateSaveString()
-    localStorage.setItem("fishgame", @saveString)
-
+    @saveString = @generateSaveString()
+    localStorage.clear()
+    localStorage.setItem("fishgame012", @saveString)
   load: =>
-    console.trace()
     $log.debug "loading"
-    @loadString = localStorage.getItem "fishgame"
-    if @loadString is ""
+    @loadString = localStorage.getItem "fishgame012"
+    if @loadString is null
       return
     @loadString = LZString.decompressFromEncodedURIComponent @loadString
     @loadString = JSON.parse @loadString
-
     for trash, rootkey of units
       for key, val of rootkey
         units[trash][key] = @loadString[trash][key]
-

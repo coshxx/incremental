@@ -11,7 +11,7 @@
 angular.module 'incrementalApp'
 .controller 'MainCtrl', (game, user, $interval, $timeout, $location, reset, loadsave) ->
   @alerts = [
-    { type: 'danger' , msg: 'Don\'t use your old savegames for new versions. It will break things.'}
+    { type: 'success' , msg: 'Autosave.'}
   ];
   @user = user
   @game = game
