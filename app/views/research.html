@@ -1,88 +1,32 @@
 <div class="content-research" ng-controller="ResearchCtrl as research">
-  <h2>Research</h2>
+    <h2>Research</h2>
 
-  <table>
-    <thead>
-    <th>Unit</th>
-    <th>Cost</th>
-    <th>Currency</th>
-    <th>Effect</th>
-    <th style="text-align: center">Research</th>
-    </thead>
-    <tr ng-repeat="unit in research.units" ng-show="unit.upgradeprice > 0 && unit.unlocked==true">
-      <td>{{unit.name}}</td>
-      <td>{{unit.upgradeprice | floor}}
-      </td>
-      <td>
-        <img src="images/currencyfish.png" ng-if="unit.upgradecurrency == 'fish'">
-        <img src="images/currencydollar.png" ng-if="unit.upgradecurrency == 'dollar'">
-      </td>
-      <td>x{{unit.efficiencyfactor}}</td>
-      <td>
-        <div ng-show="research.units[unit.upgradecurrency].owned >= unit.upgradeprice">
-          <button ng-click="research.upgradeUnit(unit)">Research</button>
-        </div>
-        <div ng-show="research.units[unit.upgradecurrency].owned < unit.upgradeprice">
-          <button disabled ng-click="research.upgradeUnit(unit)">Research</button>
-        </div>
-      </td>
-    </tr>
-  </table>
-
-
-  <!--
-  <div ng-show="research.tierchange" class="animate-show">
-    <p><h5>Tier {{research.data.tier}}</h5>
-    Unlock everything to advance to the next tier</p>
-
-
-    <table>
-      <thead>
-      <th>Unit</th>
-      <th>Effect</th>
-      <th>Cost</th>
-      <th>Just do it!<img src="images/minishia.png"></th>
-      </thead>
-      <tr ng-repeat="item in research.data['tier'+research.data.tier]">
-        <td>{{research.units[item.unit].name}}</td>
-        <td>{{research.units[item.unit].efficiency}}</td>
-        <td>{{research.units[item.unit].upgradeprice | floor}}</td>
-        <td>
-          <div ng-show="research.units[item.unit].tier == research.data.tier">
-            <button ng-click="research.doUpgrade(research.units[item.unit], research.data.tier)">Research!</button>
-          </div>
-          <div ng-show="research.units[item.unit].tier != research.data.tier">
-            <button disabled>Research!</button>
-            <span class="glyphicon glyphicon-ok" style="color:green"></span>
-          </div>
-        </td>
-      </tr>
+    <table class="table table-striped">
+        <thead>
+        <th>Unit</th>
+        <th>Cost</th>
+        <th>Currency</th>
+        <th>Effect</th>
+        <th>Research</th>
+        </thead>
+        <tr ng-repeat="unit in research.units" ng-show="unit.upgradeprice > 0 && unit.unlocked==true">
+            <td>{{unit.name}}</td>
+            <td>{{unit.upgradeprice | floor}}
+            </td>
+            <td>
+                <img src="images/currencyfish.png" ng-if="unit.upgradecurrency == 'fish'">
+                <img src="images/currencydollar.png" ng-if="unit.upgradecurrency == 'dollar'">
+            </td>
+            <td>x{{unit.efficiencyfactor}}</td>
+            <td>
+                <div ng-show="research.units[unit.upgradecurrency].owned >= unit.upgradeprice">
+                    <md-button class="md-raised" ng-click="research.upgradeUnit(unit)">Research</md-button>
+                </div>
+                <div ng-show="research.units[unit.upgradecurrency].owned < unit.upgradeprice">
+                    <md-button ng-disabled="true" class="md-raised" ng-click="research.upgradeUnit(unit)">Research
+                    </md-button>
+                </div>
+            </td>
+        </tr>
     </table>
-  </div>
-  <!--
-      <table>
-          <thead>
-          <th>Unit</th>
-          <th>Effect</th>
-          <th>Cost</th>
-          <th>Just do it!</th>
-          </thead>
-          <tr></tr>
-          <td>Office Worker</td>
-          <td>Increase Office Worker efficiency by 100%</td>
-          <td>Cost: 200 Dollars</td>
-          <td><button disabled>Research</button><span style="color: green" class="glyphicon glyphicon-ok"></span></td>
-          <td><button>Research</button></td>
-          <tr></tr>
-          <td>Fisher</td>
-          <td>Increase Fishing efficiency by 200%</td>
-          <td>Cost: 50 Dollars</td>
-          <td><button>Research</button></td>
-          <tr></tr>
-          <td>Boat</td>
-          <td>Increase Fishing efficiency by 100%</td>
-          <td>Cost: 25 Dollars</td>
-          <td><button>Research</button></td>
-      </table>
-     -->
 </div>

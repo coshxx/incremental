@@ -21,8 +21,8 @@
 
     <p><i>"My precious!"</i></p>
 
-    <span ng-if="main.user.isSelling"><button disabled ng-click="main.user.sellFish()">Sell Fish</button></span>
-    <span ng-if="!main.user.isSelling"><button ng-click="main.user.sellFish()">Sell Fish</button></span>
+    <span ng-if="main.user.isSelling"><md-button md-disabled="true" class="md-raised" ng-click="main.user.sellFish()">Sell Fish</md-button></span>
+    <span ng-if="!main.user.isSelling"><md-button class="md-raised" ng-click="main.user.sellFish()">Sell Fish</md-button></span>
 
     <!-- make this work, somehow...
     <flashbutton flashDelay="500" flashOnSuccess="main.user.sellFish()">Sell Fish</flashbutton>

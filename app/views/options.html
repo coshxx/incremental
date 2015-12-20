@@ -3,18 +3,18 @@
 
   <h5>Your save data:</h5>
   {{options.saveState}}</p>
-  <button ng-click="options.saveData()">Save to localStorage</button>
+  <md-button class="md-raised" ng-click="options.saveData()">Save to localStorage</md-button>
   {{options.saveSuccess}}<br>
-  <button ng-click="options.loadData()">Load from localStorage</button>
+  <md-button class="md-raised" ng-click="options.loadData()">Load from localStorage</md-button>
 
 
   <p>
   <h5>Import savegame</h5>
-  <input ng-model="options.importString"><button ng-click="options.import()">Import</button>
+  <input ng-model="options.importString"><md-button class="md-raised" ng-click="options.import()">Import</md-button>
   </p>
 
   <p>
     <h5>Reset</h5>
-  <button ng-click="options.reset()">Reset</button>
+  <md-button class="md-raised" ng-click="options.reset()">Reset</md-button>
   </p>
 </div>

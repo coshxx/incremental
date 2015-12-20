@@ -73,18 +73,18 @@
           <tr>
               <td>
                   <span ng-show="unit.allUnits['dollar'].owned >= unit.getPrice(1)">
-                  <button ng-click="unit.buy(unit.cur, 1)">Buy 1 {{unit.cur.name}}!</button>
+                  <md-button class="md-raised" ng-click="unit.buy(unit.cur, 1)">Buy 1 {{unit.cur.name}}!</md-button>
                   </span>
                   <span ng-show="unit.allUnits['dollar'].owned < unit.getPrice(1)">
-                      <button disabled>Buy 1 {{unit.cur.name}}!</button>
+                  <md-button ng-disabled="true" class="md-raised">Buy 1 {{unit.cur.name}}!</md-button>
                   </span>
               </td>
               <td>
                   <span ng-show="unit.allUnits['dollar'].owned >= unit.getPrice(10)">
-                  <button ng-click="unit.buy(unit.cur, 10)">Buy 10 {{unit.cur.name}}!</button>
+                  <md-button class="md-raised" ng-click="unit.buy(unit.cur, 10)">Buy 10 {{unit.cur.name}}!</md-button>
                   </span>
                   <span ng-show="unit.allUnits['dollar'].owned < unit.getPrice(10)">
-                      <button disabled>Buy 10 {{unit.cur.name}}!</button>
+                      <md-button ng-disabled="true" class="md-raised">Buy 10 {{unit.cur.name}}!</md-button>
                   </span>
               </td>
           </tr>
@@ -94,7 +94,7 @@
 
     <!-- Straight up hack to get the fishing button to show up on the fishing page -->
   <span ng-if="unit.cur.price == 0" ng-controller="MainCtrl as main">
-    <span ng-if="main.user.isFishing"><button disabled>Go Fish!</button></span>
-    <span ng-if="!main.user.isFishing"><button ng-click="main.user.goFish()">Go Fish!</button></span>
+    <span ng-if="main.user.isFishing"><md-button ng-disabled="true" class="md-raised">Go Fish!</md-button></span>
+    <span ng-if="!main.user.isFishing"><md-button class="md-raised" ng-click="main.user.goFish()">Go Fish!</md-button></span>
   </span>
 </div>

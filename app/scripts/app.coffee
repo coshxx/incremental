@@ -14,7 +14,8 @@ angular
     'ngRoute',
     'angulartics',
     'angulartics.google.analytics',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'ngMaterial'
   ]
   .config ($routeProvider) ->
     $routeProvider

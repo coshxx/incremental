@@ -42,18 +42,18 @@
       <tr>
         <td>
                   <span ng-show="unit.allUnits['dollar'].owned >= unit.getPrice(1)">
-                  <button ng-click="unit.buy(unit.cur, 1)">Buy 1 {{unit.cur.name}}!</button>
+                  <md-button class="md-raised" ng-click="unit.buy(unit.cur, 1)">Buy 1 {{unit.cur.name}}!</md-button>
                   </span>
                   <span ng-show="unit.allUnits['dollar'].owned < unit.getPrice(1)">
-                      <button disabled>Buy 1 {{unit.cur.name}}!</button>
+                      <md-button ng-disabled="true" class="md-raised">Buy 1 {{unit.cur.name}}!</md-button>
                   </span>
         </td>
         <td>
                   <span ng-show="unit.allUnits['dollar'].owned >= unit.getPrice(10)">
-                  <button ng-click="unit.buy(unit.cur, 10)">Buy 10 {{unit.cur.name}}!</button>
+                  <md-button class="md-raised" ng-click="unit.buy(unit.cur, 10)">Buy 10 {{unit.cur.name}}!</md-button>
                   </span>
                   <span ng-show="unit.allUnits['dollar'].owned < unit.getPrice(10)">
-                      <button disabled>Buy 10 {{unit.cur.name}}!</button>
+                      <md-button ng-disabled="true" class="md-raised">Buy 10 {{unit.cur.name}}!</md-button>
                   </span>
         </td>
       </tr>
@@ -61,14 +61,14 @@
   </div>
 
   <div ng-show="unit.cur.price > 0 && !unit.cur.paused">
-    <button ng-click="unit.cur.paused = true">Pause Selling!</button>
+    <md-button class="md-raised" ng-click="unit.cur.paused = true">Pause Selling!</md-button>
   </div>
   <div ng-show="unit.cur.price > 0 && unit.cur.paused">
-    <button ng-click="unit.cur.paused = false">Resume Selling!</button>
+    <md-button class="md-raised" ng-click="unit.cur.paused = false">Resume Selling!</md-button>
   </div>
 
   <div ng-show="unit.cur.price == undefined">
-    <button ng-click="unit.sellFish()">Sell Fish!</button>
+    <md-button class="md-raised" ng-click="unit.sellFish()">Sell Fish!</md-button>
   </div>
 
 </div>

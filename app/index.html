@@ -9,8 +9,9 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/skeleton/css/skeleton.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/skeleton/css/skeleton.css"/>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -29,6 +30,7 @@
                 {{alert.msg}}
         </div>
         </uib-alert>
+        <!--
         <div class="tab-content">
             <table class="table unit-table table-hover" style="width:90%; float: left;" ng-cloak="">
                 <tr>
@@ -43,7 +45,8 @@
                         {{main.game.fishPerSec}}<span class="glyphicon glyphicon-arrow-up"
                                                       style="display:inline; color:green"></span></a></td>
 
-                    <td ng-click="main.click('/dollars/dollar')"><a ng-href="#/tab/dollars">{{main.user.units['dollar'].owned | floor}} Dollars</a></td>
+                    <td ng-click="main.click('/dollars/dollar')"><a ng-href="#/tab/dollars">{{main.user.units['dollar'].owned
+                        | floor}} Dollars</a></td>
                     <td ng-show="main.user.units['pearl'].owned > 0 || main.user.units['pearl'].active > 0 || main.user.units['pearl'].spent > 0">
                         <a ng-href="#/tab/pearls">{{main.user.units['pearl'].owned | floor}} Pearls</a></td>
                     <td>
@@ -67,79 +70,103 @@
             </table>
         </div>
     </div>
+-->
+        <md-tabs md-selected="main.selectedIndex" md-stretch-tabs="always">
+            <md-tab md-on-select="main.selectTab(0)">
+                <md-tab-label>{{main.user.units['fish'].owned | floor}} Fish
 
-    <div ng-view=""></div>
-</div>
+                </md-tab-label>
+            </md-tab>
 
-<div ng-if="main.saving" class="loadsave">
-  Autosave
-</div>
+            <md-tab md-on-select="main.selectTab(1)" >
+                <md-tab-label>{{main.user.units['dollar'].owned | floor}} Dollar</md-tab-label>
+            </md-tab>
+            <md-tab md-on-select="main.selectTab(2)">
+                <md-tab-label>Research</md-tab-label>
+            </md-tab>
+            <md-tab md-on-select="main.selectTab(3)">
+                <md-tab-label>Pearl</md-tab-label>
+            </md-tab>
+            <md-tab md-on-select="main.selectTab(4)">
+                <md-tab-label>Options</md-tab-label>
+            </md-tab>
+        </md-tabs>
+        <div ng-view=""></div>
+    </div>
 
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-<script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    //ga('create', 'UA-69117458-2', 'auto');
-    //ga('send', 'pageview');
+    <div ng-if="main.saving" class="loadsave">
+        Autosave
+    </div>
 
-</script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-<!-- build:js(.) scripts/vendor.js -->
-<!-- bower:js -->
-<script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<script src="bower_components/angular-animate/angular-animate.js"></script>
-<script src="bower_components/angular-route/angular-route.js"></script>
-<script src="bower_components/lz-string/libs/lz-string.min.js"></script>
-<script src="bower_components/waypoints/lib/noframework.waypoints.min.js"></script>
-<script src="bower_components/SHA-1/sha1.js"></script>
-<script src="bower_components/angulartics/src/angulartics.js"></script>
-<script src="bower_components/angulartics/src/angulartics-clicky.js"></script>
-<script src="bower_components/angulartics/src/angulartics-cnzz.js"></script>
-<script src="bower_components/angulartics/src/angulartics-ga-cordova.js"></script>
-<script src="bower_components/angulartics/src/angulartics-gtm.js"></script>
-<script src="bower_components/angulartics/src/angulartics-piwik.js"></script>
-<script src="bower_components/angulartics/src/angulartics-scroll.js"></script>
-<script src="bower_components/angulartics/src/angulartics-splunk.js"></script>
-<script src="bower_components/angulartics/src/angulartics-woopra.js"></script>
-<script src="bower_components/angulartics/src/angulartics-marketo.js"></script>
-<script src="bower_components/angulartics/src/angulartics-intercom.js"></script>
-<script src="bower_components/angulartics/src/angulartics-inspectlet.js"></script>
-<script src="bower_components/angulartics/src/angulartics-newrelic-insights.js"></script>
-<script src="bower_components/angulartics-google-analytics/lib/angulartics-google-analytics.js"></script>
-<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-<!-- endbower -->
-<!-- endbuild -->
+        //ga('create', 'UA-69117458-2', 'auto');
+        //ga('send', 'pageview');
 
-<!-- build:js({.tmp,app}) scripts/scripts.js -->
-<script src="scripts/app.js"></script>
-<script src="scripts/controllers/main.js"></script>
-<script src="scripts/controllers/about.js"></script>
-<script src="scripts/services/user.js"></script>
-<script src="scripts/services/game.js"></script>
-<script src="scripts/directives/fishtab.js"></script>
-<script src="scripts/directives/dollartab.js"></script>
-<script src="scripts/filters/floor.js"></script>
-<script src="scripts/filters/floorspecial.js"></script>
-<script src="scripts/controllers/options.js"></script>
-<script src="scripts/services/units.js"></script>
-<script src="scripts/controllers/unit.js"></script>
-<script src="scripts/services/reset.js"></script>
-<script src="scripts/directives/flashbutton.js"></script>
-<script src="scripts/controllers/research.js"></script>
-<script src="scripts/services/analytics.js"></script>
-<script src="scripts/services/loadsave.js"></script>
-<!-- endbuild -->
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/lz-string/libs/lz-string.min.js"></script>
+    <script src="bower_components/waypoints/lib/noframework.waypoints.min.js"></script>
+    <script src="bower_components/SHA-1/sha1.js"></script>
+    <script src="bower_components/angulartics/src/angulartics.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-clicky.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-cnzz.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-ga-cordova.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-gtm.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-piwik.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-scroll.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-splunk.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-woopra.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-marketo.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-intercom.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-inspectlet.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-newrelic-insights.js"></script>
+    <script src="bower_components/angulartics-google-analytics/lib/angulartics-google-analytics.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/services/user.js"></script>
+    <script src="scripts/services/game.js"></script>
+    <script src="scripts/directives/fishtab.js"></script>
+    <script src="scripts/directives/dollartab.js"></script>
+    <script src="scripts/filters/floor.js"></script>
+    <script src="scripts/filters/floorspecial.js"></script>
+    <script src="scripts/controllers/options.js"></script>
+    <script src="scripts/services/units.js"></script>
+    <script src="scripts/controllers/unit.js"></script>
+    <script src="scripts/services/reset.js"></script>
+    <script src="scripts/directives/flashbutton.js"></script>
+    <script src="scripts/controllers/research.js"></script>
+    <script src="scripts/services/analytics.js"></script>
+    <script src="scripts/services/loadsave.js"></script>
+    <!-- endbuild -->
 </body>
 </html>
