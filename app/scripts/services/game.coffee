@@ -10,7 +10,7 @@
 angular.module 'incrementalApp'
 .factory 'game', (units, $interval, $filter, $log) -> new class Game
   constructor: ->
-    $interval @fisherTick, 50
+    $interval @fisherTick, 150
     $interval @officeworkerTick, 1000
     @fishPerSec = "(+0/sec)"
     @fishSec = 0
@@ -30,8 +30,8 @@ angular.module 'incrementalApp'
     @fishSec = 0
     for key of units
       if units[key]['efficiency']? and key isnt "officeworker"
-        units['fish'].owned += ((units[key].owned * units[key].efficiency * (1+units[key].pearlupgrades/10))/@tickrate)*now/50
-        units['fish'].total += ((units[key].owned * units[key].efficiency * (1+units[key].pearlupgrades/10))/@tickrate)*now/50
+        units['fish'].owned += ((units[key].owned * units[key].efficiency * (1+units[key].pearlupgrades/10))/@tickrate)*now/(1000/@tickrate)
+        units['fish'].total += ((units[key].owned * units[key].efficiency * (1+units[key].pearlupgrades/10))/@tickrate)*now/(1000/@tickrate)
         @fishSec += (units[key].owned * units[key].efficiency * (1+units[key].pearlupgrades/10))
     unflooredFishSec = @fishSec #for the tendency
     @fishSec = $filter('floorspecial') @fishSec

@@ -9,9 +9,9 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/skeleton/css/skeleton.css" />
-    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/skeleton/css/skeleton.css"/>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -29,9 +29,9 @@
             <uib-alert ng-repeat="alert in main.alerts" type="{{alert.type}}" close="main.closeAlert($index)">
                 {{alert.msg}}
         </div>
-        <md-tabs md-selected="main.selectedIndex" md-stretch-tabs="always">
+        <md-tabs md-selected="main.selectedIndex" md-stretch-tabs="never" md-no-pagination>
             <md-tab md-on-select="main.selectTab(0)">
-                <md-tab-label>{{main.user.units['fish'].owned | floor}} Fish</md-tab-label>
+                <md-tab-label>{{main.user.units['fish'].owned | floor}} Fish {{main.game.fishPerSec}}</md-tab-label>
             </md-tab>
 
             <md-tab md-on-select="main.selectTab(1)">
@@ -41,12 +41,11 @@
                 <md-tab-label>Research</md-tab-label>
             </md-tab>
             <md-tab md-on-select="main.selectTab(3)">
-                <md-tab-label>Pearl</md-tab-label>
+                <md-tab-label>{{main.user.units['pearl'].owned | floor}} Pearl</md-tab-label>
             </md-tab>
             <md-tab md-on-select="main.selectTab(4)">
                 <md-tab-label>Options</md-tab-label>
             </md-tab>
-
         </md-tabs>
         <div ng-view=""></div>
     </div>

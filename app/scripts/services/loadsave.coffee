@@ -14,7 +14,7 @@ angular.module 'incrementalApp'
     @loadString = ""
     @load()
 
-    $interval @save, 60000
+    $interval @save, 30000
   generateSaveString: =>
     @saveString = JSON.stringify(units)
     @saveString = LZString.compressToEncodedURIComponent(@saveString)

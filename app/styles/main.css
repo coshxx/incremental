@@ -67,3 +67,12 @@ button {
     width: 100%;
     text-align: center;
 }
+
+/* required. md-tabs inkbar looks stupid otherwise*/
+.md-tab:nth-child(1) {
+    width: 16em;
+}
+
+.md-tab {
+    width: 12em;
+}
