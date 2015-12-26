@@ -3,19 +3,6 @@
     width: 60%;
 }
 
-button[disabled] {
-    background: #ccc;
-    border-color: #000;
-    text-shadow: none;
-}
-
-button {
-    border-color: #000;
-}
-
-.content-research {
-}
-
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none !important;
 }
@@ -38,26 +25,6 @@ button {
     padding: 0 10px;
 }
 
-.achievealert {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
-
-.loadsave.ng-enter {
-  float: right;
-  border-style: double;
-  position: fixed;
-  bottom: 0;
-  right: -80px;
-  transition: 0.5s linear all;
-}
-
-.loadsave.ng-enter.ng-enter-active {
-  right: 0px;
-}
-
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 .warnalert {
@@ -74,5 +41,25 @@ button {
 }
 
 .md-tab {
-    width: 12em;
+    width: 10em;
+    text-transform: none;
+}
+
+.optionsdial {
+    height: 1px;
+    position: fixed;
+    right: 5px;
+    top: 0px;
+}
+
+.claimpearlpadding {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    position: relative;
+    left: -10px; /* counter md-raised...or something */
+}
+
+.alert-success {
+    background-color: #3F51B5;
+    color: #C5CAE9;
 }

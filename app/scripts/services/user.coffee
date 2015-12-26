@@ -16,7 +16,6 @@ angular.module 'incrementalApp'
     @units = units
     @isFishing = false
     @isSelling = false
-    $log.debug "User creation finished."
 
   buy: (unit, amount) ->
     unit.unlocked = true

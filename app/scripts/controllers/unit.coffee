@@ -8,7 +8,7 @@
  # Controller of the incrementalApp
 ###
 angular.module 'incrementalApp'
-.controller 'UnitCtrl', (units, $log, $routeParams, user, game, reset) ->
+.controller 'UnitCtrl', (units, $log, $routeParams, user, game, reset, $location) ->
   @allUnits = units
   @cur = units[$routeParams.unit]
   @game = game
@@ -50,4 +50,7 @@ angular.module 'incrementalApp'
     units['pearl'].spent += 1
     item.pearlupgradecost += 1
     item.pearlupgrades += 5
+
+  @selectUnit = (where) ->
+    $location.url "/tab#{where}"
   return

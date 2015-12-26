@@ -1,41 +1,52 @@
 <div style="width: 20%; float: left; margin-right: 15px;">
-  <table class="table unit-table table-hover">
-    <tr>
-      <td><a ng-href="#/tab/pearls">Pearls</a></td>
-      <td style="text-align: right;">{{unit.owned("pearl") | floor }}</td>
-    </tr>
-  </table>
+    <table class="table unit-table table-hover">
+        <tr>
+            <td><a ng-href="#/tab/pearls">Pearls</a></td>
+            <td style="text-align: right;">{{unit.owned("pearl") | floor }}</td>
+        </tr>
+    </table>
 </div>
 
 <div class="content">
-  <h2>Pearls</h2>
+    <h2>Pearls</h2>
 
-  <!-- Spawn the <br> and subtext only if the subtext exists -->
-  <span ng-if="unit.allUnits['pearl'].subtext != ''"><p>{{unit.allUnits['pearl'].subtext}}<br></span>
-  <br>You own {{unit.allUnits['pearl'].owned | floor}} inactive {{unit.allUnits['pearl'].plural}}
-  <br>You own {{unit.allUnits['pearl'].active | floor}} active {{unit.allUnits['pearl'].plural}}<br>
+    <!-- Spawn the <br> and subtext only if the subtext exists -->
+    <span ng-if="unit.allUnits['pearl'].subtext != ''"><p>{{unit.allUnits['pearl'].subtext}}<br></span>
+    <br>You own {{unit.allUnits['pearl'].owned | floor}} inactive {{unit.allUnits['pearl'].plural}}
+    <br>You own {{unit.allUnits['pearl'].active | floor}} active {{unit.allUnits['pearl'].plural}}<br>
 
-  <br>Allows you to buff various units.
-  To activate pearls, you must claim them by restarting the game.<br>
+    <br>Allows you to buff various units.
+    To activate pearls, you must claim them by restarting the game.
 
-  <md-button class="md-raised" ng-show="unit.allUnits['pearl'].owned > 0" ng-click="unit.claimPearls()">Claim all inactive Pearls</md-button>
-  <md-button ng-disabled="true" class="md-raised" ng-show="unit.allUnits['pearl'].owned == 0">Claim all inactive Pearls</md-button>
+    <div class="claimpearlpadding">
 
-  <table>
-    <thead>
-    <th>Unit</th>
-    <th>Effect</th>
-    <th>Cost</th>
-    <th>Upgrade</th>
-    </thead>
-    <tr ng-repeat="item in unit.allUnits" ng-show="item.pearlupgradecost > 0">
-      <td>{{item.name}}</td>
-      <td>+{{(item.pearlupgrades)*10}}%</td>
-      <td>{{item.pearlupgradecost}} Pearls</td>
-      <td>
-        <md-button class="md-raised" ng-show="unit.allUnits['pearl'].active >= item.pearlupgradecost" ng-click="unit.upgradeUnitWithPearls(item)">Upgrade 50%</md-button>
-        <md-button class="md-raised" ng-disabled="true" ng-show="unit.allUnits['pearl'].active < item.pearlupgradecost">Upgrade 50%</md-button>
-      </td>
-    </tr>
-  </table>
+        <md-button class="md-raised" ng-show="unit.allUnits['pearl'].owned > 0" ng-click="unit.claimPearls()">Claim all
+            inactive Pearls
+        </md-button>
+        <md-button ng-disabled="true" class="md-raised" ng-show="unit.allUnits['pearl'].owned == 0">Claim all inactive
+            Pearls
+        </md-button>
+
+    </div>
+    <table>
+        <thead>
+        <th style="width: 150px;">Unit</th>
+        <th style="width: 100px;">Effect</th>
+        <th style="width: 100px;">Cost</th>
+        <th style="width: 100px; text-align: center">Upgrade</th>
+        </thead>
+        <tr ng-repeat="item in unit.allUnits" ng-show="item.pearlupgradecost > 0">
+            <td>{{item.name}}</td>
+            <td>+{{(item.pearlupgrades)*10}}%</td>
+            <td>{{item.pearlupgradecost}} Pearls</td>
+            <td>
+                <md-button class="md-raised" ng-show="unit.allUnits['pearl'].active >= item.pearlupgradecost"
+                           ng-click="unit.upgradeUnitWithPearls(item)">Upgrade 50%
+                </md-button>
+                <md-button class="md-raised" ng-disabled="true"
+                           ng-show="unit.allUnits['pearl'].active < item.pearlupgradecost">Upgrade 50%
+                </md-button>
+            </td>
+        </tr>
+    </table>
 </div>

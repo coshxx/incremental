@@ -1,10 +1,10 @@
 <div style="width: 20%; float: left; margin-right: 15px;">
   <table class="table unit-table table-hover">
-    <tr>
+    <tr ng-click="unit.selectUnit('/dollars/officeworker')">
       <td><a ng-href="#/tab/dollars/officeworker">Office Worker</a></td>
       <td style="text-align: right;">{{unit.owned('officeworker')}}</td>
     </tr>
-    <tr>
+    <tr ng-click="unit.selectUnit('/dollars/dollar')">
       <td><a ng-href="#/tab/dollars/dollar">Dollars</a></td>
       <td style="text-align: right;">{{unit.owned('dollar') | floor}}</td>
     </tr>

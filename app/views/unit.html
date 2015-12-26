@@ -1,40 +1,40 @@
 <div style="width: 20%; float: left; margin-right: 15px;" ng-controller="UnitCtrl as unit">
     <table class="table unit-table table-hover">
-        <tr class="animate-show" ng-hide="unit.allUnits['submarine'].owned < 10">
+        <tr ng-click="unit.selectUnit('/fish/nuke')" class="animate-show" ng-hide="unit.allUnits['submarine'].owned < 10">
             <td><a ng-href="#/tab/fish/nuke">Nukes</a></td>
             <td style="text-align: right;">{{unit.owned("nuke") | floor}}</td>
         </tr>
-        <tr class="animate-show" ng-hide="unit.allUnits['plane'].owned < 10">
+        <tr ng-click="unit.selectUnit('/fish/submarine')" class="animate-show" ng-hide="unit.allUnits['plane'].owned < 10">
             <td><a ng-href="#/tab/fish/submarine">Submarines</a></td>
             <td style="text-align: right;">{{unit.owned("submarine") | floor}}</td>
         </tr>
 
-        <tr class="animate-show" ng-hide="unit.allUnits['robot'].owned < 10">
+        <tr ng-click="unit.selectUnit('/fish/plane')" class="animate-show" ng-hide="unit.allUnits['robot'].owned < 10">
             <td><a ng-href="#/tab/fish/plane">Planes</a></td>
             <td style="text-align: right;">{{unit.owned("plane") | floor}}</td>
         </tr>
 
-        <tr class="animate-show" ng-hide="unit.allUnits['boat'].owned < 10">
+        <tr ng-click="unit.selectUnit('/fish/robot')" class="animate-show" ng-hide="unit.allUnits['boat'].owned < 10">
             <td><a ng-href="#/tab/fish/robot">Robots</a></td>
             <td style="text-align: right;">{{unit.owned("robot") | floor}}</td>
         </tr>
 
 
-        <tr class="animate-show" ng-hide="unit.allUnits['dynamite'].owned < 10">
+        <tr ng-click="unit.selectUnit('/fish/boat')" class="animate-show" ng-hide="unit.allUnits['dynamite'].owned < 10">
             <td><a ng-href="#/tab/fish/boat">Boats</a></td>
             <td style="text-align: right;">{{unit.owned("boat") | floor}}</td>
         </tr>
 
-        <tr class="animate-show" ng-hide="unit.allUnits['fisher'].owned < 10">
+        <tr ng-click="unit.selectUnit('/fish/dynamite')" class="animate-show" ng-hide="unit.allUnits['fisher'].owned < 10">
             <td><a ng-href="#/tab/fish/dynamite">Dynamite</a></td>
             <td style="text-align: right;">{{unit.owned("dynamite") | floor}}</td>
         </tr>
 
-        <tr>
+        <tr ng-click="unit.selectUnit('/fish/fisher')">
             <td><a ng-href="#/tab/fish/fisher">Fisher</a></td>
             <td style="text-align: right;">{{unit.owned("fisher") | floor}}</td>
         </tr>
-        <tr>
+        <tr ng-click="unit.selectUnit('/fish/fish')">
             <td><a ng-href="#/tab/fish/fish">Fish</a></td>
             <td style="text-align: right;">{{unit.owned("fish") | floor }}</td>
         </tr>

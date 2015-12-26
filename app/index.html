@@ -22,30 +22,48 @@
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
 <![endif]-->
-<div class="container">
+<div class="">
     <div ng-controller="MainCtrl as main">
         <div class="warnalert" ng-cloak="">
             <uib-alert ng-repeat="alert in main.alerts" type="{{alert.type}}" close="main.closeAlert($index)">
                 {{alert.msg}}
         </div>
-        <md-tabs md-selected="main.selectedIndex" md-stretch-tabs="never" md-no-pagination>
-            <md-tab md-on-select="main.selectTab(0)">
+        <md-tabs class="md-primary" md-selected="main.selectedIndex" md-stretch-tabs="never" >
+            <md-tab ng-click="main.selectTab(0)">
                 <md-tab-label>{{main.user.units['fish'].owned | floor}} Fish {{main.game.fishPerSec}}</md-tab-label>
             </md-tab>
 
-            <md-tab md-on-select="main.selectTab(1)">
+            <md-tab ng-click="main.selectTab(1)">
                 <md-tab-label>{{main.user.units['dollar'].owned | floor}} Dollar</md-tab-label>
             </md-tab>
-            <md-tab md-on-select="main.selectTab(2)">
+            <md-tab ng-click="main.selectTab(2)">
                 <md-tab-label>Research</md-tab-label>
             </md-tab>
-            <md-tab md-on-select="main.selectTab(3)">
+            <md-tab ng-click="main.selectTab(3)">
                 <md-tab-label>{{main.user.units['pearl'].owned | floor}} Pearl</md-tab-label>
             </md-tab>
-
-            
-
         </md-tabs>
+        <div class="optionsdial">
+            <md-fab-speed-dial ng-cloak md-open="main.isOpen" md-direction="{{main.selectedDirection}}"
+                               ng-class="main.selectedMode">
+                <md-fab-trigger>
+                    <md-button aria-label="menu" class="md-fab md-warn">
+                        <md-icon md-svg-src="images/menu.svg"></md-icon>
+                    </md-button>
+                </md-fab-trigger>
+                <md-fab-actions>
+                    <md-button aria-label="Options" class="md-fab md-mini md-raised" href="#/tab/options">
+                        <md-tab-label><span class="glyphicon glyphicon-cog"></span></md-tab-label>
+                    </md-button>
+                    <md-button aria-label="Changelog" class="md-fab md-raised md-mini" href="#/tab/changelog">
+                        <md-tab-label><span class="glyphicon glyphicon-book"></span></md-tab-label>
+                    </md-button>
+                    <md-button aria-label="Statistics" class="md-fab md-raised md-mini" href="#/tab/statistics">
+                        <md-tab-label><span class="glyphicon glyphicon-stats"></span></md-tab-label>
+                    </md-button>
+                </md-fab-actions>
+            </md-fab-speed-dial>
+        </div>
 
         <div ng-view=""></div>
     </div>
@@ -118,7 +136,6 @@
 <script src="scripts/services/reset.js"></script>
 <script src="scripts/directives/flashbutton.js"></script>
 <script src="scripts/controllers/research.js"></script>
-<script src="scripts/services/analytics.js"></script>
 <script src="scripts/services/loadsave.js"></script>
 <!-- endbuild -->
 </body>
