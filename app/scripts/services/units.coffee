@@ -12,7 +12,7 @@ angular.module 'incrementalApp'
     owned: 0
     active: 0
     spent: 0
-    nextpearl: 100000
+    nextpearl: 100000000
     nextpearlfactor: 3.5
   "fish":
     name: "Fish"
@@ -25,7 +25,7 @@ angular.module 'incrementalApp'
   "dollar":
     name: "Dollar"
     plural: "Dollars"
-    owned: 0
+    owned: 100000
     subtext: "Money makes the world go round."
   "officeworker":
     name: "Office Worker"
@@ -37,7 +37,7 @@ angular.module 'incrementalApp'
     efficiency: 2
     efficiencyfactor: 2
     upgradeprice: 1000
-    upgradefactor: 2
+    upgradefactor: 3
     upgradecurrency: "fish"
     quote: "God I hate this job!"
     tier: 0
@@ -82,13 +82,13 @@ angular.module 'incrementalApp'
   "boat":
     name: "Boat"
     plural: "Boats"
-    price: 1800
+    price: 2250
     pricefactor: 1.14
     subtext: "A powerful boat that roams the ocean for you."
     owned: 0
     efficiency: 13.5
     efficiencyfactor: 2
-    upgradeprice: 18000
+    upgradeprice: 22500
     upgradefactor: 4
     upgradecurrency: "dollar"
     quote: "Well I'm on the Downeaster Alexa."
@@ -99,13 +99,13 @@ angular.module 'incrementalApp'
   "robot":
     name: "Robot"
     plural: "Robots"
-    price: 21600
+    price: 33750
     pricefactor: 1.13
     subtext: "Fish-hunting machines from the future."
     owned: 0
     efficiency: 162
     efficiencyfactor: 2
-    upgradeprice: 216000
+    upgradeprice: 337500
     upgradefactor: 4
     upgradecurrency: "dollar"
     quote: "I'll be back."
@@ -116,13 +116,13 @@ angular.module 'incrementalApp'
   "plane":
     name: "Plane"
     plural: "Planes"
-    price: 259200
+    price: 506250
     pricefactor: 1.12
     subtext: "The latest in fishing technology. Hunt from above."
     owned: 0
     efficiency: 1944
     efficiencyfactor: 2
-    upgradeprice: 2592000
+    upgradeprice: 5062500
     upgradefactor: 4
     upgradecurrency: "dollar"
     quote: "How does this even work?!"
@@ -133,13 +133,13 @@ angular.module 'incrementalApp'
   "submarine":
     name: "Submarine"
     plural: "Submarines"
-    price: 3110400
+    price: 7593750
     pricefactor: 1.11
     subtext: "The greatest submarine captains"
     owned: 0
     efficiency: 23328
     efficiencyfactor: 2
-    upgradeprice: 31104000
+    upgradeprice: 75937500
     upgradefactor: 4
     upgradecurrency: "dollar"
     quote: "Re-verify our range to target...one ping only."
@@ -150,13 +150,13 @@ angular.module 'incrementalApp'
   "nuke":
     name: "Nuke"
     plural: "Nukes"
-    price: 37324800
+    price: 113906250
     pricefactor: 1.10
     subtext: "Attack the ocean."
     owned: 0
     efficiency: 279936
     efficiencyfactor: 2
-    upgradeprice: 373248000
+    upgradeprice: 1139062500
     upgradefactor: 4
     upgradecurrency: "dollar"
     quote: "Sir, I'm not sure this is a good idea."

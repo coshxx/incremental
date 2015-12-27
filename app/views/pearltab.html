@@ -18,16 +18,19 @@
     <br>Allows you to buff various units.
     To activate pearls, you must claim them by restarting the game.
 
-    <div class="claimpearlpadding">
+    <p>You get your next pearl at {{unit.allUnits['pearl'].nextpearl | floor}} total fish caught.
+    <br>Your total fish caught: {{unit.allUnits['fish'].total | floor}}</p>
 
+
+    <div class="claimpearlpadding">
         <md-button class="md-raised" ng-show="unit.allUnits['pearl'].owned > 0" ng-click="unit.claimPearls()">Claim all
             inactive Pearls
         </md-button>
         <md-button ng-disabled="true" class="md-raised" ng-show="unit.allUnits['pearl'].owned == 0">Claim all inactive
             Pearls
         </md-button>
-
     </div>
+
     <table>
         <thead>
         <th style="width: 150px;">Unit</th>

@@ -16,7 +16,6 @@ angular.module 'incrementalApp'
     @fishSec = 0
     @tickrate = 20
     @start = new Date
-
     @tendency = 0
 
   processPearlGain = ->
@@ -36,19 +35,15 @@ angular.module 'incrementalApp'
     unflooredFishSec = @fishSec #for the tendency
     @fishSec = $filter('floorspecial') @fishSec
     @fishPerSec = "(+#{@fishSec}/sec)"
-
     sellpower = units['officeworker'].owned * units['officeworker'].efficiency * (1+units['officeworker'].pearlupgrades/10)
-
     if units['officeworker'].paused
       sellpower = 0
-
     # calculate tendency
     if sellpower == unflooredFishSec
       @tendency = 0
     else if sellpower > unflooredFishSec
       @tendency = 1
     else @tendency = 2
-
     processPearlGain()
     return
 
@@ -59,15 +54,12 @@ angular.module 'incrementalApp'
     dollar = units['dollar'].owned
     officeworker = units['officeworker'].owned
     efficiency = units['officeworker'].efficiency * (1+units['officeworker'].pearlupgrades/10)
-
     sellpower = officeworker * efficiency
-
     if fish - sellpower > 0
       fish -= sellpower
       dollar += sellpower
     else
       dollar += fish
       fish = 0
-
     units['fish'].owned = fish
     units['dollar'].owned = dollar

@@ -13,7 +13,6 @@ angular.module 'incrementalApp'
     @saveString = ""
     @loadString = ""
     @load()
-
     $interval @save, 30000
   generateSaveString: =>
     @saveString = JSON.stringify(units)
