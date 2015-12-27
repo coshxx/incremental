@@ -12,7 +12,7 @@ angular.module 'incrementalApp'
   .filter 'floor', ->
     (input) ->
       # http://crusaders-of-the-lost-idols.wikia.com/wiki/Large_Number_Abbreviations
-      numShort = [ 'K', 'M', 'B', 't', 'q', 'Q', 's', 'S' ] #enough for now :)
+      numShort = [ 'K', 'M', 'B', 't', 'q', 'Q', 's', 'S', 'o', 'n', 'd', 'U' ] #enough for now :)
       temp = Math.floor(input)
 
       index = -1

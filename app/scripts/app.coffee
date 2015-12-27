@@ -13,7 +13,7 @@ angular
     'ngAnimate',
     'ngRoute',
     'angulartics',
-#    'angulartics.google.analytics',
+    'angulartics.google.analytics',
     'ui.bootstrap',
     'ngMaterial'
   ]
@@ -53,5 +53,5 @@ angular
         redirectTo: '/'
 
 angular.module('incrementalApp').config ->
-  # window.ga.trackingId = "UA-69117458-2"
+  window.ga.trackingId = "UA-69117458-2"
   window.ga 'create', window.ga.trackingId, 'auto'

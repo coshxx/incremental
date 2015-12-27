@@ -32,6 +32,7 @@ angular.module 'incrementalApp'
       for key, val of rootkey
         units[trash][key] = @loadString[trash][key]
   load: =>
+    return
     $log.debug "loading"
     @loadString = localStorage.getItem "fishgame012"
     if @loadString is null
