@@ -42,6 +42,9 @@
             <md-tab ng-click="main.selectTab(3)">
                 <md-tab-label>{{main.user.units['pearl'].owned | floor}} Pearls</md-tab-label>
             </md-tab>
+            <md-tab ng-click="main.selectTab(4)">
+                <md-tab-label>Achievements</md-tab-label>
+            </md-tab>
         </md-tabs>
         <div class="optionsdial">
             <md-fab-speed-dial ng-cloak md-open="main.isOpen" md-direction="{{main.selectedDirection}}"
@@ -137,6 +140,8 @@
 <script src="scripts/directives/flashbutton.js"></script>
 <script src="scripts/controllers/research.js"></script>
 <script src="scripts/services/loadsave.js"></script>
+<script src="scripts/services/achievements.js"></script>
+<script src="scripts/controllers/achiev.js"></script>
 <!-- endbuild -->
 </body>
 </html>

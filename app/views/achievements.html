@@ -1,0 +1,22 @@
+<h2>Achievements</h2>
+
+<div>
+    Unlocking achievements increase the price of fish.
+</div>
+<div>
+    Current Price increase: <b>0%</b>
+</div>
+<div style="padding: 25px">
+    <table class="table table-striped">
+        {{achiev.all}}
+        <tr ng-repeat="item in achiev.all.pearl">
+            <td>{{item.title}}</td>
+        </tr>
+        <tr>
+            <td>Own 25 Fisher</td>
+        </tr>
+        <tr>
+            <td>Own 50 Fisher</td>
+        </tr>
+    </table>
+</div>

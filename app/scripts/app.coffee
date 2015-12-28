@@ -45,6 +45,10 @@ angular
         controllerAs: 'options'
       .when '/tab/changelog/',
         templateUrl: 'views/changelog.html'
+      .when '/tab/achievements/',
+        templateUrl: 'views/achievements.html'
+        controller: 'AchievCtrl',
+        controllerAs: 'achiev'
       .when '/tab/cheat/',
         templateUrl: 'views/cheats.html'
         controller: 'OptionsCtrl'

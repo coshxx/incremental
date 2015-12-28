@@ -17,9 +17,6 @@ angular.module 'incrementalApp'
       for key, val of rootkey
         if key isnt "pearlupgrades" and key isnt "pearlupgradecost" and key isnt "unlocked"
           units[trash][key] = @unitBackup[trash][key]
-        else
-          $log.debug "key was #{key}"
-
 
   doResetHard: =>
     $log.debug "resetting"

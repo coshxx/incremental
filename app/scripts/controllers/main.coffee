@@ -35,6 +35,6 @@ angular.module 'incrementalApp'
     if where is 3
       $location.url "/tab/pearls"
     if where is 4
-      $location.url "/tab/options"
+      $location.url "/tab/achievements"
     @selectIndex = where
   return

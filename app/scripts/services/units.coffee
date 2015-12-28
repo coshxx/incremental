@@ -25,7 +25,7 @@ angular.module 'incrementalApp'
   "dollar":
     name: "Dollar"
     plural: "Dollars"
-    owned: 0
+    owned: 10000
     subtext: "Money makes the world go round."
   "officeworker":
     name: "Office Worker"
