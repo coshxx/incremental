@@ -1,74 +1,76 @@
 <div style="width: 20%; float: left; margin-right: 15px;">
-  <table class="table unit-table table-hover">
-    <tr ng-click="unit.selectUnit('/dollars/officeworker')">
-      <td><a ng-href="#/tab/dollars/officeworker">Office Worker</a></td>
-      <td style="text-align: right;">{{unit.owned('officeworker')}}</td>
-    </tr>
-    <tr ng-click="unit.selectUnit('/dollars/dollar')">
-      <td><a ng-href="#/tab/dollars/dollar">Dollars</a></td>
-      <td style="text-align: right;">{{unit.owned('dollar') | floor}}</td>
-    </tr>
-  </table>
+    <table class="table unit-table table-hover">
+        <tr ng-click="unit.selectUnit('/dollars/officeworker')">
+            <td><a ng-href="#/tab/dollars/officeworker">Office Worker</a></td>
+            <td style="text-align: right;">{{unit.owned('officeworker')}}</td>
+        </tr>
+        <tr ng-click="unit.selectUnit('/dollars/dollar')">
+            <td><a ng-href="#/tab/dollars/dollar">Dollars</a></td>
+            <td style="text-align: right;">{{unit.owned('dollar') | floor}}</td>
+        </tr>
+    </table>
 </div>
 
 
 <div class="content">
-  <h2>{{unit.cur.name}}</h2>
+    <h2>{{unit.cur.name}}</h2>
 
-  <p>{{unit.cur.subtext}}<br>
+    {{unit.cur.subtext}}<br>
 
 
     <br>You own {{unit.cur.owned | floor}} {{unit.cur.plural}}
 
     <span ng-show="unit.cur.price > 0">
-        <br>1 Office Worker costs {{unit.cur.price | number:2}} Dollars
-        <br>1 Office Worker sells {{unit.cur.efficiency * (1+unit.cur.pearlupgrades/10) | number:2}} Fish per Second
+        <br>1 Office Worker costs {{unit.cur.price | floorspecial}} Dollars
+        <br>1 Office Worker sells {{unit.cur.efficiency * (1+unit.cur.pearlupgrades/10) | floorspecial}} Fish per Second
       <span ng-show="unit.cur.pearlupgrades > 0">({{unit.cur.pearlupgrades*10}}% Pearl Bonus)</span>
         <br>In total your Office Worker sell {{unit.cur.owned * unit.cur.efficiency * (1+unit.cur.pearlupgrades/10)| floor}} fish per second
-  </p></span>
+    </span>
 
-  <p><i>"{{unit.cur.quote}}"</i></p>
+    <div class="quotepadding">
+        <p><i>"{{unit.cur.quote}}"</i></p>
+    </div>
 
-  <div ng-show="unit.cur.price > 0">
-    <table>
-      <thead>
-      <th style="text-align: center">
-        {{unit.getPrice(1) | floor}}
-      </th>
-      <th style="text-align: center">
-        {{unit.getPrice(10) | floor}}
-      </th>
-      </thead>
-      <tr>
-        <td>
+    <div ng-show="unit.cur.price > 0">
+        <table>
+            <thead>
+            <th style="text-align: center">
+                {{unit.getPrice(1) | floor}}
+            </th>
+            <th style="text-align: center">
+                {{unit.getPrice(10) | floor}}
+            </th>
+            </thead>
+            <tr>
+                <td>
                   <span ng-show="unit.allUnits['dollar'].owned >= unit.getPrice(1)">
                   <md-button class="md-raised" ng-click="unit.buy(unit.cur, 1)">Buy 1 {{unit.cur.name}}!</md-button>
                   </span>
                   <span ng-show="unit.allUnits['dollar'].owned < unit.getPrice(1)">
                       <md-button ng-disabled="true" class="md-raised">Buy 1 {{unit.cur.name}}!</md-button>
                   </span>
-        </td>
-        <td>
+                </td>
+                <td>
                   <span ng-show="unit.allUnits['dollar'].owned >= unit.getPrice(10)">
                   <md-button class="md-raised" ng-click="unit.buy(unit.cur, 10)">Buy 10 {{unit.cur.name}}!</md-button>
                   </span>
                   <span ng-show="unit.allUnits['dollar'].owned < unit.getPrice(10)">
                       <md-button ng-disabled="true" class="md-raised">Buy 10 {{unit.cur.name}}!</md-button>
                   </span>
-        </td>
-      </tr>
-    </table>
-  </div>
+                </td>
+            </tr>
+        </table>
+    </div>
 
-  <div ng-show="unit.cur.price > 0 && !unit.cur.paused">
-    <md-button class="md-raised" ng-click="unit.cur.paused = true">Pause Selling!</md-button>
-  </div>
-  <div ng-show="unit.cur.price > 0 && unit.cur.paused">
-    <md-button class="md-raised" ng-click="unit.cur.paused = false">Resume Selling!</md-button>
-  </div>
+    <div ng-show="unit.cur.price > 0 && !unit.cur.paused">
+        <md-button class="md-raised" ng-click="unit.cur.paused = true">Pause Selling!</md-button>
+    </div>
+    <div ng-show="unit.cur.price > 0 && unit.cur.paused">
+        <md-button class="md-raised" ng-click="unit.cur.paused = false">Resume Selling!</md-button>
+    </div>
 
-  <div ng-show="unit.cur.price == undefined">
-    <md-button class="md-raised" ng-click="unit.sellFish()">Sell Fish!</md-button>
-  </div>
+    <div ng-show="unit.cur.price == undefined">
+        <md-button class="md-raised" ng-click="unit.sellFish()">Sell Fish!</md-button>
+    </div>
 
 </div>

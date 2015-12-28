@@ -18,8 +18,8 @@
     <br>Allows you to buff various units.
     To activate pearls, you must claim them by restarting the game.
 
-    <p>You get your next pearl at {{unit.allUnits['pearl'].nextpearl | floor}} total fish caught.
-    <br>Your total fish caught: {{unit.allUnits['fish'].total | floor}}</p>
+    <p>You get your next pearl at <b>{{unit.allUnits['pearl'].nextpearl | floor}}</b> total fish caught.
+    <br>Your total fish caught: <b>{{unit.allUnits['fish'].total | floor}}</b></p>
 
 
     <div class="claimpearlpadding">
@@ -38,7 +38,7 @@
         <th style="width: 100px;">Cost</th>
         <th style="width: 100px; text-align: center">Upgrade</th>
         </thead>
-        <tr ng-repeat="item in unit.allUnits" ng-show="item.pearlupgradecost > 0">
+        <tr ng-repeat="item in unit.allUnits" ng-show="item.pearlupgradecost > 0 && item.unlocked===true">
             <td>{{item.name}}</td>
             <td>+{{(item.pearlupgrades)*10}}%</td>
             <td>{{item.pearlupgradecost}} Pearls</td>

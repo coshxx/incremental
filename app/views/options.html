@@ -1,20 +1,22 @@
 <div class="content">
-  <h2>Options</h2>
+    <h2>Options</h2>
 
-  <h5>Your save data:</h5>
-  {{options.saveState}}</p>
-  <md-button class="md-raised" ng-click="options.saveData()">Save to localStorage</md-button>
-  {{options.saveSuccess}}<br>
-  <md-button class="md-raised" ng-click="options.loadData()">Load from localStorage</md-button>
+    <h5>Your save data:</h5>
+    {{options.saveState}}</p>
+    <div class="quotepadding">
+        <md-button class="md-raised" ng-click="options.saveData()">Save to localStorage</md-button>
+        {{options.saveSuccess}}<br>
+        <md-button class="md-raised" ng-click="options.loadData()">Load from localStorage</md-button>
+    </div>
 
+    <p>
+    <h5>Import savegame</h5>
+    <input ng-model="options.importString">
+    <md-button class="md-raised" ng-click="options.import()">Import</md-button>
+    </p>
 
-  <p>
-  <h5>Import savegame</h5>
-  <input ng-model="options.importString"><md-button class="md-raised" ng-click="options.import()">Import</md-button>
-  </p>
-
-  <p>
+    <p>
     <h5>Reset</h5>
-  <md-button class="md-raised" ng-click="options.reset()">Reset</md-button>
-  </p>
+    <md-button class="md-raised" ng-click="options.reset()">Reset</md-button>
+    </p>
 </div>

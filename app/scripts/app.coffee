@@ -53,5 +53,5 @@ angular
         redirectTo: '/'
 
 angular.module('incrementalApp').config ->
-  window.ga.trackingId = "UA-69117458-2"
-  window.ga 'create', window.ga.trackingId, 'auto'
+  # window.ga.trackingId = "UA-69117458-2"
+  # window.ga 'create', window.ga.trackingId, 'auto'

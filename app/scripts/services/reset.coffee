@@ -15,8 +15,10 @@ angular.module 'incrementalApp'
   doAscend: =>
     for trash, rootkey of units
       for key, val of rootkey
-        if key != "pearlupgrades" and key != "pearlupgradecost"
+        if key isnt "pearlupgrades" and key isnt "pearlupgradecost" and key isnt "unlocked"
           units[trash][key] = @unitBackup[trash][key]
+        else
+          $log.debug "key was #{key}"
 
 
   doResetHard: =>

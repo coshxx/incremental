@@ -8,7 +8,7 @@
  # Factory in the incrementalApp.
 ###
 angular.module 'incrementalApp'
-.factory 'loadsave', ($log, $interval, units) -> new class LoadSave
+.factory 'loadsave', ($log, $interval, units, reset) -> new class LoadSave
   constructor: ->
     @saveString = ""
     @loadString = ""
@@ -21,7 +21,7 @@ angular.module 'incrementalApp'
     $log.debug "saving"
     @saveString = @generateSaveString()
     localStorage.clear()
-    localStorage.setItem("fishgame015", @saveString)
+    localStorage.setItem("fishgame016", @saveString)
   import: (importString) =>
     @loadString = importString
     if @loadString is null
@@ -32,8 +32,9 @@ angular.module 'incrementalApp'
       for key, val of rootkey
         units[trash][key] = @loadString[trash][key]
   load: =>
+    return
     $log.debug "loading"
-    @loadString = localStorage.getItem "fishgame015"
+    @loadString = localStorage.getItem "fishgame016"
     if @loadString is null
       return
     @loadString = LZString.decompressFromEncodedURIComponent @loadString
