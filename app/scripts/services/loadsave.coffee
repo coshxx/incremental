@@ -21,7 +21,7 @@ angular.module 'incrementalApp'
     $log.debug "saving"
     @saveString = @generateSaveString()
     localStorage.clear()
-    localStorage.setItem("fishgame012", @saveString)
+    localStorage.setItem("fishgame015", @saveString)
   import: (importString) =>
     @loadString = importString
     if @loadString is null
@@ -32,9 +32,8 @@ angular.module 'incrementalApp'
       for key, val of rootkey
         units[trash][key] = @loadString[trash][key]
   load: =>
-    return
     $log.debug "loading"
-    @loadString = localStorage.getItem "fishgame012"
+    @loadString = localStorage.getItem "fishgame015"
     if @loadString is null
       return
     @loadString = LZString.decompressFromEncodedURIComponent @loadString
