@@ -1,15 +1,15 @@
 <div style="width: 20%; float: left; margin-right: 15px;" ng-controller="UnitCtrl as unit">
     <table class="table unit-table table-hover">
         <tr ng-click="unit.selectUnit('/fish/nuke')" class="animate-show"
-            ng-hide="unit.allUnits['predator'].owned < 5">
+            ng-hide="unit.allUnits['ufo'].owned < 5">
             <td><a ng-href="#/tab/fish/nuke">Nukes</a></td>
             <td style="text-align: right;">{{unit.owned("nuke") | floor}}</td>
         </tr>
 
-        <tr ng-click="unit.selectUnit('/fish/predator')" class="animate-show"
+        <tr ng-click="unit.selectUnit('/fish/ufo')" class="animate-show"
             ng-hide="unit.allUnits['submarine'].owned < 5">
-            <td><a ng-href="#/tab/fish/predator">Predators</a></td>
-            <td style="text-align: right;">{{unit.owned("predator") | floor}}</td>
+            <td><a ng-href="#/tab/fish/ufo">Ufos</a></td>
+            <td style="text-align: right;">{{unit.owned("ufo") | floor}}</td>
         </tr>
 
         <tr ng-click="unit.selectUnit('/fish/submarine')" class="animate-show"

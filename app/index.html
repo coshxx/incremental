@@ -26,7 +26,10 @@
     <div ng-controller="MainCtrl as main">
         <div class="warnalert" ng-cloak="">
             <uib-alert ng-repeat="alert in main.alerts" type="{{alert.type}}" close="main.closeAlert($index)">
-                {{alert.msg}}
+                <h4>Achievement unlocked</h4>
+                <b>{{alert.msg.title}}</b><br>
+                {{alert.msg.subtext}}<br>
+                {{alert.msg.content}}
         </div>
         <md-tabs class="md-primary" md-selected="main.selectedIndex" md-stretch-tabs="never" >
             <md-tab ng-click="main.selectTab(0)">

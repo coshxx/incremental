@@ -8,11 +8,11 @@
  # Controller of the incrementalApp
 ###
 angular.module 'incrementalApp'
-.controller 'AchievCtrl', (achievements, $log) ->
-  @all = achievements
-  $log.debug "hey out"
-  for item, key of @all
-    $log.debug key
-    $log.debug "hey in"
+.controller 'AchievCtrl', (achievements, achievementslist, $log, $interval, $scope) ->
+  @all = achievements.getList()
+  @unlockcount = achievements.getUnlockCount()
+  # @length = Object.keys(@all).length
+  @length = @all.length
+
   return
 

@@ -8,7 +8,7 @@
  # Factory in the incrementalApp.
 ###
 angular.module 'incrementalApp'
-.factory 'game', (units, $interval, $filter, $log) -> new class Game
+.factory 'game', (units, $interval, $filter, $log, achievements) -> new class Game
   constructor: ->
     $interval @fisherTick, 150
     $interval @officeworkerTick, 1000
@@ -22,6 +22,7 @@ angular.module 'incrementalApp'
     if units['fish'].total >= units['pearl'].nextpearl
       units['pearl'].owned += 1
       units['pearl'].nextpearl *= units['pearl'].nextpearlfactor
+    achievements.checkUnit(units['pearl'])
 
   fisherTick: =>
     now = new Date - @start
@@ -45,6 +46,7 @@ angular.module 'incrementalApp'
       @tendency = 1
     else @tendency = 2
     processPearlGain()
+    achievements.checkUnit(units['fish'])
     return
 
   officeworkerTick: ->
@@ -63,3 +65,4 @@ angular.module 'incrementalApp'
       fish = 0
     units['fish'].owned = fish
     units['dollar'].owned = dollar
+    achievements.checkUnit(units['dollar'])

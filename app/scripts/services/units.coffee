@@ -25,7 +25,7 @@ angular.module 'incrementalApp'
   "dollar":
     name: "Dollar"
     plural: "Dollars"
-    owned: 10000
+    owned: 1000000000000000000
     subtext: "Money makes the world go round."
   "officeworker":
     name: "Office Worker"
@@ -108,7 +108,7 @@ angular.module 'incrementalApp'
     upgradecurrency: "dollar"
     subtext: "His wife makes cookies all day. He likes to fish all day."
     owned: 0
-    quote: "Orteil took my wife, now I take his fish!?"
+    quote: "I am too old for this ... stuff."
     tier: 0
     unlocked: false
     pearlupgrades: 0
@@ -232,9 +232,9 @@ angular.module 'incrementalApp'
     unlocked: false
     pearlupgrades: 0
     pearlupgradecost: 1
-  "predator":
-    name: "Predator"
-    plural: "Predators"
+  "ufo":
+    name: "Ufo"
+    plural: "Ufos"
     price: 86497558593750
     pricefactor: 1.10
     efficiency: 69657034752
@@ -242,9 +242,9 @@ angular.module 'incrementalApp'
     upgradeprice: 864975585937500
     upgradefactor: 4
     upgradecurrency: "dollar"
-    subtext: "An ugly motherf*****. Hunting fish for sport."
+    subtext: "The aliens inside seem friendly."
     owned: 0
-    quote: "Get to the chopper!"
+    quote: "E.T. phone home."
     tier: 0
     unlocked: false
     pearlupgrades: 0

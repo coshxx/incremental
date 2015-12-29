@@ -9,7 +9,7 @@
 ###
 
 angular.module 'incrementalApp'
-.factory 'user', ($log, $timeout, units) -> new class User
+.factory 'user', ($log, $timeout, units, achievements) -> new class User
   constructor: ->
     @init()
   init: =>
@@ -32,6 +32,8 @@ angular.module 'incrementalApp'
         units['dollar'].owned -= sum
         unit.price = unit.price * unit.pricefactor**amount
         unit.owned += amount
+
+    achievements.checkUnit(unit)
 
   goFish: ->
     @isFishing = true
