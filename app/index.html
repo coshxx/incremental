@@ -26,8 +26,8 @@
     <div ng-controller="MainCtrl as main">
         <div class="warnalert" ng-cloak="">
             <uib-alert ng-repeat="alert in main.alerts" type="{{alert.type}}" close="main.closeAlert($index)">
-                <h4>Achievement unlocked</h4>
-                <b>{{alert.msg.title}}</b><br>
+                <h4><span style="color:lawngreen">Achievement unlocked</span></h4>
+                <b><span style="color: yellowgreen">{{alert.msg.title}}</span></b><br>
                 {{alert.msg.subtext}}<br>
                 {{alert.msg.content}}
         </div>

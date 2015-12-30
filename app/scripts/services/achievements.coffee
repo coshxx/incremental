@@ -127,6 +127,15 @@ angular.module 'incrementalApp'
     requiredamount: 10
   }
   {
+    title: "One hundred"
+    subtext: "It's getting crowded in here."
+    content: "Buy 100 Net-Fisher"
+    revealed: false
+    unlocked: false
+    requiredunit: "Net-Fisher"
+    requiredamount: 100
+  }
+  {
     title: "Dynamite?"
     subtext: "Watch your fingers"
     content: "Buy 1 Dynamite-Fisher"
@@ -143,6 +152,15 @@ angular.module 'incrementalApp'
     unlocked: false
     requiredunit: "Dynamite-Fisher"
     requiredamount: 10
+  }
+  {
+    title: "Dynamitastic"
+    subtext: "I can't hear anything anymore"
+    content: "Buy 100 Dynamite-Fisher"
+    revealed: false
+    unlocked: false
+    requiredunit: "Dynamite-Fisher"
+    requiredamount: 100
   }
   {
     title: "Grandpa?"
@@ -163,6 +181,15 @@ angular.module 'incrementalApp'
     requiredamount: 10
   }
   {
+    title: "Grandparade"
+    subtext: "My back hurts"
+    content: "Buy 100 Grandpas"
+    revealed: false
+    unlocked: false
+    requiredunit: "Grandpa"
+    requiredamount: 100
+  }
+  {
     title: "A cat"
     subtext: "That's not a cat. That's a monster."
     content: "Buy 1 cat"
@@ -179,6 +206,15 @@ angular.module 'incrementalApp'
     unlocked: false
     requiredunit: "Cat"
     requiredamount: 10
+  }
+  {
+    title: "Catplosion"
+    subtext: "This is not a dwarven outpost"
+    content: "Buy 100 cats"
+    revealed: false
+    unlocked: false
+    requiredunit: "Cat"
+    requiredamount: 100
   }
   {
     title: "I should buy a boat"
@@ -199,6 +235,15 @@ angular.module 'incrementalApp'
     requiredamount: 10
   }
   {
+    title: "I'm on a boat"
+    subtext: "Take a good hard look"
+    content: "Buy 100 boats"
+    revealed: false
+    unlocked: false
+    requiredunit: "Boat"
+    requiredamount: 100
+  }
+  {
     title: "Scary"
     subtext: "It's a tank after all"
     content: "Buy 1 tank"
@@ -215,6 +260,15 @@ angular.module 'incrementalApp'
     unlocked: false
     requiredunit: "Tank"
     requiredamount: 10
+  }
+  {
+    title: "Three star general"
+    subtext: "...with a tank army"
+    content: "Buy 100 tanks"
+    revealed: false
+    unlocked: false
+    requiredunit: "Tank"
+    requiredamount: 100
   }
   {
     title: "Great, a robot"
@@ -235,6 +289,15 @@ angular.module 'incrementalApp'
     requiredamount: 10
   }
   {
+    title: "A.I."
+    subtext: "The machines are starting to revolt."
+    content: "Buy 100 robots"
+    revealed: false
+    unlocked: false
+    requiredunit: "Robot"
+    requiredamount: 100
+  }
+  {
     title: "What? Why?"
     subtext: "The pilot tells you this is perfectly safe."
     content: "Buy 1 plane"
@@ -251,6 +314,15 @@ angular.module 'incrementalApp'
     unlocked: false
     requiredunit: "Plane"
     requiredamount: 10
+  }
+  {
+    title: "Hangar 18"
+    subtext: "It's music"
+    content: "Buy 100 planes"
+    revealed: false
+    unlocked: false
+    requiredunit: "Plane"
+    requiredamount: 100
   }
   {
     title: "A what? A xenomorph"
@@ -271,6 +343,15 @@ angular.module 'incrementalApp'
     requiredamount: 10
   }
   {
+    title: "The horror"
+    subtext: "Ok that's one too many!"
+    content: "Buy 100 Xenomorphs"
+    revealed: false
+    unlocked: false
+    requiredunit: "Xenomorph"
+    requiredamount: 100
+  }
+  {
     title: "Crazy Ivan"
     subtext: "The captain of the submarine looks cool."
     content: "Buy 1 submarine"
@@ -282,11 +363,20 @@ angular.module 'incrementalApp'
   {
     title: "Flotilla"
     subtext: "They call themselves 'Grey Wolves'"
-    content: "Buy 10 xenomorph"
+    content: "Buy 10 submarines"
     revealed: false
     unlocked: false
-    requiredunit: "Xenomorph"
+    requiredunit: "Submarine"
     requiredamount: 10
+  }
+  {
+    title: "The ocean is too small"
+    subtext: "Our submarines are crashing into each other"
+    content: "Buy 100 submarines"
+    revealed: false
+    unlocked: false
+    requiredunit: "submarine"
+    requiredamount: 100
   }
   {
     title: "U.F.O."
@@ -307,6 +397,15 @@ angular.module 'incrementalApp'
     requiredamount: 10
   }
   {
+    title: "Alien invasion"
+    subtext: "Our scientists tell us they have everything under control"
+    content: "Buy 100 Ufos"
+    revealed: false
+    unlocked: false
+    requiredunit: "Ufo"
+    requiredamount: 100
+  }
+  {
     title: "A nuclear bomb"
     subtext: "Our scientists tell us it's safe to 'drop the bomb'"
     content: "Buy 1 nuke"
@@ -316,13 +415,22 @@ angular.module 'incrementalApp'
     requiredamount: 1
   }
   {
-    title: "Atomic winter"
+    title: "Nuclear winter"
     subtext: "Please wear this radiation protection suit."
     content: "Buy 10 nukes"
     revealed: false
     unlocked: false
     requiredunit: "Nuke"
     requiredamount: 10
+  }
+  {
+    title: "It's the end of the world"
+    subtext: "as we know it"
+    content: "Buy 100 nukes"
+    revealed: false
+    unlocked: false
+    requiredunit: "Nuke"
+    requiredamount: 100
   }
   {
     title: "A motivated helper"
