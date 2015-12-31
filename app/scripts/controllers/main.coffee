@@ -9,7 +9,7 @@
 ###
 
 angular.module 'incrementalApp'
-.controller 'MainCtrl', (reset, loadsave, game, user, $interval, $timeout, $location, achievements, $log ) ->
+.controller 'MainCtrl', (loadsave, reset, game, user, $interval, $timeout, $location, achievements, $log ) ->
   @alerts = [
     # { type: 'success' , msg: 'Autosave'}
   ]
@@ -20,7 +20,6 @@ angular.module 'incrementalApp'
   @selectedDirection = 'down'
   @selectedIndex = -1
   @nextdelete = 0
-
   @closeAlert = =>
     @alerts.splice(@nextdelete, 1)
     @nextdelete -= 1
@@ -29,24 +28,21 @@ angular.module 'incrementalApp'
     recent = achievements.getRecentUnlocks()
     itemsFound = false
     for item in recent
-      $log.debug "in loop"
       itemsFound = true
       @message = {
         title: item.title
         subtext: item.subtext
         content: item.content
       }
-      $log.debug @message
       temp = @alerts.push( { type: 'success', msg: @message})
       @nextDelete += temp
-      $timeout @closeAlert, 7500
+      $timeout @closeAlert, 9000
     if itemsFound
       achievements.clearRecentUnlocks()
 
 
   # $timeout @closeAlert, 20000
 
-  $log.debug "starting interval"
   $interval @checkAchievements, 500
 
   @selectTab = (where) ->

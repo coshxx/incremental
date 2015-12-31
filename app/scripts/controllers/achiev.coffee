@@ -13,6 +13,5 @@ angular.module 'incrementalApp'
   @unlockcount = achievements.getUnlockCount()
   # @length = Object.keys(@all).length
   @length = @all.length
-
   return
 

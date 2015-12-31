@@ -52,7 +52,8 @@ angular.module 'incrementalApp'
     @isSelling = false
     if units['fish'].owned - 1 >= 0
       units['fish'].owned -= 1
-      units['dollar'].owned += 1
+      units['dollar'].owned++
+      units['dollar'].total++
 
   reset: ->
     @init()

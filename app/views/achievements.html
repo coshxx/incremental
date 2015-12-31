@@ -1,19 +1,17 @@
 <h2>Achievements</h2>
 
-<div>
+<div style="padding-top: 10px">
     Unlocking achievements increase the price of fish.
 </div>
 <div>
-    Current Price increase: <b>{{achiev.unlockcount.amount*10}}%</b>
+    Current Price increase: <b>{{achiev.unlockcount.amount*2.5}}%</b>
 
 </div>
-<div>
+<div style="padding-top: 10px">
     Unlocked achievements: {{achiev.unlockcount.amount}}/{{achiev.length}}
     <md-progress-linear style="width: 50%" md-mode="determinate" value="{{achiev.unlockcount.amount/achiev.length*100}}"></md-progress-linear>
-
 </div>
-<div>
-    <md-content>
+<div style="padding-top:50px">
         <md-list layout="row" layout-wrap layout-margin style="max-width: 720px">
             <md-list-item class="md-3-line" ng-repeat="item in achiev.all | filter:{revealed:true}" style="width: 300px">
                 <img ng-src="images/currencyfish.png" class="md-avatar"/>
@@ -32,5 +30,4 @@
                 </div>
             </md-list-item>
         </md-list>
-    </md-content>
 </div>

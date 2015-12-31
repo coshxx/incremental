@@ -8,9 +8,13 @@
  # Controller of the incrementalApp
 ###
 angular.module 'incrementalApp'
-.controller 'OptionsCtrl', (units, reset, $log, loadsave) ->
+.controller 'OptionsCtrl', (units, reset, $log, loadsave, achievements, game) ->
   @allUnits = units
   @saveState = loadsave.generateSaveString()
+  @achievements = achievements
+  @gameStarted = game.statisticsGameStarted
+  @timeNow = new Date
+  @timeNow = @timeNow.getMilliseconds()
   @importString = ""
   @saveData = ->
     loadsave.save()

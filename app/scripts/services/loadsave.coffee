@@ -8,37 +8,50 @@
  # Factory in the incrementalApp.
 ###
 angular.module 'incrementalApp'
-.factory 'loadsave', ($log, $interval, units, reset) -> new class LoadSave
+.factory 'loadsave', ($log, $interval, units, achievementslist, achievements, reset) -> new class LoadSave
   constructor: ->
     @saveString = ""
     @loadString = ""
     @load()
     $interval @save, 30000
   generateSaveString: =>
-    @saveString = JSON.stringify(units)
+    @saveString = JSON.stringify([units, achievementslist])
     @saveString = LZString.compressToEncodedURIComponent(@saveString)
   save: =>
     $log.debug "saving"
     @saveString = @generateSaveString()
     localStorage.clear()
-    localStorage.setItem("fishgame016", @saveString)
+    localStorage.setItem("idlefisher", @saveString)
   import: (importString) =>
     @loadString = importString
     if @loadString is null
       return
     @loadString = LZString.decompressFromEncodedURIComponent @loadString
     @loadString = JSON.parse @loadString
-    for trash, rootkey of units
+    loadedUnits = @loadString[0]
+    for trash, rootkey of loadedUnits
       for key, val of rootkey
-        units[trash][key] = @loadString[trash][key]
+        if units[trash]?
+          units[trash][key] = loadedUnits[trash][key]
+
+    loadedAchievements = @loadString[1]
+    for ach, i in loadedAchievements
+      achievementslist[i] = loadedAchievements[i]
+    achievements.recountAchievements()
   load: =>
-    return
     $log.debug "loading"
-    @loadString = localStorage.getItem "fishgame016"
+    @loadString = localStorage.getItem "idlefisher"
     if @loadString is null
       return
     @loadString = LZString.decompressFromEncodedURIComponent @loadString
     @loadString = JSON.parse @loadString
-    for trash, rootkey of units
+    loadedUnits = @loadString[0]
+    for trash, rootkey of loadedUnits
       for key, val of rootkey
-        units[trash][key] = @loadString[trash][key]
+        if units[trash]?
+          units[trash][key] = loadedUnits[trash][key]
+
+    loadedAchievements = @loadString[1]
+    for ach, i in loadedAchievements
+      achievementslist[i] = loadedAchievements[i]
+    achievements.recountAchievements()

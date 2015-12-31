@@ -5,6 +5,9 @@
 ###
 angular.module 'incrementalApp'
 .value 'units', units =
+  "ascension":
+    name: "Ascension"
+    owned: 0
   "pearl":
     name: "Pearl"
     plural: "Pearls"
@@ -12,8 +15,8 @@ angular.module 'incrementalApp'
     owned: 0
     active: 0
     spent: 0
-    nextpearl: 100000000
-    nextpearlfactor: 3.5
+    nextpearl: 1000000000
+    nextpearlfactor: 4.5
   "fish":
     name: "Fish"
     plural: "Fish" # http://grammarist.com/usage/fish-fishes/
@@ -25,7 +28,8 @@ angular.module 'incrementalApp'
   "dollar":
     name: "Dollar"
     plural: "Dollars"
-    owned: 1000000000000000000
+    owned: 0 #1000000000000000000
+    total: 0
     subtext: "Money makes the world go round."
   "officeworker":
     name: "Office Worker"
@@ -33,7 +37,7 @@ angular.module 'incrementalApp'
     price: 30
     pricefactor: 2
     efficiency: 2
-    efficiencyfactor: 2
+    efficiencyfactor: 27
     upgradeprice: 1000
     upgradefactor: 2.5
     upgradecurrency: "fish"
@@ -63,8 +67,8 @@ angular.module 'incrementalApp'
     pearlupgrades: 0
     pearlupgradecost: 1
   "net":
-    name: "Net-Fisher"
-    plural: "Net-Fishers"
+    name: "Netfisher"
+    plural: "Netfishers"
     price: 150
     pricefactor: 1.07
     efficiency: 1.15

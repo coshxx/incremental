@@ -3,10 +3,13 @@
 angular.module 'incrementalApp'
 .factory 'achievements', (achievementslist, $log) -> new class Achievements
   constructor: ->
+    count = 0
+    for ach in achievementslist
+      if ach.unlocked is true
+        count++
     @unlockcount = {
-      amount: 0
+      amount: count
     }
-
     @recentunlocks = []
 
   checkUnit: (unit) =>
@@ -22,6 +25,14 @@ angular.module 'incrementalApp'
   getList: ->
     achievementslist
 
+  recountAchievements: =>
+    count = 0
+    for ach in achievementslist
+      if ach.unlocked is true
+        count++
+    @unlockcount = {
+      amount: count
+    }
   getUnlockCount: =>
     @unlockcount
 
@@ -100,6 +111,15 @@ angular.module 'incrementalApp'
     requiredunit: "Fisher"
   }
   {
+    title: "The usual suspects"
+    subtext: "Keyser Söze"
+    content: "Buy 50 fisher"
+    revealed: false
+    unlocked: false
+    requiredamount: 50
+    requiredunit: "Fisher"
+  }
+  {
     title: "Entrepreneur"
     subtext: "100 guys off the street"
     content: "Buy 100 fisher"
@@ -110,29 +130,38 @@ angular.module 'incrementalApp'
   }
   {
     title: "A new beginning"
-    subtext: "Who are you? 'Nobody'-Net-Fisher"
-    content: "Buy 1 Net-Fisher"
+    subtext: "Who are you? 'I'm no one'-Netfisher"
+    content: "Buy 1 Netfisher"
     revealed: false
     unlocked: false
-    requiredunit: "Net-Fisher"
+    requiredunit: "Netfisher"
     requiredamount: 1
   }
   {
-    title: "Net-workers"
-    subtext: "Punny"
-    content: "Buy 10 Net-Fisher"
+    title: "The Net-work"
+    subtext: "Puns are hard"
+    content: "Buy 10 Netfisher"
     revealed: false
     unlocked: false
-    requiredunit: "Net-Fisher"
+    requiredunit: "Netfisher"
     requiredamount: 10
+  }
+  {
+    title: "Net-nado"
+    subtext: "It's worse than a sharknado"
+    content: "Buy 50 Netfisher"
+    revealed: false
+    unlocked: false
+    requiredunit: "Netfisher"
+    requiredamount: 50
   }
   {
     title: "One hundred"
     subtext: "It's getting crowded in here."
-    content: "Buy 100 Net-Fisher"
+    content: "Buy 100 Netfisher"
     revealed: false
     unlocked: false
-    requiredunit: "Net-Fisher"
+    requiredunit: "Netfisher"
     requiredamount: 100
   }
   {
@@ -154,6 +183,15 @@ angular.module 'incrementalApp'
     requiredamount: 10
   }
   {
+    title: "T.N.T"
+    subtext: "...and I'll win the fight"
+    content: "Buy 50 Dynamite-Fisher"
+    revealed: false
+    unlocked: false
+    requiredunit: "Dynamite-Fisher"
+    requiredamount: 50
+  }
+  {
     title: "Dynamitastic"
     subtext: "I can't hear anything anymore"
     content: "Buy 100 Dynamite-Fisher"
@@ -164,7 +202,7 @@ angular.module 'incrementalApp'
   }
   {
     title: "Grandpa?"
-    subtext: "His wife works in a cookie factory not far from here."
+    subtext: "Orteil took my wife. I hate him."
     content: "Buy 1 Grandpa"
     revealed: false
     unlocked: false
@@ -179,6 +217,15 @@ angular.module 'incrementalApp'
     unlocked: false
     requiredunit: "Grandpa"
     requiredamount: 10
+  }
+  {
+    title: "Why so many?"
+    subtext: "They really know how to fish"
+    content: "Buy 50 Grandpa"
+    revealed: false
+    unlocked: false
+    requiredunit: "Grandpa"
+    requiredamount: 50
   }
   {
     title: "Grandparade"
@@ -208,6 +255,15 @@ angular.module 'incrementalApp'
     requiredamount: 10
   }
   {
+    title: "Natural Selection"
+    subtext: "Cats vs Fish"
+    content: "Buy 50 Cats"
+    revealed: false
+    unlocked: false
+    requiredunit: "Cat"
+    requiredamount: 50
+  }
+  {
     title: "Catplosion"
     subtext: "This is not a dwarven outpost"
     content: "Buy 100 cats"
@@ -233,6 +289,15 @@ angular.module 'incrementalApp'
     unlocked: false
     requiredunit: "Boat"
     requiredamount: 10
+  }
+  {
+    title: "More and more miles from shore every year"
+    subtext: "...and a good captain can't fall asleep."
+    content: "Buy 50 boats"
+    revealed: false
+    unlocked: false
+    requiredunit: "Boat"
+    requiredamount: 50
   }
   {
     title: "I'm on a boat"
@@ -262,6 +327,15 @@ angular.module 'incrementalApp'
     requiredamount: 10
   }
   {
+    title: "World on fire"
+    subtext: "In a good mood again. I'm sick of these stinky boots."
+    content: "Buy 50 tanks"
+    revealed: false
+    unlocked: false
+    requiredunit: "Tank"
+    requiredamount: 50
+  }
+  {
     title: "Three star general"
     subtext: "...with a tank army"
     content: "Buy 100 tanks"
@@ -289,6 +363,15 @@ angular.module 'incrementalApp'
     requiredamount: 10
   }
   {
+    title: "Chessmaster"
+    subtext: "These guys are unbeatable."
+    content: "Buy 50 robots"
+    revealed: false
+    unlocked: false
+    requiredunit: "Robot"
+    requiredamount: 50
+  }
+  {
     title: "A.I."
     subtext: "The machines are starting to revolt."
     content: "Buy 100 robots"
@@ -307,13 +390,22 @@ angular.module 'incrementalApp'
     requiredamount: 1
   }
   {
-    title: "We might need more space "
+    title: "We might need more space"
     subtext: "This is madness."
     content: "Buy 10 planes"
     revealed: false
     unlocked: false
     requiredunit: "Plane"
     requiredamount: 10
+  }
+  {
+    title: "Airline"
+    subtext: "And it's yours."
+    content: "Buy 50 planes"
+    revealed: false
+    unlocked: false
+    requiredunit: "Plane"
+    requiredamount: 50
   }
   {
     title: "Hangar 18"
@@ -343,6 +435,15 @@ angular.module 'incrementalApp'
     requiredamount: 10
   }
   {
+    title: "Communication is hard"
+    subtext: "The xenomorph don't exactly speak our language"
+    content: "Buy 50 xenomorph"
+    revealed: false
+    unlocked: false
+    requiredunit: "Xenomorph"
+    requiredamount: 50
+  }
+  {
     title: "The horror"
     subtext: "Ok that's one too many!"
     content: "Buy 100 Xenomorphs"
@@ -370,12 +471,21 @@ angular.module 'incrementalApp'
     requiredamount: 10
   }
   {
+    title: "Running silent running deep"
+    subtext: "We are your final prayer"
+    content: "Buy 50 submarines"
+    revealed: false
+    unlocked: false
+    requiredunit: "Submarine"
+    requiredamount: 50
+  }
+  {
     title: "The ocean is too small"
     subtext: "Our submarines are crashing into each other"
     content: "Buy 100 submarines"
     revealed: false
     unlocked: false
-    requiredunit: "submarine"
+    requiredunit: "Submarine"
     requiredamount: 100
   }
   {
@@ -395,6 +505,15 @@ angular.module 'incrementalApp'
     unlocked: false
     requiredunit: "Ufo"
     requiredamount: 10
+  }
+  {
+    title: "Alien army"
+    subtext: "Hope they are friendly"
+    content: "Buy 50 ufos"
+    revealed: false
+    unlocked: false
+    requiredunit: "Ufo"
+    requiredamount: 50
   }
   {
     title: "Alien invasion"
@@ -424,8 +543,17 @@ angular.module 'incrementalApp'
     requiredamount: 10
   }
   {
+    title: "Fallout"
+    subtext: "It's not so bad"
+    content: "Buy 50 nukes"
+    revealed: false
+    unlocked: false
+    requiredunit: "Nuke"
+    requiredamount: 50
+  }
+  {
     title: "It's the end of the world"
-    subtext: "as we know it"
+    subtext: "as we know it. Also, you win the game."
     content: "Buy 100 nukes"
     revealed: false
     unlocked: false
@@ -458,6 +586,24 @@ angular.module 'incrementalApp'
     unlocked: false
     requiredunit: "Office Worker"
     requiredamount: 20
+  }
+  {
+    title: "It's getting hot in here."
+    subtext: "So take out all your calcs."
+    content: "Buy 30 Office Workers"
+    revealed: false
+    unlocked: false
+    requiredunit: "Office Worker"
+    requiredamount: 30
+  }
+  {
+    title: "That must have taken quite some time."
+    subtext: "What a player you are :)"
+    content: "Buy 40 Office Workers"
+    revealed: false
+    unlocked: false
+    requiredunit: "Office Worker"
+    requiredamount: 40
   }
   {
     title: "You should stop playing this game"
@@ -558,5 +704,31 @@ angular.module 'incrementalApp'
     requiredamount: 10
     requiredunit: "Pearl"
   }
-
+  {
+    title: "Ascension"
+    subtext: "I know that feature"
+    content: "Ascend 1 time"
+    revealed: false
+    unlocked: false
+    requiredamount: 1
+    requiredunit: "Ascension"
+  }
+  {
+    title: "Let's try that again"
+    subtext: "Your fifth ascension"
+    content: "Ascend 5 times"
+    revealed: false
+    unlocked: false
+    requiredamount: 5
+    requiredunit: "Ascension"
+  }
+  {
+    title: "One too many"
+    subtext: "Ten ascensions!!"
+    content: "Ascend 10 times"
+    revealed: false
+    unlocked: false
+    requiredamount: 10
+    requiredunit: "Ascension"
+  }
 ]

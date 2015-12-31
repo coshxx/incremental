@@ -1,4 +1,8 @@
 <div class="content">
   <h2>Statistics</h2>
-    Total Fish caught: {{options.allUnits['fish'].total | floor}}
+    Game started: {{options.gameStarted | date:'medium'}}<br>
+
+    Total fish caught: {{options.allUnits['fish'].total | floor}}<br>
+    Total money earned: {{options.allUnits['dollar'].total | floor}}<br>
+    Total achievements unlocked: {{options.achievements.getUnlockCount().amount}}<br>
 </div>

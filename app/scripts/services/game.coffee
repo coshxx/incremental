@@ -17,6 +17,11 @@ angular.module 'incrementalApp'
     @tickrate = 20
     @start = new Date
     @tendency = 0
+    @achievementupgrades = achievements.getUnlockCount()
+    @achpower = @achievementupgrades.amount
+    @achpower = 1 + (@achpower/40)
+
+    @statisticsGameStarted = new Date
 
   processPearlGain = ->
     if units['fish'].total >= units['pearl'].nextpearl
@@ -49,9 +54,12 @@ angular.module 'incrementalApp'
     achievements.checkUnit(units['fish'])
     return
 
-  officeworkerTick: ->
+  officeworkerTick: =>
     if units['officeworker'].paused
       return
+    @achievementupgrades = achievements.getUnlockCount()
+    @achpower = @achievementupgrades.amount
+    @achpower = 1 + (@achpower/40)
     fish = units['fish'].owned
     dollar = units['dollar'].owned
     officeworker = units['officeworker'].owned
@@ -59,10 +67,11 @@ angular.module 'incrementalApp'
     sellpower = officeworker * efficiency
     if fish - sellpower > 0
       fish -= sellpower
-      dollar += sellpower
+      dollar += sellpower * @achpower
     else
-      dollar += fish
+      dollar += fish * @achpower
       fish = 0
     units['fish'].owned = fish
     units['dollar'].owned = dollar
+    units['dollar'].total += dollar
     achievements.checkUnit(units['dollar'])
