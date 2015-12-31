@@ -37,7 +37,7 @@ angular.module 'incrementalApp'
     price: 30
     pricefactor: 2
     efficiency: 2
-    efficiencyfactor: 27
+    efficiencyfactor: 2
     upgradeprice: 1000
     upgradefactor: 2.5
     upgradecurrency: "fish"

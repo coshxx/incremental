@@ -21,7 +21,7 @@ angular.module 'incrementalApp'
     $log.debug "saving"
     @saveString = @generateSaveString()
     localStorage.clear()
-    localStorage.setItem("idlefisher", @saveString)
+    localStorage.setItem("idlefisher2", @saveString)
   import: (importString) =>
     @loadString = importString
     if @loadString is null
@@ -40,7 +40,7 @@ angular.module 'incrementalApp'
     achievements.recountAchievements()
   load: =>
     $log.debug "loading"
-    @loadString = localStorage.getItem "idlefisher"
+    @loadString = localStorage.getItem "idlefisher2"
     if @loadString is null
       return
     @loadString = LZString.decompressFromEncodedURIComponent @loadString
